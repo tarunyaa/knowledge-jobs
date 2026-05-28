@@ -1,0 +1,86 @@
+{
+  "_note": "Hand-curated mapping from BLS occupation slug to AI-agent vendors operating in that segment today. Used by the §4 'State of Affairs' overlay. Selected examples only — not comprehensive. Includes (a) vendors named in the thesis prose, (b) well-known AI agent companies targeting these occupations. Edit freely to add/remove.",
+
+  "lawyers": ["Harvey", "Spellbook", "Leya", "Robin AI"],
+  "paralegals-and-legal-assistants": ["Harvey", "Spellbook", "EvenUp"],
+  "judges-and-hearing-officers": ["Harvey"],
+
+  "customer-service-representatives": ["Decagon", "Sierra", "Ada", "Intercom Fin", "Forethought", "Cresta"],
+  "receptionists": ["Decagon", "Ada"],
+  "information-clerks": ["Decagon"],
+  "bill-and-account-collectors": ["Decagon"],
+
+  "physicians-and-surgeons": ["Abridge", "Ambience", "Suki", "DeepScribe"],
+  "nurse-practitioners": ["Abridge", "Ambience", "Suki"],
+  "registered-nurses": ["Abridge", "Ambience"],
+  "medical-records-and-health-information-technicians": ["Abridge", "Ambience"],
+
+  "wholesale-and-manufacturing-sales-representatives": ["Clay", "11x", "Artisan", "Outreach"],
+  "advertising-sales-agents": ["Clay", "11x"],
+  "securities-commodities-and-financial-services-sales-agents": ["Clay"],
+  "insurance-sales-agents": ["Clay", "EvenUp"],
+  "sales-managers": ["Clay", "Gong", "Salesloft"],
+  "real-estate-brokers-and-sales-agents": ["Clay"],
+
+  "software-developers": ["Claude Code", "Cursor", "GitHub Copilot", "Cognition Devin", "Replit Agent"],
+  "computer-programmers": ["Claude Code", "Cursor", "GitHub Copilot", "Aider"],
+  "web-developers": ["Claude Code", "Cursor", "GitHub Copilot", "Replit Agent"],
+  "computer-systems-analysts": ["Claude Code", "Cursor"],
+  "computer-network-architects": ["Claude Code"],
+  "computer-and-information-systems-managers": ["Claude Code", "Cursor"],
+
+  "accountants-and-auditors": ["Pilot", "Numeric", "Tabs", "FloQast"],
+  "bookkeeping-accounting-and-auditing-clerks": ["Pilot", "Tabs"],
+  "financial-clerks": ["Pilot"],
+  "financial-analysts": ["Numeric", "Vena"],
+  "financial-managers": ["Numeric"],
+  "loan-officers": ["Hadrian"],
+  "insurance-underwriters": ["Sixfold"],
+  "claims-adjusters-appraisers-examiners-and-investigators": ["EvenUp", "Sixfold"],
+  "personal-financial-advisors": ["Numeric"],
+
+  "human-resources-specialists": ["Mercor", "Eightfold", "Viven", "Ashby"],
+  "human-resources-managers": ["Mercor", "Eightfold"],
+  "training-and-development-specialists": ["Viven", "Afterquery"],
+  "compensation-benefits-and-job-analysis-specialists": ["Eightfold"],
+
+  "advertising-promotions-and-marketing-managers": ["Jasper", "Writer", "Anyword", "Copy.ai"],
+  "market-research-analysts": ["Jasper", "Writer"],
+  "public-relations-specialists": ["Jasper", "Writer"],
+  "public-relations-managers": ["Jasper"],
+  "writers-and-authors": ["Jasper", "Writer", "Anyword"],
+  "editors": ["Writer"],
+  "fundraisers": ["Jasper"],
+
+  "graphic-designers": ["Galileo", "Magicpath"],
+  "art-directors": ["Galileo"],
+  "interior-designers": ["Galileo"],
+
+  "data-scientists": ["Claude Code", "Numeric"],
+  "operations-research-analysts": ["Numeric"],
+  "database-administrators": ["Claude Code"],
+  "information-security-analysts": ["Claude Code"],
+  "computer-support-specialists": ["Decagon", "Forethought"],
+  "network-and-computer-systems-administrators": ["Claude Code"],
+
+  "management-analysts": ["Glean"],
+  "project-management-specialists": ["Glean"],
+  "compliance-officers": ["Norm Ai", "Hadrian"],
+
+  "tutors": ["Claude Cowork"],
+  "postsecondary-teachers": ["Claude Cowork"],
+  "high-school-teachers": ["Claude Cowork"],
+  "adult-literacy-and-ged-teachers": ["Claude Cowork"],
+  "instructional-coordinators": ["Claude Cowork"],
+
+  "librarians": ["Glean"],
+  "library-technicians-and-assistants": ["Glean"],
+
+  "translators-and-interpreters": ["Claude Code"],
+  "court-reporters-and-simultaneous-captioners": ["Abridge"],
+
+  "purchasing-managers-buyers-and-purchasing-agents": ["Numeric"],
+  "logisticians": ["Numeric"],
+  "cost-estimators": ["Numeric"],
+  "property-appraisers-and-assessors": ["EvenUp"]
+}
