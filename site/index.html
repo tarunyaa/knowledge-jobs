@@ -49,9 +49,30 @@ header.page h1 {
   margin-bottom: 8px;
 }
 header.page .tagline {
-  font-size: 15px;
-  color: var(--fg2);
+  font-size: 17px;
+  color: var(--fg);
+  font-weight: 500;
   max-width: 720px;
+  margin-bottom: 10px;
+}
+header.page .subquestions {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px 0;
+  max-width: 720px;
+}
+header.page .subquestions li {
+  font-size: 14px;
+  color: var(--fg2);
+  padding-left: 16px;
+  position: relative;
+  margin-bottom: 3px;
+}
+header.page .subquestions li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--fg3);
 }
 header.page .credit {
   font-size: 12px;
@@ -343,7 +364,12 @@ canvas#canvas {
 
 <header class="page">
   <h1>Knowledge Work Map</h1>
-  <p class="tagline">How will AI agents actually get deployed, and where will the value accrue? A tier-based view of the US knowledge-work labour pool.</p>
+  <p class="tagline">When and how will AI create value at the application layer?</p>
+  <ul class="subquestions">
+    <li>When will frontier labs become profitable?</li>
+    <li>How will AI agents be deployed?</li>
+    <li>How will AI agents be priced?</li>
+  </ul>
   <p class="credit">Built on <a href="https://karpathy.ai/jobs/">Karpathy's BLS visualizer</a>. Same Bureau of Labor Statistics dataset; filtered to high-digital-exposure occupations; recoloured by tier.</p>
 </header>
 

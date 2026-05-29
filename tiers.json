@@ -302,5 +302,61 @@
     "knowledge_work": true,
     "tier": "T2",
     "rationale": "A data science agent needs access to the company's specific data warehouses, schemas, business metrics definitions, and domain context to produce useful analysis \u2014 generic horizontal agents can't meaningfully analyze a company's data without integration into their data stack (Snowflake, dbt, BI tools) and configuration around their KPIs. The skills are transferable but each deployment requires substantial per-customer setup of data connections, semantic layers, and stakeholder context. This mirrors the T2 pattern where the agent product is similar across companies but enterprise deployment requires meaningful integration work."
+  },
+  {
+    "slug": "database-administrators",
+    "title": "Database administrators and architects",
+    "exposure": 9,
+    "knowledge_work": true,
+    "tier": "T2",
+    "rationale": "DBA work requires deep integration with a company's specific database systems, schemas, security policies, and operational tooling. While the skills (SQL, performance tuning, backup/restore) are transferable, an AI agent serving a customer needs configured access to their particular DBMS instances, internal data models, and compliance controls \u2014 making it a genericizable framework with substantial per-customer configuration."
+  },
+  {
+    "slug": "desktop-publishers",
+    "title": "Desktop publishers",
+    "exposure": 9,
+    "knowledge_work": true,
+    "tier": "T1",
+    "rationale": "Desktop publishing uses standard software (InDesign, QuarkXPress, etc.) with standard inputs (text, graphics) and outputs (print-ready or web files) across all employers. A horizontal AI agent with access to these standard tools and the project files could handle layout work at any company without per-customer integration or configuration. The work is highly genericizable, similar to graphic design or copywriting."
+  },
+  {
+    "slug": "drafters",
+    "title": "Drafters",
+    "exposure": 9,
+    "knowledge_work": true,
+    "tier": "T1",
+    "rationale": "Drafters convert engineer/architect sketches into technical CAD/BIM drawings using standard industry tools (AutoCAD, Revit, SolidWorks). An AI agent connected to these standard CAD file formats can perform the work across firms without per-customer integration \u2014 the project files themselves provide the context. Specialization by domain (mechanical/architectural/electrical) is captured in the agent's training, not in customer-specific configuration."
+  },
+  {
+    "slug": "economists",
+    "title": "Economists",
+    "exposure": 9,
+    "knowledge_work": true,
+    "tier": "T1",
+    "rationale": "Economist work \u2014 research, statistical analysis, modeling, forecasting, and writing reports \u2014 uses standard tools (Stata, R, Python, Excel) and produces standard outputs (papers, forecasts, policy memos). A horizontal agent with access to the economist's data files and standard analysis tools can do the work without per-employer integration. While some government roles have specific data systems, the core analytical work is genericizable across employers."
+  },
+  {
+    "slug": "editors",
+    "title": "Editors",
+    "exposure": 9,
+    "knowledge_work": true,
+    "tier": "T1",
+    "rationale": "Editing work uses standard tools (Word, Google Docs, CMS platforms) and standard inputs/outputs (manuscripts in, edited text out) across publishers. A horizontal AI agent given access to the manuscript files can perform copyediting, fact-checking, and revision suggestions without per-customer integration. Style-guide adherence is just a prompt/reference document, not a deep enterprise integration."
+  },
+  {
+    "slug": "electrical-and-electronics-engineers",
+    "title": "Electrical and electronics engineers",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T3b",
+    "rationale": "Electrical/electronics engineering involves deep tacit judgment about physical systems\u2014knowing whether a circuit will have signal integrity issues, EMI problems, thermal failures, or manufacturability concerns. While CAD tools are standard, the engineering intuition for tradeoffs in real hardware often can't be fully articulated and requires close iteration with the expert. Unlike software where the artifact is fully digital and testable, hardware involves physical site visits, supervising manufacturing, and embodied judgment that resists full extraction."
+  },
+  {
+    "slug": "epidemiologists",
+    "title": "Epidemiologists",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T2",
+    "rationale": "An epidemiologist agent needs to integrate with specific public health data systems (state/local surveillance databases, EHRs, CDC reporting pipelines) and be configured to a jurisdiction's reporting requirements, disease priorities, and stakeholder communication channels. The analytical skills (biostatistics, study design, report writing) are generic across employers, but useful deployment requires per-customer data integrations and workflow tuning. This matches T2 rather than T1 (not pure horizontal tool use) or T3 (knowledge is largely codified in epidemiological methods)."
   }
 ]

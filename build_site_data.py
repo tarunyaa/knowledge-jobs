@@ -29,8 +29,10 @@ SECTION_MODE = {
     "1": "default",
     "2": "default",
     "3": "t2-focus",
-    "4": "vendors",
+    "4": "default",
     "5": "default",
+    "6": "vendors",
+    "7": "default",
 }
 
 TIER_CHIP_RE = re.compile(r"\{(T1|T2|T3a|T3b|T3c)\}")
