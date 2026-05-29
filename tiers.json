@@ -358,5 +358,685 @@
     "knowledge_work": true,
     "tier": "T2",
     "rationale": "An epidemiologist agent needs to integrate with specific public health data systems (state/local surveillance databases, EHRs, CDC reporting pipelines) and be configured to a jurisdiction's reporting requirements, disease priorities, and stakeholder communication channels. The analytical skills (biostatistics, study design, report writing) are generic across employers, but useful deployment requires per-customer data integrations and workflow tuning. This matches T2 rather than T1 (not pure horizontal tool use) or T3 (knowledge is largely codified in epidemiological methods)."
+  },
+  {
+    "slug": "fashion-designers",
+    "title": "Fashion designers",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T1",
+    "rationale": "Fashion design uses standard creative tools (CAD programs like CLO 3D, Adobe Illustrator, graphics editing software) that are common across the industry. An AI agent could assist with trend research, sketching, fabric selection, and design iteration by connecting to these standard tools without per-enterprise integration. The work output (designs, prototypes, tech packs) is portable across employers."
+  },
+  {
+    "slug": "film-and-video-editors-and-camera-operators",
+    "title": "Film and video editors and camera operators",
+    "exposure": 7,
+    "knowledge_work": false,
+    "tier": null,
+    "rationale": "Camera operators are primarily physical work (operating cameras on location, often carrying heavy equipment). Film/video editing is knowledge work but the role as a whole is mixed and predominantly creative/physical craft rather than knowledge work amenable to agent deployment."
+  },
+  {
+    "slug": "financial-analysts",
+    "title": "Financial analysts",
+    "exposure": 9,
+    "knowledge_work": true,
+    "tier": "T2",
+    "rationale": "An AI agent for financial analysts needs to ingest enterprise-specific data (internal financial models, proprietary research databases, Bloomberg/FactSet/Capital IQ feeds, portfolio management systems) and be tuned to the firm's investment thesis, risk frameworks, and reporting templates. While the analytical skills are generalizable, deployment requires substantial per-firm integration with data providers and internal systems, plus configuration to firm-specific methodologies. This is the classic T2 shape: same agent product, months of integration per enterprise."
+  },
+  {
+    "slug": "financial-clerks",
+    "title": "Financial clerks",
+    "exposure": 9,
+    "knowledge_work": true,
+    "tier": "T2",
+    "rationale": "Financial clerks do transactional record-keeping work tied to enterprise-specific systems (billing platforms, payroll systems, EHRs, insurance policy databases, brokerage back-office systems). An AI agent for this work requires per-enterprise integrations into those systems plus configuration of the company's specific workflows, fee schedules, and approval rules. The skills are generic but deployment demands substantial customization per customer."
+  },
+  {
+    "slug": "financial-examiners",
+    "title": "Financial examiners",
+    "exposure": 8,
+    "knowledge_work": true,
+    "tier": "T2",
+    "rationale": "Financial examiners review balance sheets, loan documents, and compliance with regulations at specific institutions. An AI agent would need integration into each institution's core banking systems, loan management platforms, and document repositories, plus tuning to the specific regulatory frameworks (federal vs state, risk vs consumer compliance) the examiner operates under. The skills generalize across employers but deployment requires substantial per-institution integration and configuration."
+  },
+  {
+    "slug": "financial-managers",
+    "title": "Financial managers",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T2",
+    "rationale": "Financial managers analyze data, prepare reports, and advise executives \u2014 work that requires deep integration with enterprise-specific ERP/accounting systems (SAP, Oracle, NetSuite), internal financial databases, and industry/regulatory context (healthcare billing, government appropriations). An AI agent would need per-enterprise integrations and configuration to ledgers, chart of accounts, and reporting workflows, plus tuning to the org's policies and compliance rules. There is also a relational/advisory component with executives, but the core analytical work is a genericizable framework with heavy custom configuration."
+  },
+  {
+    "slug": "fundraisers",
+    "title": "Fundraisers",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T3c",
+    "rationale": "Fundraising centers on cultivating and maintaining personal relationships with donors\u2014especially major gifts and planned giving\u2014where trust, rapport, and in-person engagement are the core value. An AI agent can handle research, prospect identification, drafting appeals, and campaign analytics, but the relational core of soliciting and stewarding donors stays with the human."
+  },
+  {
+    "slug": "general-office-clerks",
+    "title": "General office clerks",
+    "exposure": 9,
+    "knowledge_work": true,
+    "tier": "T2",
+    "rationale": "An agent for general office clerks would handle phone routing, scheduling, document filing/retrieval, data entry, and bill processing \u2014 tasks that look similar across companies but depend on each employer's specific systems (phone systems, CRM, document repositories, EHRs for hospitals, SIS for colleges). A horizontal agent can't just plug in; deployment requires integrating with the enterprise's office stack and tuning workflows to local procedures. The skills are generic but the per-enterprise integration burden makes it T2."
+  },
+  {
+    "slug": "geographers",
+    "title": "Geographers",
+    "exposure": 8,
+    "knowledge_work": true,
+    "tier": "T2",
+    "rationale": "Geographers' work centers on GIS analysis, remote sensing, and spatial data interpretation using standard tools (ArcGIS, QGIS), but deployment at a government agency or firm requires integration with that organization's proprietary geospatial databases, satellite/imagery feeds, and domain-specific data layers (population, infrastructure, environmental). An agent product would generalize across geographers but need per-enterprise data pipeline configuration and workflow tuning. This puts it in T2 rather than T1."
+  },
+  {
+    "slug": "graphic-designers",
+    "title": "Graphic designers",
+    "exposure": 9,
+    "knowledge_work": true,
+    "tier": "T1",
+    "rationale": "Graphic design uses standard professional tools (Adobe Creative Suite, Figma) that are used across every company. A horizontal AI agent given access to brand assets and project files could produce designs at any enterprise without per-customer integration work. The inputs (briefs, references) and outputs (visual files) are standardized across the industry."
+  },
+  {
+    "slug": "health-information-technologists-and-medical-registrars",
+    "title": "Health information technologists and medical registrars",
+    "exposure": 8,
+    "knowledge_work": true,
+    "tier": "T2",
+    "rationale": "The work requires deep integration with enterprise-specific EHR systems (Epic, Cerner), clinical databases, and disease registries, plus tuning to institution-specific coding practices, data schemas, and compliance requirements (HIPAA). An agent product could serve many healthcare organizations but each deployment requires substantial integration into the hospital's specific information systems and validation workflows, mirroring the T2 pattern of medical scribing tools like Abridge."
+  },
+  {
+    "slug": "high-school-teachers",
+    "title": "High school teachers",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T3c",
+    "rationale": "Teaching is fundamentally relational \u2014 value comes from sustained relationships with specific students, classroom management, motivation, and in-person supervision. An AI agent can augment portable parts (lesson planning, grading, generating materials) but the core instructional and relational work stays with the human teacher in a physical classroom."
+  },
+  {
+    "slug": "historians",
+    "title": "Historians",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T1",
+    "rationale": "Historian work involves research, analysis, and writing using standard sources (archives, documents, books) and standard authoring tools. A horizontal AI agent with research, document analysis, and writing capabilities can perform this work across employers by being pointed at the relevant archives/sources, without per-enterprise integration or system-prompt tuning."
+  },
+  {
+    "slug": "human-resources-managers",
+    "title": "Human resources managers",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T3c",
+    "rationale": "HR managers' work centers on relationships with executives, employees, and union counterparts\u2014mediating disputes, advising leaders, handling grievances, and serving as the trusted link between management and staff. While an agent could automate portable pieces (policy drafting, recruiting workflows, payroll oversight, compliance checks), the core consultative and mediation work depends on established trust and standing within the organization. Deployment would also require enterprise-specific integrations (HRIS, payroll), but the binding constraint is relational."
+  },
+  {
+    "slug": "human-resources-specialists",
+    "title": "Human resources specialists",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T2",
+    "rationale": "An HR agent needs deep integration with enterprise-specific systems (ATS like Workday/Greenhouse, HRIS, payroll, benefits providers) and tuning to each organization's policies, compliance requirements, and workflows. The core skills (screening, interviewing, policy guidance) are similar across employers, but deployment requires per-enterprise configuration of integrations, policy knowledge bases, and escalation logic. This matches the T2 pattern of a generic agent product with substantial customization per customer."
+  },
+  {
+    "slug": "industrial-designers",
+    "title": "Industrial designers",
+    "exposure": 8,
+    "knowledge_work": true,
+    "tier": "T1",
+    "rationale": "Industrial designers work primarily in standard professional tools (CAD/CAID software like SolidWorks, Rhino, Figma for UI) that an AI agent can interface with the same way at any firm. The work product (sketches, 3D models, prototypes, specs) is portable across employers and doesn't require per-enterprise system integration. While some tacit aesthetic judgment exists, the core design workflow is genericizable like other creative/engineering tool-based roles."
+  },
+  {
+    "slug": "industrial-engineers",
+    "title": "Industrial engineers",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T3a",
+    "rationale": "Industrial engineering work depends heavily on tacit knowledge of specific factory layouts, production processes, worker behaviors, and physical observation of operations \u2014 none of which a horizontal agent can access. However, this context is documentable through process maps, time studies, sensor data, and structured interviews, which once captured could enable a per-enterprise agent (T2-like) to analyze data and recommend optimizations. The physical observation and cross-functional collaboration aspects make it harder than pure software roles, placing it in T3a."
+  },
+  {
+    "slug": "information-clerks",
+    "title": "Information clerks",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T2",
+    "rationale": "Information clerks do routine clerical work that's similar across employers in skill terms, but automating it requires deep integration with each enterprise's specific systems \u2014 hotel PMS, court docketing systems, government eligibility databases, HRIS, order-entry platforms. A clerk-automation agent product can serve many enterprises, but each deployment requires connecting to bespoke records systems and tuning workflows to local policies and escalation rules."
+  },
+  {
+    "slug": "information-security-analysts",
+    "title": "Information security analysts",
+    "exposure": 8,
+    "knowledge_work": true,
+    "tier": "T2",
+    "rationale": "An infosec agent needs deep integration with the enterprise's specific security stack (SIEM, firewalls, EDR, IAM, ticketing) and tuning to the organization's network topology, asset inventory, and risk posture. While the skills and frameworks are standardized across companies, deploying an agent requires substantial per-enterprise configuration of detection rules, escalation paths, and compliance controls. Same product, many enterprise integrations."
+  },
+  {
+    "slug": "instructional-coordinators",
+    "title": "Instructional coordinators",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T3c",
+    "rationale": "Instructional coordinators' work centers on relationships with teachers, principals, and administrators\u2014mentoring, coaching, observing classrooms, and negotiating curriculum changes through trust built over time. While an agent could augment portable parts (analyzing test data, drafting curriculum materials, summarizing research on teaching techniques), the core relational work of persuading and developing teachers stays with the human. Per-district context also matters but the binding constraint is interpersonal."
+  },
+  {
+    "slug": "insurance-sales-agents",
+    "title": "Insurance sales agents",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T3c",
+    "rationale": "Insurance sales is fundamentally relational \u2014 agents build trust with clients, generate referrals, and maintain ongoing relationships for renewals and claims support. An AI agent could automate quoting, policy comparison, application processing, and follow-ups (T2-style with carrier system integrations), but the core client acquisition and trust-building stays with the human. The relational core dominates the value proposition, especially for independent agents who compete on advice and rapport."
+  },
+  {
+    "slug": "insurance-underwriters",
+    "title": "Insurance underwriters",
+    "exposure": 9,
+    "knowledge_work": true,
+    "tier": "T2",
+    "rationale": "Underwriting agents require deep integration with each carrier's policy administration systems, rating engines, proprietary risk models, and underwriting guidelines that vary by line of business and state regulations. While the core skills (risk analysis, applying guidelines) are similar across insurers, deployment requires per-enterprise configuration of decision rules, escalation logic, and connections to internal data sources and external feeds (MIB, credit bureaus, MVR)."
+  },
+  {
+    "slug": "interior-designers",
+    "title": "Interior designers",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T3c",
+    "rationale": "Interior design is heavily relational \u2014 designers spend significant time soliciting clients, understanding their personal tastes and lifestyles, and coordinating with contractors and architects on-site. While an agent could help with CAD work, material specification, and renderings (portable tasks), the client relationship, on-site visits, and trust-based collaboration with builders remain with the human. Aesthetic judgment also has a tacit component, but the dominant constraint is the client-relationship core of the business."
+  },
+  {
+    "slug": "interpreters-and-translators",
+    "title": "Interpreters and translators",
+    "exposure": 9,
+    "knowledge_work": true,
+    "tier": "T1",
+    "rationale": "Translation has standard inputs (source text) and outputs (target text), with universal CAT tools and well-established workflows across industries. A horizontal AI agent (LLM-based translation) can perform this work without per-enterprise integration \u2014 just give it the documents. Live interpreting has performative/physical elements but the core knowledge work is genericizable."
+  },
+  {
+    "slug": "judges-and-hearing-officers",
+    "title": "Judges and hearing officers",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T3b",
+    "rationale": "Judicial decision-making relies on courtroom demeanor assessment, weighing credibility, judicial temperament, and discretion that even judges struggle to fully articulate. Beyond tacit gestalt, the role carries constitutional/societal authority that society won't delegate to an agent \u2014 though if one tried, only the judge could harness-engineer a tool to assist their own reasoning. Research, drafting opinions, and reviewing briefs can be augmented, but the core adjudicative judgment is genuinely tacit."
+  },
+  {
+    "slug": "labor-relations-specialists",
+    "title": "Labor relations specialists",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T3c",
+    "rationale": "The core of labor relations work is negotiating contracts, resolving grievances, and building trust between management, unions, and workers \u2014 value lives in established relationships and credibility with specific counterparties at the bargaining table. An agent could help draft contracts, analyze labor law, and prepare materials, but the relational negotiation and dispute resolution core stays with the human. Secondary tacit elements (reading the room in tense negotiations) also resist full extraction."
+  },
+  {
+    "slug": "landscape-architects",
+    "title": "Landscape architects",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T1",
+    "rationale": "Landscape architects use standard professional tools (CADD, GIS) to produce site plans, models, and specifications \u2014 inputs and outputs are largely standardized across firms. A horizontal agent connected to these standard design tools and project files could perform the design work without per-enterprise integration. Site-specific data (surveys, environmental reports) is project-level context rather than enterprise-level customization."
+  },
+  {
+    "slug": "lawyers",
+    "title": "Lawyers",
+    "exposure": 8,
+    "knowledge_work": true,
+    "tier": "T2",
+    "rationale": "Lawyers' work requires deep integration with firm-specific document management systems, matter databases, precedent libraries, and client files, plus tuning to jurisdiction and practice-area workflows\u2014Harvey-style deployments require months of per-firm configuration. While the core skills (research, drafting, analysis) are similar across firms, the agent product needs custom integrations and workflow tuning per enterprise. Senior partner work with key client relationships would shade toward T3c, but the bulk of lawyer work (associates doing research, drafting, document review) fits T2."
+  },
+  {
+    "slug": "librarians",
+    "title": "Librarians and library media specialists",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T2",
+    "rationale": "Librarian work involves significant physical/in-person components (story time, circulation desk, patron interaction) but the knowledge core\u2014cataloging, reference research, collection management\u2014requires integration with each library's specific ILS (Integrated Library System like Alma, Sierra, Koha), local catalog, patron database, and consortium resources. An agent could provide reference and cataloging assistance generically, but enterprise deployment requires per-institution integration with collection systems and tuning to local collection policies and patron populations."
+  },
+  {
+    "slug": "library-technicians-and-assistants",
+    "title": "Library technicians and assistants",
+    "exposure": 7,
+    "knowledge_work": false,
+    "tier": null,
+    "rationale": "The role is primarily physical and clerical: checking materials in/out, reshelving books, staffing service desks, and helping patrons in person. While it includes some information-organization tasks, the core work requires physical presence in the library."
+  },
+  {
+    "slug": "loan-officers",
+    "title": "Loan officers",
+    "exposure": 8,
+    "knowledge_work": true,
+    "tier": "T2",
+    "rationale": "Loan officer work requires deep integration with each lender's loan origination system (LOS), underwriting software, credit bureau feeds, compliance/regulatory rules, and product-specific terms \u2014 all of which vary by institution. An AI agent would be a horizontal product (analyze applications, verify documents, run underwriting logic, communicate with applicants) but every deployment requires connecting to the bank's core systems and tuning to its credit policies and state/federal compliance workflows. The relational/sales aspects (especially in mortgage and commercial) add some T3c flavor, but the bulk of the role \u2014 underwriting and processing \u2014 fits T2."
+  },
+  {
+    "slug": "logisticians",
+    "title": "Logisticians",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T2",
+    "rationale": "A logistician agent requires deep integration with enterprise-specific ERP, WMS, TMS, and procurement systems (SAP, Oracle, Manhattan), plus tuning to each company's supplier network, SKUs, routing rules, and escalation workflows. The skills are generic but every deployment demands months of integration and configuration to the company's supply chain data and processes. This matches T2: same agent product, custom per-enterprise configuration."
+  },
+  {
+    "slug": "management-analysts",
+    "title": "Management analysts",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T3c",
+    "rationale": "Management consulting blends tacit diagnostic judgment with deep client relationships \u2014 proposals are won, access to personnel is granted, and recommendations are accepted largely on the basis of trust with specific executives. An AI agent can do significant portions of the analytical work (data analysis, benchmarking, deck drafting) but the relational core of winning engagements, interviewing personnel, and persuading managers to adopt changes stays with the human. The portable analytic pieces resemble T1 work, but the role's value capture is fundamentally relational."
+  },
+  {
+    "slug": "marine-engineers-and-naval-architects",
+    "title": "Marine engineers and naval architects",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T3b",
+    "rationale": "Marine engineering and naval architecture involves deep tacit judgment about hull behavior, structural integrity, and propulsion tradeoffs that even experts struggle to fully articulate, combined with safety-critical physical intuition refined over decades. While CAD and simulation tools are standard, the design judgment for one-off vessels and offshore structures requires close expert iteration rather than a horizontal or configurable agent. An agent for this work would need to be harness-engineered by the senior engineers themselves alongside specialized simulation tools."
+  },
+  {
+    "slug": "market-research-analysts",
+    "title": "Market research analysts",
+    "exposure": 9,
+    "knowledge_work": true,
+    "tier": "T2",
+    "rationale": "An AI agent for market research analysts needs access to enterprise-specific data sources (CRM, sales data, customer databases, survey platforms like Qualtrics, social listening tools) and tuning to the company's products, competitive landscape, and reporting conventions. While the analytical skills are generic, deployment requires per-enterprise integration with proprietary data and workflows, plus eval dashboards trusted by internal stakeholders. This matches the T2 pattern of a generic framework with substantial per-customer configuration."
+  },
+  {
+    "slug": "material-recording-clerks",
+    "title": "Material recording clerks",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T2",
+    "rationale": "The work involves tracking inventory and shipments in enterprise systems (WMS, ERP, RFID scanners) that vary by employer. An agent automating this requires per-enterprise integrations into the specific inventory/ERP stack and workflow tuning, similar to other back-office automation. Also includes significant physical warehouse handling, but the recording/scheduling core is T2 knowledge work."
+  },
+  {
+    "slug": "materials-engineers",
+    "title": "Materials engineers",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T3b",
+    "rationale": "Materials engineering work depends heavily on proprietary processes, lab equipment, physical testing, and tacit expertise about how materials behave in specific manufacturing contexts. Much of the judgment (failure analysis, material selection trade-offs) is built from hands-on experience with specific products and is hard to fully articulate; an agent would need close iteration with the expert and integration with physical experimentation. Relational and physical lab elements further prevent a generic or merely-configured agent from doing the work."
+  },
+  {
+    "slug": "mathematicians-and-statisticians",
+    "title": "Mathematicians and statisticians",
+    "exposure": 9,
+    "knowledge_work": true,
+    "tier": "T2",
+    "rationale": "An AI agent for this work uses standard statistical/mathematical tooling (R, Python, SAS) but needs deep integration with each enterprise's specific data sources, schemas, and domain context (clinical trial protocols, government survey designs, manufacturing QA pipelines) to deliver useful analyses. The analytical skills are portable, but the value comes from being wired into the organization's data infrastructure and tuned to its reporting conventions and regulatory requirements. This matches the T2 pattern of a genericizable agent framework requiring substantial per-enterprise configuration."
+  },
+  {
+    "slug": "mechanical-engineers",
+    "title": "Mechanical engineers",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T3b",
+    "rationale": "Mechanical engineering work depends on physical intuition, manufacturability judgment, and integration with hardware/prototyping that involves genuinely tacit expertise \u2014 the senior engineer's sense for whether a design will fail under load or be manufacturable. While CAD tools are standardized, the design judgment, multi-physics tradeoffs, and physical testing loops require expert-driven harness engineering rather than a generic or configurable agent. Some sub-tasks (drafting, simulation setup) lean T1, but the core role is dominated by tacit physical-world judgment."
+  },
+  {
+    "slug": "medical-dosimetrists",
+    "title": "Medical dosimetrists",
+    "exposure": 8,
+    "knowledge_work": true,
+    "tier": "T2",
+    "rationale": "Medical dosimetry is knowledge work centered on radiation dose calculation and treatment planning using specialized software (Eclipse, Pinnacle, RayStation) integrated with hospital imaging systems (CT/MRI), EHRs, and linear accelerator hardware. An agent would need deep per-enterprise integration with each cancer center's planning systems, equipment calibration data, and physician workflows, plus regulatory/QA compliance \u2014 similar to how Abridge integrates per-hospital. The skills are standardized across institutions but deployment requires substantial customization, making this T2."
+  },
+  {
+    "slug": "medical-records-and-health-information-technicians",
+    "title": "Medical records specialists",
+    "exposure": 9,
+    "knowledge_work": true,
+    "tier": "T2",
+    "rationale": "Medical records work requires deep integration with the enterprise's specific EHR system (Epic, Cerner, etc.), billing systems, and coding workflows, plus tuning to the facility's documentation patterns and payer rules. The skills are standardized (ICD-10, CPT coding) but an agent like Abridge or similar needs per-hospital integration, compliance/HIPAA configuration, and escalation logic to clinicians. Same agent product, but every deployment requires substantial integration work."
+  },
+  {
+    "slug": "medical-scientists",
+    "title": "Medical scientists",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T3b",
+    "rationale": "Medical scientists do frontier research requiring deep tacit expertise \u2014 hypothesis generation, experimental design intuition, and interpretation of ambiguous results rely on judgment that even expert scientists cannot fully articulate. While portions (literature review, statistical analysis, grant drafting) are genericizable, the core scientific judgment requires the expert themselves to harness-engineer an agent through close iteration. Lab-specific protocols and research directions vary too idiosyncratically for a horizontal or framework-based agent product."
+  },
+  {
+    "slug": "medical-transcriptionists",
+    "title": "Medical transcriptionists",
+    "exposure": 10,
+    "knowledge_work": true,
+    "tier": "T2",
+    "rationale": "An AI agent for medical transcription (like Abridge) needs deep integration with the specific hospital's EHR system, custom templates for different physician specialties and document types, and tuning to local terminology and workflows. The core skill is generic but enterprise deployment requires substantial per-customer integration work into clinical systems with HIPAA compliance."
+  },
+  {
+    "slug": "models",
+    "title": "Models",
+    "exposure": 8,
+    "knowledge_work": false,
+    "tier": null,
+    "rationale": "Modeling is primarily performative/physical work \u2014 posing, displaying clothing, and embodying a physical appearance for photographers and audiences. It is not knowledge work."
+  },
+  {
+    "slug": "music-directors-and-composers",
+    "title": "Music directors and composers",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T3b",
+    "rationale": "Music direction and composition are creative/performative knowledge work where value comes from artistic taste, interpretive vision, and ensemble leadership \u2014 tacit qualities that even the artist can't fully articulate. An agent could assist with arrangement drafting or score prep, but the core artistic judgment must be iteratively shaped by the individual composer/director. There's no enterprise integration story; deployment would be per-artist harness work."
+  },
+  {
+    "slug": "natural-sciences-managers",
+    "title": "Natural sciences managers",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T3c",
+    "rationale": "Natural sciences managers lead research teams, hire and evaluate scientists, secure budgets, and communicate with executives, clients, and policymakers \u2014 value lives in relationships, leadership, and accountability for high-stakes scientific decisions. Portable work (drafting reports, reviewing literature, scheduling) can be augmented by horizontal agents, but the managerial core depends on trust, organizational standing, and judgment that cannot be transferred to an agent. Some tacit scientific judgment also factors in, but the dominant constraint is relational/leadership authority."
+  },
+  {
+    "slug": "network-and-computer-systems-administrators",
+    "title": "Network and computer systems administrators",
+    "exposure": 8,
+    "knowledge_work": true,
+    "tier": "T2",
+    "rationale": "A sysadmin AI agent requires deep integration into each enterprise's specific network topology, server inventory, identity providers, monitoring tools, ticketing systems, and security policies. The core skills (Linux/Windows admin, networking, troubleshooting) are generic, but deploying an agent to actually manage an organization's infrastructure requires substantial per-customer configuration, credentialed access, and tuning to local conventions and escalation paths."
+  },
+  {
+    "slug": "reporters-correspondents-and-broadcast-news-analysts",
+    "title": "News analysts, reporters, and journalists",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T3c",
+    "rationale": "Journalism's core value lies in cultivated source relationships, on-the-ground interviewing, and trust-based access to people willing to share tips and leads\u2014these relational assets stay with the human reporter. An AI agent can substantially augment portable parts (research, drafting, editing, transcription, multimedia production) but cannot replace the human who has cultivated the contacts and conducts in-person interviews. The work is also partially tacit (editorial judgment, news instinct), but the binding constraint is relational."
+  },
+  {
+    "slug": "nuclear-engineers",
+    "title": "Nuclear engineers",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T3b",
+    "rationale": "Nuclear engineering involves deep tacit expertise around reactor physics, safety judgment, and regulatory compliance specific to particular facilities and equipment, where mistakes are catastrophic and judgment is hard to fully articulate. An agent would need to be built by the experts themselves through close iteration on plant-specific systems, with senior engineers in the loop validating safety-critical decisions. Heavy regulatory and physical-plant context makes this resistant to either horizontal or framework-based deployment."
+  },
+  {
+    "slug": "operations-research-analysts",
+    "title": "Operations research analysts",
+    "exposure": 9,
+    "knowledge_work": true,
+    "tier": "T2",
+    "rationale": "OR analysts solve enterprise-specific optimization problems requiring deep integration with company databases, ERP/supply chain systems, and proprietary business processes. The analytical methods (forecasting, simulation, optimization) are generic, but agent deployment needs per-enterprise data connectors, domain context, and tuned outputs trusted by managers \u2014 fitting the T2 pattern of generic framework with substantial custom configuration."
+  },
+  {
+    "slug": "paralegals-and-legal-assistants",
+    "title": "Paralegals and legal assistants",
+    "exposure": 9,
+    "knowledge_work": true,
+    "tier": "T2",
+    "rationale": "A paralegal AI agent (like Harvey) needs deep per-firm integration with document management systems (iManage, NetDocuments), case management tools, court e-filing systems, and firm-specific templates and workflows. While the underlying skills (legal research, drafting) are similar across firms, each deployment requires substantial configuration to firm precedents, practice area conventions, and matter files. Same product, custom configuration per enterprise."
+  },
+  {
+    "slug": "personal-financial-advisors",
+    "title": "Personal financial advisors",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T3c",
+    "rationale": "Personal financial advisors' value is fundamentally relational \u2014 clients choose advisors based on trust built over years, and the work involves making clients 'feel comfortable' with their financial decisions and life circumstances. An AI agent can augment the portable analytical work (portfolio analysis, research, plan drafting, monitoring) but the relational core of client meetings, trust-building, and sales/networking stays with the human advisor."
+  },
+  {
+    "slug": "photographers",
+    "title": "Photographers",
+    "exposure": 7,
+    "knowledge_work": false,
+    "tier": null,
+    "rationale": "Photography is primarily a physical/performative craft requiring being on location with a camera to capture images of people, places, and events. While post-production editing is knowledge work, the core job is physical image capture that cannot be done by a software agent."
+  },
+  {
+    "slug": "physicists-and-astronomers",
+    "title": "Physicists and astronomers",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T3b",
+    "rationale": "Frontier physics and astronomy research depends on deeply tacit expert intuition about which theories to pursue, how to design experiments, and how to interpret anomalous results \u2014 knowledge that even leading researchers cannot fully articulate. An agent for this work must be harness-engineered by the scientist themselves, iterating closely on their specific research program rather than deployed as a generic or enterprise-configured product."
+  },
+  {
+    "slug": "political-scientists",
+    "title": "Political scientists",
+    "exposure": 8,
+    "knowledge_work": true,
+    "tier": "T1",
+    "rationale": "Political scientists do research work\u2014gathering public data, analyzing policies, writing reports\u2014using standard tools (documents, public datasets, survey data). A horizontal research/analysis agent with access to the researcher's files and public sources can do this work without per-enterprise integration. The outputs (reports, analyses, forecasts) are standard across employers."
+  },
+  {
+    "slug": "postsecondary-education-administrators",
+    "title": "Postsecondary education administrators",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T3c",
+    "rationale": "Postsecondary administrators (deans, provosts, admissions officers, student affairs) derive most of their value from relationships with faculty, students, parents, and external stakeholders, plus institution-specific governance and politics. An agent could automate portable pieces (application screening, registrar data processing, scheduling) but the core advising, judgment calls on admissions/tenure, and stakeholder management stay with humans. The relational and institutional-political core dominates, making this T3c."
+  },
+  {
+    "slug": "postsecondary-teachers",
+    "title": "Postsecondary teachers",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T3c",
+    "rationale": "Postsecondary teaching combines relational mentorship (advising students, dissertation supervision, committee work, building scholarly networks) with genuinely tacit research expertise in a specialized subfield. While portable tasks like syllabus drafting, lecture prep, and grading could be handled by a horizontal agent, the core value\u2014mentoring specific students, peer-reviewed original research, and institutional governance\u2014depends on established relationships and credentialed standing that stay with the human."
+  },
+  {
+    "slug": "producers-and-directors",
+    "title": "Producers and directors",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T3c",
+    "rationale": "Producers and directors combine relational work (assembling cast/crew, raising money, managing talent relationships) with deeply tacit creative judgment (interpreting scripts, shaping performance, defining a production's look and feel). The relational and reputational core \u2014 who you know, who trusts your vision, who will finance and act for you \u2014 cannot be transferred to an agent, though agents can help with scheduling, budgeting, research, and drafting. T3c fits best given the centrality of relationships with talent, financiers, and crew, with tacit creative gestalt as a secondary T3b element."
+  },
+  {
+    "slug": "project-management-specialists",
+    "title": "Project management specialists",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T3c",
+    "rationale": "Project management is fundamentally relational and coordinative \u2014 value comes from established trust with clients, stakeholder management, navigating internal politics, and resolving ambiguity through human conversations. An agent could automate the portable artifacts (Gantt charts, status reports, budget tracking, risk registers) but the core work of aligning people, negotiating scope changes, and being the trusted point of contact stays with the human. Tools and integrations vary heavily (Jira, MS Project, Primavera, SAP) but the binding constraint isn't tool integration \u2014 it's the relational/judgment core."
+  },
+  {
+    "slug": "appraisers-and-assessors-of-real-estate",
+    "title": "Property appraisers and assessors",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T2",
+    "rationale": "Property appraisal involves substantial site inspection and physical observation, but the analytical/valuation core (comparables analysis, report writing, mass appraisal modeling) is knowledge work. An AI agent for this role needs integration with jurisdiction-specific assessment databases, MLS/comparable sales data, GIS systems, and locality-specific tax assessment rules, plus configuration to defend valuations under each jurisdiction's appeals process. The skills are similar across appraisers, but each enterprise/locality deployment requires meaningful integration and rule tuning, making it T2."
+  },
+  {
+    "slug": "public-relations-managers",
+    "title": "Public relations and fundraising managers",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T3c",
+    "rationale": "PR and fundraising management centers on relationships\u2014with journalists, donors, executives, and community stakeholders\u2014and on representing an organization's reputation in high-stakes, trust-dependent contexts. An AI agent can draft press releases, prepare grant applications, research donors, and analyze media trends, but the core value of in-person donor cultivation, media rapport, and crisis judgment stays with the human manager."
+  },
+  {
+    "slug": "public-relations-specialists",
+    "title": "Public relations specialists",
+    "exposure": 8,
+    "knowledge_work": true,
+    "tier": "T3c",
+    "rationale": "PR work depends heavily on relationships with specific journalists, media contacts, and executive stakeholders, plus deep knowledge of the client's voice, ongoing narrative, and sensitive internal context. An agent can draft press releases, monitor social sentiment, and prepare briefing materials, but the relational core\u2014pitching reporters, managing crisis communications, and speaking on behalf of executives\u2014remains with the human. While some tacit brand/voice knowledge could be documented (T3a-like), the persistent value lies in trusted relationships."
+  },
+  {
+    "slug": "police-fire-and-ambulance-dispatchers",
+    "title": "Public safety telecommunicators",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T2",
+    "rationale": "A 911 dispatcher AI agent requires deep per-PSAP integration: computer-aided dispatch (CAD) systems, local geography/GIS, agency-specific protocols, radio channel management, and connections to local police/fire/EMS units. The skill of triaging emergency calls is similar across jurisdictions, but each deployment needs custom integrations and protocol tuning, plus heavy compliance/escalation logic \u2014 classic T2 shape."
+  },
+  {
+    "slug": "purchasing-managers-buyers-and-purchasing-agents",
+    "title": "Purchasing managers, buyers, and purchasing agents",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T2",
+    "rationale": "A procurement agent needs deep integration into the enterprise's ERP/procurement systems (SAP Ariba, Coupa, Oracle), supplier databases, contract repositories, and inventory systems, plus configuration around the company's approval workflows, vendor relationships, and category-specific policies. The skills are similar across companies, but each deployment requires substantial per-enterprise integration and tuning. Supplier relationships add some T3c flavor for senior roles, but the bulk of buyer/agent work is system-mediated transactional procurement."
+  },
+  {
+    "slug": "receptionists",
+    "title": "Receptionists",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T2",
+    "rationale": "A receptionist agent would need to integrate with each enterprise's specific phone system, calendar/scheduling software, visitor management, EHR or CRM, and be tuned to the organization's escalation rules and information disclosure policies. The skills are generic but the deployment requires per-customer integrations and configuration (similar to customer service agents). Physical greeting is partially being replaced by kiosks/digital check-in, which fits the T2 deployment pattern."
+  },
+  {
+    "slug": "sales-engineers",
+    "title": "Sales engineers",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T3c",
+    "rationale": "Sales engineers combine technical product expertise with relationship-driven selling \u2014 their value lies in established customer trust, tailoring solutions to specific buyer contexts, and negotiating deals. An AI agent can assist with technical demos, RFP responses, and product configuration, but the customer relationship, in-person presentations, and negotiation must remain with the human. The relational core makes this T3c."
+  },
+  {
+    "slug": "sales-managers",
+    "title": "Sales managers",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T3c",
+    "rationale": "Sales managers' work centers on leading, motivating, and developing sales teams, plus maintaining relationships with key customers, distributors, and cross-functional stakeholders. While analytics, forecasting, and pipeline review can be automated with CRM-integrated agents (T2-like), the core leadership and relational components \u2014 coaching reps, closing escalated deals, internal political navigation \u2014 stay with the human."
+  },
+  {
+    "slug": "secretaries-and-administrative-assistants",
+    "title": "Secretaries and administrative assistants",
+    "exposure": 8,
+    "knowledge_work": true,
+    "tier": "T2",
+    "rationale": "An AI agent for this role needs deep integration with the enterprise's calendar, email, CRM, document management, and (for medical/legal subspecialties) EHR or case management systems, plus tuning to the specific executive's or office's preferences and workflows. The skills are generic across companies but deployment requires substantial per-enterprise configuration of integrations and escalation logic, mirroring the customer service agent pattern."
+  },
+  {
+    "slug": "securities-commodities-and-financial-services-sales-agents",
+    "title": "Securities, commodities, and financial services sales agents",
+    "exposure": 8,
+    "knowledge_work": true,
+    "tier": "T3c",
+    "rationale": "The core value of brokers, investment bankers, and financial sales agents lies in client relationships, trust, and book-of-business \u2014 they cold-call, network, and maintain long-term advisory ties with individuals and corporate executives. An AI agent can augment portable parts (market analysis, deal modeling, pitch deck drafting, compliance checks) but cannot replace the relational core required to win and retain clients in high-stakes financial transactions. This places the role firmly in T3c."
+  },
+  {
+    "slug": "set-and-exhibit-designers",
+    "title": "Set and exhibit designers",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T1",
+    "rationale": "Set and exhibit designers use standard professional tools (CAD programs, sketching software) to produce designs based on scripts, briefs, and project parameters. An AI agent could perform much of the design work using these same standard tools without requiring enterprise-specific integration\u2014each project is essentially self-contained with portable inputs and outputs. The work is largely freelance/per-project, reinforcing that no deep enterprise customization is needed."
+  },
+  {
+    "slug": "sociologists",
+    "title": "Sociologists",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T1",
+    "rationale": "Sociological research uses standard methods (surveys, interviews, statistical analysis) and standard tools (SPSS, R, Stata, qualitative coding software) that are consistent across employers. An AI agent could conduct literature reviews, design studies, analyze data, and draft reports using these generic tools without per-enterprise integration. The work product (papers, reports, policy analyses) is portable across institutions."
+  },
+  {
+    "slug": "software-developers",
+    "title": "Software developers, quality assurance analysts, and testers",
+    "exposure": 9,
+    "knowledge_work": true,
+    "tier": "T1",
+    "rationale": "Software development uses standard tools (git, IDEs, file system) that horizontal coding agents like Claude Code can access at any company without per-enterprise integration. The codebase itself provides the context; no months-long configuration is needed to deploy the agent at a new company."
+  },
+  {
+    "slug": "multimedia-artists-and-animators",
+    "title": "Special effects artists and animators",
+    "exposure": 9,
+    "knowledge_work": true,
+    "tier": "T1",
+    "rationale": "Special effects artists and animators use standard professional tools (Maya, Blender, After Effects, Houdini, Unreal) that are common across studios, with project files accessed through standard file systems. An AI agent could be built once to operate these tools and produce assets at any studio without per-enterprise integration. While studios have proprietary pipelines, the customization is minimal \u2014 analogous to a software developer's codebase access."
+  },
+  {
+    "slug": "survey-researchers",
+    "title": "Survey researchers",
+    "exposure": 9,
+    "knowledge_work": true,
+    "tier": "T1",
+    "rationale": "Survey research uses standard tools (statistical software like SPSS/R/Stata, survey platforms like Qualtrics) and produces standard outputs (survey designs, statistical analyses, reports) that are similar across employers. A horizontal AI agent with access to these tools and the project files could design surveys, run statistical analyses, and write up results without substantial per-enterprise integration. The work resembles a generic data analyst more than a deeply embedded enterprise role."
+  },
+  {
+    "slug": "tax-examiners-and-collectors-and-revenue-agents",
+    "title": "Tax examiners and collectors, and revenue agents",
+    "exposure": 8,
+    "knowledge_work": true,
+    "tier": "T2",
+    "rationale": "An AI agent for this role would need deep integration with government tax systems (IRS IMF/BMF, state revenue databases, case management systems), access to taxpayer records, and configuration tuned to specific agency enforcement procedures and legal compliance requirements. The skills (reviewing returns, applying tax code, collections workflows) are similar across agencies, but deploying an agent requires substantial per-agency integration into proprietary tax infrastructure with strict compliance/audit controls. This matches the T2 pattern of a common product framework with heavy enterprise-specific configuration."
+  },
+  {
+    "slug": "technical-writers",
+    "title": "Technical writers",
+    "exposure": 9,
+    "knowledge_work": true,
+    "tier": "T3a",
+    "rationale": "Technical writing requires deep familiarity with a specific company's products, internal terminology, style guides, and source materials (engineer interviews, product specs, code). An agent needs access to this proprietary knowledge and documentation systems, but it's documentable through artifact analysis and structured extraction from SMEs, after which the work becomes a T2-style deployment with integrations into the company's docs platforms and product repositories."
+  },
+  {
+    "slug": "tellers",
+    "title": "Tellers",
+    "exposure": 7,
+    "knowledge_work": false,
+    "tier": null,
+    "rationale": "Teller work is primarily physical cash handling and in-person customer service at a branch counter, not knowledge work. The role centers on processing physical transactions, counting cash, and face-to-face interactions, which fall outside the scope of agent-deployable knowledge work."
+  },
+  {
+    "slug": "training-and-development-managers",
+    "title": "Training and development managers",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T3c",
+    "rationale": "Training and development managers' core work involves aligning training with organizational goals, conferring with department heads and executives to identify needs, managing staff, and overseeing budgets \u2014 work that depends on internal relationships, political context, and stakeholder buy-in specific to the organization. An agent could draft training materials, evaluate vendors, and analyze effectiveness, but the relational and leadership core (negotiating priorities with executives, motivating staff, building cross-functional consensus) stays with the human. Tacit organizational knowledge could partly be extracted, but the persistent value lives in ongoing relationships with leaders and subject-matter experts."
+  },
+  {
+    "slug": "training-and-development-specialists",
+    "title": "Training and development specialists",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T3a",
+    "rationale": "Training specialists must assess organization-specific needs, design materials tailored to internal processes/policies, and deliver instruction tied to a company's culture and systems. Much of this tacit context (workflows, compliance requirements, role-specific skills) can be extracted via interviews and artifact analysis, then converted into a T2-style configured agent. Pure horizontal authoring tools aren't enough because the content is deeply enterprise-specific."
+  },
+  {
+    "slug": "travel-agents",
+    "title": "Travel agents",
+    "exposure": 9,
+    "knowledge_work": true,
+    "tier": "T2",
+    "rationale": "Travel agent work uses standard industry reservation systems (GDS like Sabre/Amadeus), supplier portals, and CRM systems that require per-agency integration and configuration. An AI agent would need connectors to these booking systems, agency-specific preferred-supplier rules, commission structures, and client profile databases, plus tuned escalation logic for travel disruptions. The skills are generic but enterprise deployment requires substantial integration work."
+  },
+  {
+    "slug": "tutors",
+    "title": "Tutors",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T1",
+    "rationale": "Tutoring uses standard educational content (curricula, practice problems, standardized test materials) that is consistent across students and institutions. A horizontal AI agent like ChatGPT/Khanmigo can deliver tutoring directly to students without per-enterprise integration \u2014 the 'customization' is just adapting to the individual student's level. No deep institutional system integration is required."
+  },
+  {
+    "slug": "urban-and-regional-planners",
+    "title": "Urban and regional planners",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T3c",
+    "rationale": "Urban planning's core value involves stakeholder relationships\u2014with public officials, developers, community groups, and residents\u2014through meetings, hearings, and negotiated consensus-building over local political dynamics. An AI agent could handle portable tasks like GIS analysis, zoning research, data gathering, and drafting reports, but the relational and political work of building stakeholder trust and navigating community politics stays with the human planner. While there's also tacit local knowledge (T3a-like), the relational/political core of the role is the binding constraint."
+  },
+  {
+    "slug": "web-developers",
+    "title": "Web developers and digital designers",
+    "exposure": 9,
+    "knowledge_work": true,
+    "tier": "T1",
+    "rationale": "Web development and digital design use standard tools (VS Code, Figma, browsers, git) across companies, and a horizontal AI agent like Claude Code or a design copilot can do the work by accessing the project's codebase and design files without per-enterprise integration. The work is genericizable \u2014 skills and outputs (HTML/CSS/JS, mockups) are standardized industry-wide."
+  },
+  {
+    "slug": "wholesale-and-manufacturing-sales-representatives",
+    "title": "Wholesale and manufacturing sales representatives",
+    "exposure": 7,
+    "knowledge_work": true,
+    "tier": "T3c",
+    "rationale": "B2B sales value lives in established buyer relationships, trust, and long-cycle account management with specific customers. An agent can handle lead research, prospecting outreach, quote prep, CRM updates, and follow-ups, but the relational core\u2014negotiating, building rapport, closing\u2014stays with the human rep."
+  },
+  {
+    "slug": "writers-and-authors",
+    "title": "Writers and authors",
+    "exposure": 9,
+    "knowledge_work": true,
+    "tier": "T1",
+    "rationale": "Writing is a generic knowledge task with standard inputs (briefs, research) and outputs (prose) using standard tools (word processors, CMSs). A horizontal LLM-based agent can perform this work at any organization without per-enterprise integration \u2014 just provide the brief and style guide."
   }
 ]

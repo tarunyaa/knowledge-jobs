@@ -34,7 +34,7 @@ OUTPUT_FILE = "tiers.json"
 SYSTEM_PROMPT = """\
 You are classifying US occupations by the **deployment shape of the AI agent \
 that would do this job's work**. The axis: how much customization does an AI \
-agent need to serve a customer in this job?
+agent need to deploy at an enterprise for this job?
 
 **Tiers:**
 
@@ -50,12 +50,12 @@ translator, copywriter, generic data analyst.
 
 - **T2 — Genericizable framework, custom configuration.** The job is similar \
 across companies in skills required, but an AI agent built for it requires \
-substantial per-customer customization to be useful: pre-built integrations \
-into the company's specific tools (Zendesk, Salesforce, internal databases), a \
-system prompt and escalation logic tuned over the company's own workflows, eval \
-dashboards trusted by the company's workers, multi-tenant infrastructure with \
-compliance controls. The same agent *product* serves many companies, but every \
-enterprise deployment is months of integration and configuration work. \
+substantial per-enterprise customization to be useful: pre-built integrations \
+into the enterprise's specific tools (Zendesk, Salesforce, internal databases), \
+a system prompt and escalation logic tuned over the enterprise's own workflows, \
+eval dashboards trusted by the enterprise's workers, multi-tenant infrastructure \
+with compliance controls. The same agent *product* serves many enterprises, but \
+every enterprise deployment is months of integration and configuration work. \
 Examples: customer service representative (Decagon needs Zendesk/Salesforce \
 integrations and escalation logic tuned over thousands of conversations), legal \
 research (Harvey integrated to a firm's document management), medical scribing \
@@ -79,12 +79,12 @@ stays with the human. Examples: senior account executive, partnerships lead, \
 high-stakes negotiator.
 
 **Distinguishing T1 vs T2:** The question is *how much customization does the \
-agent need to do useful work for one customer*, not *how transferable are the \
-worker's skills*. A customer service rep's skills are highly transferable \
-(generic communication) but the agent that automates the role (Decagon) \
-requires deep per-company integration — that makes it T2, not T1. A software \
-developer's work depends on a specific codebase, but Claude Code accesses that \
-codebase through standard tools (git, MCP, the file system) without per-customer \
+agent need to deploy at one enterprise*, not *how transferable are the worker's \
+skills*. A customer service rep's skills are highly transferable (generic \
+communication) but the agent that automates the role (Decagon) requires deep \
+per-enterprise integration — that makes it T2, not T1. A software developer's \
+work depends on a specific codebase, but Claude Code accesses that codebase \
+through standard tools (git, MCP, the file system) without per-enterprise \
 configuration — that makes it T1, not T2.
 
 **Not knowledge work.** If the occupation is primarily physical (electrician, \
