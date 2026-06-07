@@ -257,8 +257,9 @@ def build_map_facts(data, quadrant):
             "stat": f"{labs['outlook']:+.0f}%",
             "label": f"The one cell the labs can win is the largest in Tier 2 "
                      f"(${labs['wages']/1e9:.0f}B in wages) but the lowest-paid, at "
-                     f"${labs['pay']/1000:.0f}K, and the only Tier 2 cell BLS projects to "
-                     f"shrink this decade. The labs win on volume, not value.",
+                     f"${labs['pay']/1000:.0f}K, and BLS projects its employment to "
+                     f"shrink {abs(labs['outlook']):.0f}% this decade. The labs win on "
+                     f"volume, not value.",
         })
         facts.append({
             "stat": f"{inc['outlook']:+.0f}%",
