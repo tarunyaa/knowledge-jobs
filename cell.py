@@ -126,14 +126,121 @@ def classify_voted(client, text, model, votes):
     }
 
 
+# Sharpened repeatability axis. The combined prompt judged broad BLS buckets
+# (secretaries, general clerks) as low-repeatability because the title spans many
+# sub-roles and each employer uses different tools. That conflates "configuration
+# differs" with "the workflow differs". This prompt forces the model to score the
+# CORE automatable workflow's transferability instead.
+REPEATABILITY_PROMPT = """\
+You are scoring one US "Tier 2" occupation on a single axis: workflow \
+repeatability across companies.
+
+Judge the CORE tasks an AI agent would actually automate for this occupation, \
+the recurring describable work, NOT the company-specific wrapper around it.
+
+The question: if an agent were built for those core tasks at one company, would \
+it transfer to most other companies with only light configuration?
+
+- **high**: the core automatable tasks follow nearly the same pattern everywhere \
+(for example scheduling, email and calendar management, expense processing, \
+document drafting, data entry, reconciliation, note-taking, answering routine \
+queries). Differences between employers are mostly configuration (which calendar, \
+which inbox, which templates), not a different workflow.
+- **low**: the core work itself differs fundamentally from company to company \
+because it is bound to each employer's proprietary systems, products, regulatory \
+posture, or bespoke processes, so an agent must be substantially rebuilt per \
+employer (for example sales operations on a custom CRM, IT service management, \
+bank-specific compliance).
+
+Important: do NOT mark an occupation "low" merely because the BLS title is a \
+broad bucket spanning many industries, because each employer uses different \
+software tools, or because workers tailor output to a particular manager's \
+preferences. Those are configuration differences, which count as "high". Mark \
+"low" only when the underlying task logic genuinely changes from one company to \
+the next.
+
+Use the occupation description provided. Return repeatability (high or low) and a \
+1-2 sentence rationale.\
+"""
+
+
+class RepeatabilityOnly(BaseModel):
+    repeatability: Literal["high", "low"]
+    rationale: str
+
+
+def classify_repeatability_voted(client, text, model, votes):
+    rep, rats = [], []
+    for _ in range(votes):
+        r = client.messages.parse(
+            model=model, max_tokens=1024, system=REPEATABILITY_PROMPT,
+            messages=[{"role": "user", "content": text}],
+            output_format=RepeatabilityOnly,
+        ).parsed_output
+        rep.append(r.repeatability)
+        rats.append(r.rationale)
+    win = max(set(rep), key=lambda v: (rep.count(v), v == "high"))
+    rationale = next((rats[i] for i in range(votes) if rep[i] == win), rats[0])
+    return win, {"high": rep.count("high"), "low": rep.count("low")}, rationale
+
+
+def revote_repeatability(model, votes, delay):
+    """Re-score ONLY the repeatability axis with the sharpened prompt, preserving
+    the existing concentration placements in cells.json."""
+    if not os.path.exists(OUTPUT_FILE):
+        print(f"Need existing {OUTPUT_FILE} to re-vote repeatability. Run a full pass first.")
+        return
+    with open(OUTPUT_FILE) as f:
+        cells = {c["slug"]: c for c in json.load(f)}
+
+    client = anthropic.Anthropic()
+    changed = 0
+    for i, (slug, c) in enumerate(cells.items()):
+        md_path = f"pages/{slug}.md"
+        if not os.path.exists(md_path):
+            print(f"  SKIP {slug} (no markdown)")
+            continue
+        with open(md_path, encoding="utf-8") as f:
+            text = f.read()
+        old = c["repeatability"]
+        win, tally, rationale = classify_repeatability_voted(client, text, model, votes)
+        c["repeatability"] = win
+        c.setdefault("votes", {})["repeatability"] = tally
+        c["repeatability_rationale"] = rationale
+        if win != old:
+            changed += 1
+        flag = "" if win == old else f"   CHANGED {old} -> {win}"
+        print(f"  [{i+1}/{len(cells)}] {c['title']}: {win} ({tally['high']}h-{tally['low']}l){flag}")
+        with open(OUTPUT_FILE, "w") as f:
+            json.dump(list(cells.values()), f, indent=2)
+        if delay > 0:
+            time.sleep(delay)
+
+    print(f"\nDone. Repeatability re-voted with the sharpened axis. {changed} changed.")
+    grid = {}
+    for c in cells.values():
+        grid[f"{c['repeatability']}-{c['concentration']}"] = \
+            grid.get(f"{c['repeatability']}-{c['concentration']}", 0) + 1
+    print("\nCell distribution (occupation count):")
+    for key in ("high-concentrated", "high-fragmented", "low-concentrated", "low-fragmented"):
+        print(f"  {key:<18} {grid.get(key, 0)}")
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model", default=DEFAULT_MODEL)
     parser.add_argument("--votes", type=int, default=3,
                         help="Samples per occupation; majority wins each axis")
+    parser.add_argument("--axis", choices=["both", "repeatability"], default="both",
+                        help="'repeatability' re-votes only that axis with the sharpened "
+                             "prompt, keeping existing concentration placements")
     parser.add_argument("--delay", type=float, default=0.0)
     parser.add_argument("--force", action="store_true")
     args = parser.parse_args()
+
+    if args.axis == "repeatability":
+        revote_repeatability(args.model, args.votes, args.delay)
+        return
 
     with open(TIERS_FILE) as f:
         tiers = json.load(f)

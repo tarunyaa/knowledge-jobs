@@ -941,11 +941,8 @@ function quadrantCell(c) {
 }
 
 function quadrantHTML(q) {
-  const cells = ["high-concentrated", "high-fragmented", "low-concentrated", "low-fragmented"]
-    .map(k => q[k]).filter(Boolean);
-  const totW = cells.reduce((s, c) => s + c.wages, 0) || 1;
-  const labs = q["high-fragmented"] || { wages: 0, pct: 0 };
-  const notLabsW = Math.round((totW - labs.wages) / totW * 100);
+  const labs = q["high-fragmented"] || { wages: 0, pct: 0, pay: 0 };
+  const inc = q["low-concentrated"] || { pay: 0 };
   return `<div class="diagram quadrant">
       <div class="q-axis-y">Workflow repeatability</div>
       <div class="q-main">
@@ -963,7 +960,7 @@ function quadrantHTML(q) {
         <div class="q-axis-x">Company concentration →</div>
       </div>
     </div>
-    <div class="diagram-cap">Cells placed by <b>company concentration</b> (whether the agent's buyers are a small cohort of large enterprises or a long tail), sized by the Tier 2 wages at stake. Placements are majority-vote LLM judgments over 51 occupations, directional and not exact. The labs win one cell, horizontal agents, ${labs.pct}% of Tier 2 jobs; roughly <b>${notLabsW}%</b> of Tier 2 wages sit in the three cells owned by vertical startups, incumbents, or the enterprise itself.</div>`;
+    <div class="diagram-cap">Cells placed by <b>company concentration</b> (whether the agent's buyers are a small cohort of large enterprises or a long tail), sized by the Tier 2 wages at stake. Placements are majority-vote LLM judgments over 51 occupations, directional and not exact. The labs' one cell, horizontal agents for fragmented work, is the largest in Tier 2 at <b>${labs.pct}%</b> of jobs but the lowest-paid (about $${Math.round(labs.pay/1000)}K, versus $${Math.round(inc.pay/1000)}K for the incumbent-owned cell). The labs win the volume; the higher-value work stays with vertical startups, incumbents, and in-house teams.</div>`;
 }
 
 function renderMapFacts(facts) {

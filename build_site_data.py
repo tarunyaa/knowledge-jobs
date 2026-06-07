@@ -249,24 +249,22 @@ def build_map_facts(data, quadrant):
         total_w = sum(c["wages"] for c in quadrant.values()) or 1
         labs = quadrant["high-fragmented"]
         inc = quadrant["low-concentrated"]
-        non_labs_w = (total_w - labs["wages"]) / total_w * 100
         labs_w = labs["wages"] / total_w * 100
         facts.append({
-            "stat": f"{non_labs_w:.0f}%",
-            "label": f"of Tier 2 wages sit in cells the labs don't structurally win. "
-                     f"Their one cell, horizontal agents for fragmented work, holds "
-                     f"{labs['pct']:.0f}% of Tier 2 jobs and {labs_w:.0f}% of its wages. "
-                     f"The rest goes to vertical startups, platform incumbents, or "
-                     f"enterprises building in-house.",
+            "stat": f"{labs['pct']:.0f}%",
+            "label": f"of Tier 2 jobs fall in the one cell the labs can win, horizontal "
+                     f"agents for fragmented work. It is the largest cell in Tier 2 "
+                     f"(${labs['wages']/1e9:.0f}B in wages), but also the lowest-paid at "
+                     f"${labs['pay']/1000:.0f}K a year. The labs win on volume, not value.",
         })
         ratio = inc["pay"] / labs["pay"] if labs["pay"] else 0
         facts.append({
             "stat": f"{ratio:.1f}×",
-            "label": f"The labs can win the cheapest Tier 2 work. Their winnable cell "
-                     f"pays ${labs['pay']/1000:.0f}K a year; the most valuable T2 work "
-                     f"pays ${inc['pay']/1000:.0f}K and holds a third of all T2 wages, "
-                     f"and it sits in the low-repeatability cell platform incumbents own. "
-                     f"Reach and value point in opposite directions.",
+            "label": f"The highest-value Tier 2 work pays ${inc['pay']/1000:.0f}K, more "
+                     f"than double the labs' cell, and holds a third of all T2 wages. It "
+                     f"sits in the low-repeatability cell platform incumbents already own "
+                     f"(Salesforce, ServiceNow, FIS). The labs win the volume; incumbents "
+                     f"keep the margin.",
         })
 
     t3c = [d for d in data if d.get("tier") == "T3c"]

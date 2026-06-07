@@ -7,14 +7,15 @@
     "rationale": "Accounting workflows vary significantly across industries (banking, healthcare, manufacturing) and company sizes, requiring substantial customization around client-specific chart-of-accounts, regulatory frameworks, and internal controls. However, the addressable market is dominated by large enterprises and mid-market firms with substantial accounting operations, plus a concentrated segment of large CPA/accounting service providers (23% of employment) that serve many clients, making it feasible for a vendor to capture most buyer-side value through a few enterprise contracts.",
     "votes": {
       "repeatability": {
-        "high": 0,
-        "low": 3
+        "high": 1,
+        "low": 2
       },
       "concentration": {
         "concentrated": 2,
         "fragmented": 1
       }
-    }
+    },
+    "repeatability_rationale": "Accounting and auditing workflows are heavily dependent on each employer's proprietary accounting systems, chart of accounts, internal control frameworks, regulatory requirements, and industry-specific compliance standards. While data entry and routine reconciliation may be automatable across companies, the core analytical work\u2014risk assessment, control testing, audit procedures, and financial statement analysis\u2014must be substantially customized to each organization's specific accounting infrastructure, regulatory environment (government vs. public vs. internal audit), and business model, making agent transfer between employers require significant rebuilding."
   },
   {
     "slug": "actuaries",
@@ -31,41 +32,44 @@
         "concentrated": 3,
         "fragmented": 0
       }
-    }
+    },
+    "repeatability_rationale": "Actuarial work is deeply bound to each employer's proprietary models, regulatory requirements, product lines, and legacy systems. While the mathematical frameworks are universal, the core tasks\u2014designing insurance products, pricing policies, calculating reserves, and forecasting risk\u2014require rebuilding the agent for different insurance lines (health vs. life vs. property), regulatory regimes (state vs. federal), company-specific underwriting rules, and custom databases that vary significantly across employers."
   },
   {
     "slug": "air-traffic-controllers",
     "title": "Air traffic controllers",
-    "repeatability": "high",
+    "repeatability": "low",
     "concentration": "concentrated",
     "rationale": "Air traffic control workflows are highly standardized across all facilities, governed by FAA regulations, radar systems, and radio communication protocols that are uniform nationwide. The addressable market is concentrated among a small number of large airport operators (major hubs and regional facilities) that account for most air traffic volume and control complexity, with 90% of controllers employed by the federal government (FAA) itself.",
     "votes": {
       "repeatability": {
-        "high": 3,
-        "low": 0
+        "high": 0,
+        "low": 3
       },
       "concentration": {
         "concentrated": 3,
         "fragmented": 0
       }
-    }
+    },
+    "repeatability_rationale": "Air traffic control relies on highly standardized federal regulations, equipment, and procedures governed by the FAA, but the core workflow differs significantly based on facility type (tower, approach/departure, en route center), airspace complexity, airport geography, and real-time dynamic conditions that cannot be pre-scripted. An AI agent built to automate ATC tasks at one facility would require substantial rebuilding to operate safely and effectively at a different facility with different airspace, traffic patterns, runway configurations, and local procedures."
   },
   {
     "slug": "atmospheric-scientists-including-meteorologists",
     "title": "Atmospheric scientists, including meteorologists",
-    "repeatability": "high",
+    "repeatability": "low",
     "concentration": "concentrated",
     "rationale": "Atmospheric scientists follow standardized scientific methodologies (data collection, computer modeling, forecasting) that are largely uniform across employers, making workflows highly repeatable. However, the addressable market is highly concentrated: 31% work in federal government (primarily NOAA/NWS), 16% in universities, and only 13% in dispersed professional services, meaning a dominant AI vendor could capture most value by serving NOAA and a small number of large research institutions and broadcasters.",
     "votes": {
       "repeatability": {
-        "high": 3,
-        "low": 0
+        "high": 0,
+        "low": 3
       },
       "concentration": {
         "concentrated": 3,
         "fragmented": 0
       }
-    }
+    },
+    "repeatability_rationale": "Atmospheric scientists' core work is fundamentally tied to scientific research methods, proprietary weather modeling systems, and domain-specific instruments (radar, satellites, weather balloons) that vary significantly between employers\u2014from NOAA's operational forecasting infrastructure to broadcast networks' graphics systems to research institutions' custom models. An agent built for one employer's data collection, analysis, and forecasting workflow would require substantial rebuilding to handle another employer's different modeling approaches, data sources, and operational requirements."
   },
   {
     "slug": "bill-and-account-collectors",
@@ -82,7 +86,8 @@
         "concentrated": 0,
         "fragmented": 3
       }
-    }
+    },
+    "repeatability_rationale": "The core tasks of bill collectors\u2014skip tracing, contacting debtors, negotiating repayment plans, recording interactions, and monitoring payments\u2014follow a consistent workflow across employers despite industry variation. These tasks rely on standard databases, phone systems, CRM tools, and regulatory compliance (Fair Debt Collection Practices Act) that are largely configurable rather than fundamentally different; an agent built for one collection operation would transfer to another with configuration changes to account systems and creditor policies."
   },
   {
     "slug": "bookkeeping-accounting-and-auditing-clerks",
@@ -99,24 +104,26 @@
         "concentrated": 0,
         "fragmented": 3
       }
-    }
+    },
+    "repeatability_rationale": "The core tasks\u2014posting financial transactions, reconciling accounts, recording debits and credits, checking for accuracy, and producing standard reports\u2014follow nearly identical patterns across all companies. While specific accounting software, chart of accounts structures, and reporting templates vary by employer, the underlying workflow logic (data entry, classification, reconciliation, verification) remains constant and requires only configuration rather than fundamental rebuilding of the agent's logic."
   },
   {
     "slug": "budget-analysts",
     "title": "Budget analysts",
-    "repeatability": "low",
+    "repeatability": "high",
     "concentration": "concentrated",
     "rationale": "Budget analysis workflows vary dramatically across government agencies, universities, and private companies due to idiosyncratic accounting systems, regulatory requirements, org structures, and funding models\u2014an agent must be rebuilt for each buyer's context. However, the addressable buyer market is highly concentrated: 26% of jobs are in federal government, 15% in education, and 13-11% in state/local government, meaning a few large institutional buyers (federal agencies, state systems, large universities, major corporations) control most of the value and can sustain specialized vendor solutions with dedicated integrations to their finance systems and compliance frameworks.",
     "votes": {
       "repeatability": {
-        "high": 0,
-        "low": 3
+        "high": 3,
+        "low": 0
       },
       "concentration": {
         "concentrated": 3,
         "fragmented": 0
       }
-    }
+    },
+    "repeatability_rationale": "Budget analysts perform core repeatable tasks across employers: reviewing proposals for completeness and compliance, analyzing financial data, consolidating budgets, monitoring spending against approved budgets, and preparing reports explaining variances. These workflows follow consistent analytical and documentation patterns regardless of employer; differences are primarily configuration-based (which budget system, which reporting templates, which regulatory frameworks) rather than fundamental changes to the underlying task logic."
   },
   {
     "slug": "cartographers-and-photogrammetrists",
@@ -133,7 +140,8 @@
         "concentrated": 3,
         "fragmented": 0
       }
-    }
+    },
+    "repeatability_rationale": "The core tasks\u2014collecting spatial data, analyzing geographic information, creating maps using GIS and CAD software, and integrating data from standard sources (surveys, LiDAR, satellite imagery)\u2014follow consistent methodological patterns across employers regardless of industry. While output tailoring (map format, data sources, specific use cases) and software configurations vary by employer, the underlying workflow of data collection \u2192 analysis \u2192 visualization \u2192 map production remains fundamentally the same, making an agent built for one organization readily transferable with light configuration adjustments."
   },
   {
     "slug": "claims-adjusters-appraisers-examiners-and-investigators",
@@ -150,41 +158,44 @@
         "concentrated": 3,
         "fragmented": 0
       }
-    }
+    },
+    "repeatability_rationale": "Claims adjustment work is fundamentally shaped by each insurer's proprietary policy language, underwriting standards, claims management systems, and regulatory compliance requirements that vary significantly by state and insurance type. While the surface tasks (document review, damage assessment, settlement negotiation) appear similar across companies, the actual decision logic\u2014what's covered, how much to reserve, fraud thresholds, and legal interpretations\u2014is deeply embedded in each carrier's specific policies, systems, and risk appetite, requiring substantial rebuilding of the automation logic per employer rather than light configuration."
   },
   {
     "slug": "compensation-and-benefits-managers",
     "title": "Compensation and benefits managers",
-    "repeatability": "low",
+    "repeatability": "high",
     "concentration": "fragmented",
     "rationale": "Compensation and benefits management is deeply embedded in each organization's unique pay structures, regulatory environment, vendor relationships, and internal systems\u2014what works at a tech company differs substantially from a bank or hospital. Additionally, while concentrated in larger employers, the 20,900 job holders are distributed across many industries and company sizes with no dominant buyer cohort, making it difficult for a single vendor to serve most of the market with one configuration.",
     "votes": {
       "repeatability": {
-        "high": 0,
-        "low": 3
+        "high": 3,
+        "low": 0
       },
       "concentration": {
         "concentrated": 0,
         "fragmented": 3
       }
-    }
+    },
+    "repeatability_rationale": "The core tasks\u2014analyzing compensation data, monitoring market rates and regulations, designing pay structures, managing benefits vendors, ensuring compliance, and preparing budgets\u2014follow consistent analytical and administrative patterns across organizations. While specific systems (payroll platforms, HRIS tools, vendor choices) and regulatory contexts vary, the underlying workflow logic remains transferable with configuration adjustments rather than fundamental redesign."
   },
   {
     "slug": "compensation-benefits-and-job-analysis-specialists",
     "title": "Compensation, benefits, and job analysis specialists",
-    "repeatability": "low",
+    "repeatability": "high",
     "concentration": "fragmented",
     "rationale": "Compensation and benefits structures vary significantly across industries, company sizes, regulatory environments, and organizational philosophies, requiring substantial customization around each employer's specific pay scales, benefits packages, compliance obligations, and HR systems. The 107,000 workers are distributed across nearly every industry (18% in insurance, 13% in professional services, with significant long-tail employment) with no dominant buyer cohort, making the market fragmented across large enterprises, mid-market firms, and public sector organizations rather than concentrated in a few major players.",
     "votes": {
       "repeatability": {
-        "high": 0,
-        "low": 3
+        "high": 3,
+        "low": 0
       },
       "concentration": {
         "concentrated": 0,
         "fragmented": 3
       }
-    }
+    },
+    "repeatability_rationale": "The core tasks\u2014analyzing compensation data, researching benefits trends, evaluating job descriptions, ensuring regulatory compliance, and preparing reports\u2014follow consistent analytical and administrative patterns across employers. While specific compensation systems, benefits vendors, and regulatory requirements vary, these are configuration differences; the underlying workflow of data analysis, policy comparison, compliance checking, and recommendation documentation remains fundamentally similar and would transfer readily between organizations with minimal agent retraining."
   },
   {
     "slug": "compliance-officers",
@@ -201,7 +212,8 @@
         "concentrated": 1,
         "fragmented": 2
       }
-    }
+    },
+    "repeatability_rationale": "Compliance officers' core work is fundamentally tied to industry-specific regulations, company-specific risk profiles, and proprietary compliance frameworks that vary dramatically across sectors (healthcare vs. finance vs. manufacturing vs. government). While some tasks like documentation and training delivery could transfer, the underlying logic of identifying compliance risks, developing policies, and conducting audits is deeply rooted in each employer's regulatory environment and bespoke processes, requiring substantial rebuilding of an agent's rule sets and assessment logic per employer."
   },
   {
     "slug": "computer-network-architects",
@@ -218,41 +230,44 @@
         "concentrated": 1,
         "fragmented": 2
       }
-    }
+    },
+    "repeatability_rationale": "Computer network architects' core work is highly dependent on each organization's specific infrastructure, security requirements, existing systems, and proprietary architecture. While the general methodology (assessment, design, deployment, testing, documentation) is consistent, the actual technical tasks\u2014selecting specific technologies, configuring particular network topologies, integrating with legacy systems, and implementing security postures\u2014vary fundamentally based on each company's unique IT environment and business needs, making automation agents non-transferable without substantial rebuilding."
   },
   {
     "slug": "computer-support-specialists",
     "title": "Computer support specialists",
-    "repeatability": "low",
+    "repeatability": "high",
     "concentration": "fragmented",
     "rationale": "Computer support workflows vary dramatically across industries (healthcare EHR systems vs. telecom networks vs. financial institutions vs. education) and depend heavily on each organization's specific infrastructure, legacy systems, and IT architecture, making cross-company transfer difficult. The buyer market is highly fragmented, with support needs distributed across tens of thousands of small-to-medium employers, educational institutions, government agencies, and small businesses that cannot justify shared-infrastructure vendors\u2014the top five employer sectors account for only ~55% of network support jobs and ~58% of user support jobs, leaving the majority spread across a long tail of organizations.",
     "votes": {
       "repeatability": {
-        "high": 0,
-        "low": 3
+        "high": 3,
+        "low": 0
       },
       "concentration": {
         "concentrated": 0,
         "fragmented": 3
       }
-    }
+    },
+    "repeatability_rationale": "Core support tasks\u2014diagnosing problems, documenting issues, guiding users through troubleshooting steps, installing software/hardware, and escalating recurring problems\u2014follow consistent patterns across companies. While the specific systems, tools, and products differ by employer, an agent trained on the fundamental diagnostic and communication workflows would transfer readily with light configuration for company-specific software stacks and ticket-management systems."
   },
   {
     "slug": "cost-estimators",
     "title": "Cost estimators",
-    "repeatability": "low",
+    "repeatability": "high",
     "concentration": "fragmented",
     "rationale": "Cost estimation workflows vary significantly across construction, manufacturing, and automotive sectors due to industry-specific methodologies, regulatory requirements, and proprietary systems (BIM, CAD, company databases); additionally, the 221,400 jobs are dispersed across thousands of small-to-medium specialty contractors, builders, and manufacturers with no dominant buyer cohort, making it difficult for a single vendor to capture most addressable value with shared infrastructure.",
     "votes": {
       "repeatability": {
-        "high": 0,
-        "low": 3
+        "high": 3,
+        "low": 0
       },
       "concentration": {
         "concentrated": 0,
         "fragmented": 3
       }
-    }
+    },
+    "repeatability_rationale": "Cost estimators perform core tasks\u2014reading technical documents, identifying cost factors, calculating estimates, comparing against historical data, and documenting results\u2014that follow consistent logical patterns across construction and manufacturing contexts. While the specific software (BIM, CAD, proprietary systems) and pricing databases differ by employer, the underlying workflow of data collection, analysis, and estimate generation remains fundamentally the same, making an agent built at one company readily transferable with configuration adjustments."
   },
   {
     "slug": "credit-counselors",
@@ -269,7 +284,8 @@
         "concentrated": 0,
         "fragmented": 3
       }
-    }
+    },
+    "repeatability_rationale": "Credit counselors perform core repeatable tasks\u2014financial assessment, debt analysis, budget planning, client education, and documentation\u2014that follow consistent logical patterns across employers. While specific financial tools, creditor databases, and institutional policies vary by employer, these differences are configuration-level rather than fundamental workflow changes, making an agent trained at one organization readily transferable to another with minimal rebuilding."
   },
   {
     "slug": "customer-service-representatives",
@@ -286,24 +302,26 @@
         "concentrated": 3,
         "fragmented": 0
       }
-    }
+    },
+    "repeatability_rationale": "The core automatable tasks\u2014listening to customer inquiries, retrieving product/service information, processing orders and payments, handling returns, and documenting interactions\u2014follow consistent patterns across companies and industries. While specific products, systems, and regulatory requirements vary by employer (retail vs. insurance vs. utilities), the underlying workflow logic remains the same; an agent trained on these foundational tasks would transfer across employers with primarily configuration changes (different CRM systems, product databases, billing platforms) rather than fundamental process redesign."
   },
   {
     "slug": "data-scientists",
     "title": "Data scientists",
-    "repeatability": "low",
+    "repeatability": "high",
     "concentration": "fragmented",
     "rationale": "Data science workflows vary dramatically across industries and companies due to differences in data infrastructure, domain-specific problems, regulatory requirements, and internal analytics maturity; an agent must be rebuilt around each organization's data stack, business context, and analytical priorities. While data science spans many sectors (tech, insurance, consulting, finance, research), the addressable value is distributed across a large, heterogeneous buyer base with no dominant cohort\u2014most organizations need data scientists but few have the scale to support a standardized vendor solution like the largest enterprises in customer service or legal review.",
     "votes": {
       "repeatability": {
-        "high": 0,
-        "low": 3
+        "high": 3,
+        "low": 0
       },
       "concentration": {
         "concentrated": 1,
         "fragmented": 2
       }
-    }
+    },
+    "repeatability_rationale": "Data scientists' core tasks\u2014data collection, cleaning, exploratory analysis, algorithm development, validation, and visualization\u2014follow consistent methodological patterns across companies regardless of industry. While the specific datasets, business domains, and tools differ, the underlying workflow and analytical logic remain fundamentally similar, making an agent built for these tasks readily transferable with configuration changes (different data sources, visualization platforms, or domain context) rather than requiring structural rebuilding."
   },
   {
     "slug": "database-administrators",
@@ -320,7 +338,8 @@
         "concentrated": 3,
         "fragmented": 0
       }
-    }
+    },
+    "repeatability_rationale": "Database administration and architecture are heavily dependent on proprietary systems, vendor-specific tools (Oracle, SQL Server, PostgreSQL, cloud platforms like AWS/Azure), and organization-specific data schemas, security policies, and infrastructure. An agent built for one company's database environment would require substantial rebuilding to handle different database management systems, security protocols, backup strategies, and application-specific requirements at another company."
   },
   {
     "slug": "epidemiologists",
@@ -337,7 +356,8 @@
         "concentrated": 3,
         "fragmented": 0
       }
-    }
+    },
+    "repeatability_rationale": "Epidemiologists' core work is heavily dependent on each employer's specific disease focus, regulatory environment, data systems, and research infrastructure\u2014whether working for CDC on federal surveillance, a state health department on outbreak response, a hospital on infection control, or a pharmaceutical company on drug trials. The underlying investigative logic and statistical methods may be similar, but the actual tasks (which diseases to track, which data systems to query, which populations to study, which reporting requirements to meet) differ fundamentally by organization, making substantial workflow reconfiguration necessary for each employer."
   },
   {
     "slug": "financial-analysts",
@@ -354,24 +374,26 @@
         "concentrated": 3,
         "fragmented": 0
       }
-    }
+    },
+    "repeatability_rationale": "Financial analysts' core work is deeply bound to proprietary trading systems, risk models, portfolio management platforms, and client-specific investment mandates that vary fundamentally between securities firms, hedge funds, banks, and insurance companies. An agent built for buy-side portfolio optimization would require substantial rebuilding for sell-side equity research or ratings analysis, and again for risk assessment in a credit institution, because the underlying analytical logic, data inputs, regulatory constraints, and decision criteria are fundamentally different across these contexts."
   },
   {
     "slug": "financial-clerks",
     "title": "Financial clerks",
-    "repeatability": "low",
+    "repeatability": "high",
     "concentration": "fragmented",
     "rationale": "Financial clerks encompass highly specialized subtypes (billing, payroll, brokerage, loan processing, insurance claims) with vastly different workflows, systems, and regulatory requirements across industries\u2014an agent built for insurance claims processing will not transfer to brokerage or payroll work. The 1.2M workers are distributed across insurance (20%), healthcare (18%), credit intermediation (16%), and many smaller sectors with no dominant buyer cohort; most employers are mid-market and smaller firms where the addressable value per deployment is low, making it economically infeasible for a vendor to capture most of the market with a single product.",
     "votes": {
       "repeatability": {
-        "high": 0,
-        "low": 3
+        "high": 3,
+        "low": 0
       },
       "concentration": {
         "concentrated": 1,
         "fragmented": 2
       }
-    }
+    },
+    "repeatability_rationale": "Financial clerks perform core tasks that follow consistent patterns across employers: data entry, record-keeping, calculations, transaction processing, and customer account management. While the specific systems (insurance platforms, loan management software, payroll systems) differ by employer, the underlying workflows\u2014verify information, calculate amounts, update records, process transactions\u2014remain fundamentally the same and would require only configuration changes, not algorithmic redesign."
   },
   {
     "slug": "financial-examiners",
@@ -388,7 +410,8 @@
         "concentrated": 3,
         "fragmented": 0
       }
-    }
+    },
+    "repeatability_rationale": "Financial examiners work within heavily regulated, institution-specific frameworks where examination procedures, compliance requirements, and risk assessment methodologies vary significantly by regulatory agency (federal vs. state), institution type (banks, credit unions, securities firms), and regulatory posture. An agent built for one employer's examination process would require substantial rebuilding to handle different regulatory regimes, proprietary banking systems, loan portfolio structures, and compliance documentation standards across other institutions."
   },
   {
     "slug": "financial-managers",
@@ -405,24 +428,26 @@
         "concentrated": 3,
         "fragmented": 0
       }
-    }
+    },
+    "repeatability_rationale": "Financial managers' core work is deeply bound to each organization's proprietary financial systems, accounting structures, regulatory requirements, and strategic priorities. While data analysis and reporting are common, the specific calculations, compliance frameworks (government vs. healthcare vs. banking), investment strategies, and decision-making processes differ fundamentally across industries and individual companies, requiring substantial rebuilding of an agent per employer rather than light configuration."
   },
   {
     "slug": "general-office-clerks",
     "title": "General office clerks",
-    "repeatability": "low",
+    "repeatability": "high",
     "concentration": "fragmented",
     "rationale": "General office clerk duties vary significantly by industry context (colleges process applications, hospitals manage medical records, construction handles project documentation), requiring customization to each employer's specific systems, workflows, and organizational structure. The 2.6M workers are distributed across highly fragmented buyers\u2014education (13%), healthcare (11%), construction (10%), government (10%), and dozens of other sectors\u2014with no dominant cohort of large employers that would allow a single vendor to capture most addressable value with a shared platform.",
     "votes": {
       "repeatability": {
-        "high": 0,
-        "low": 3
+        "high": 3,
+        "low": 0
       },
       "concentration": {
         "concentrated": 0,
         "fragmented": 3
       }
-    }
+    },
+    "repeatability_rationale": "Core tasks like answering phones, typing/formatting documents, filing records, scheduling appointments, data entry, and mail sorting follow standardized patterns across all employers\u2014differences are primarily configuration-based (which phone system, which filing structure, which software platform). While specific content varies by industry (hospital medical records vs. university applications), the underlying workflow logic and automation potential remain consistent."
   },
   {
     "slug": "geographers",
@@ -432,14 +457,15 @@
     "rationale": "Geographic research workflows vary significantly by domain (physical vs. human geography), client needs (urban planning vs. environmental assessment vs. resource management), and regulatory/institutional context, requiring customized GIS integrations and data sources for each organization. However, 68% of geographers work in federal government, creating a highly concentrated buyer market where a single vendor could serve most of the addressable value through tailored solutions for federal agencies and large state/local governments managing infrastructure and environmental planning projects.",
     "votes": {
       "repeatability": {
-        "high": 1,
-        "low": 2
+        "high": 0,
+        "low": 3
       },
       "concentration": {
         "concentrated": 3,
         "fragmented": 0
       }
-    }
+    },
+    "repeatability_rationale": "Geographic research is highly context-dependent, requiring domain expertise in specific regional systems, environmental conditions, regulatory frameworks, and stakeholder relationships that differ fundamentally across projects and employers. While GIS software and data visualization tools are standardized, the underlying research methodology, data sources, analytical approach, and interpretation of geographic phenomena are tailored to each study's unique geographic, political, and institutional context, making substantial rebuilding necessary for each new employer or research domain."
   },
   {
     "slug": "health-information-technologists-and-medical-registrars",
@@ -456,41 +482,44 @@
         "concentrated": 1,
         "fragmented": 2
       }
-    }
+    },
+    "repeatability_rationale": "Health information technologists and medical registrars work with organization-specific healthcare systems, clinical databases, and disease registries that vary significantly in architecture, data structure, and regulatory requirements across hospitals, physician offices, and research institutions. While some tasks like data validation and report generation follow general patterns, the core work of system implementation, clinical data abstraction, and registry maintenance is deeply dependent on each employer's proprietary systems, coding standards, and institutional workflows, requiring substantial rebuilding per organization."
   },
   {
     "slug": "human-resources-specialists",
     "title": "Human resources specialists",
-    "repeatability": "low",
+    "repeatability": "high",
     "concentration": "fragmented",
     "rationale": "HR specialist workflows vary significantly across companies due to different organizational structures, compensation systems, benefits packages, and regulatory requirements; moreover, while 944k workers hold this role, the buyer market is highly fragmented across employers of all sizes (from small businesses to large enterprises), with no dominant cohort where a single vendor can capture most addressable value.",
     "votes": {
       "repeatability": {
-        "high": 0,
-        "low": 3
+        "high": 3,
+        "low": 0
       },
       "concentration": {
         "concentrated": 0,
         "fragmented": 3
       }
-    }
+    },
+    "repeatability_rationale": "Core HR specialist tasks like applicant screening, reference checking, benefits administration, policy compliance documentation, and employee record-keeping follow standardized workflows across organizations. While specific HR systems, benefits packages, and compliance regulations vary by employer, these differences are configuration-level; the underlying process logic for recruiting, onboarding, records management, and policy communication remains consistent and readily transferable."
   },
   {
     "slug": "information-clerks",
     "title": "Information clerks",
-    "repeatability": "low",
+    "repeatability": "high",
     "concentration": "fragmented",
     "rationale": "Information clerks perform highly heterogeneous work across different subtypes (court clerks, eligibility interviewers, hotel desk clerks, file clerks, order clerks, etc.) with fundamentally different workflows, regulatory contexts, and systems (court dockets, government benefit systems, hotel management software, filing protocols), making agent reuse across companies minimal. The 1.3 million-person workforce is distributed across many small employers (traveler accommodation at 19%, healthcare at 11%, state government at 9%) with no dominant buyer cohort\u2014most organizations that employ information clerks are fragmented across small and mid-sized companies, hotels, and government agencies, so no single vendor can capture most addressable value with one configuration.",
     "votes": {
       "repeatability": {
-        "high": 0,
-        "low": 3
+        "high": 3,
+        "low": 0
       },
       "concentration": {
         "concentrated": 0,
         "fragmented": 3
       }
-    }
+    },
+    "repeatability_rationale": "Information clerks perform core automatable tasks\u2014data entry, record maintenance, answering routine inquiries, processing applications, and document filing\u2014that follow consistent patterns across employers despite industry variation. While employer-specific systems (CRMs, booking platforms, government databases) differ, the underlying workflow logic (collect data, validate against criteria, file/respond, track status) remains substantially the same, making an agent built at one company readily transferable with configuration adjustments."
   },
   {
     "slug": "information-security-analysts",
@@ -507,7 +536,8 @@
         "concentrated": 3,
         "fragmented": 0
       }
-    }
+    },
+    "repeatability_rationale": "Information security analysts' core work is deeply bound to each organization's proprietary systems, network architecture, security tools, regulatory requirements, and threat landscape; while some tasks like vulnerability scanning or report generation follow repeatable patterns, the security standards, disaster recovery procedures, threat detection logic, and remediation strategies must be substantially rebuilt per employer due to fundamental differences in infrastructure, industry compliance needs, and organizational risk profiles."
   },
   {
     "slug": "insurance-underwriters",
@@ -524,7 +554,8 @@
         "concentrated": 3,
         "fragmented": 0
       }
-    }
+    },
+    "repeatability_rationale": "Insurance underwriting relies on proprietary underwriting software systems, company-specific risk assessment criteria, and regulatory frameworks that vary significantly by insurer, insurance type (health, life, property/casualty), and state regulations. While the surface workflow appears standardized, the core decision-making logic\u2014risk evaluation rules, premium calculation models, and approval thresholds\u2014is deeply embedded in each company's underwriting guidelines and systems, requiring substantial reconfiguration rather than light configuration to transfer an agent across employers."
   },
   {
     "slug": "lawyers",
@@ -541,24 +572,26 @@
         "concentrated": 3,
         "fragmented": 0
       }
-    }
+    },
+    "repeatability_rationale": "Legal work is fundamentally bound to jurisdiction-specific statutes, case law, regulatory frameworks, and procedural rules that vary significantly across states and practice areas, requiring substantial rebuilding of legal reasoning and document generation logic for each new jurisdiction or legal specialty rather than simple configuration changes."
   },
   {
     "slug": "librarians",
     "title": "Librarians and library media specialists",
-    "repeatability": "low",
+    "repeatability": "high",
     "concentration": "fragmented",
     "rationale": "Library workflows vary significantly by institution type (public, academic, school, special/corporate) with different systems, patron bases, collection management practices, and organizational structures, requiring substantial customization per employer. The buyer market is highly fragmented across 142,100+ jobs distributed among local governments (32%), schools (31%), colleges (18%), and corporate/special libraries (5%), with no dominant cohort where a single vendor could capture most addressable value.",
     "votes": {
       "repeatability": {
-        "high": 1,
-        "low": 2
+        "high": 2,
+        "low": 1
       },
       "concentration": {
         "concentrated": 0,
         "fragmented": 3
       }
-    }
+    },
+    "repeatability_rationale": "Core librarian tasks\u2014cataloging materials, managing databases, conducting reference research, evaluating information sources, organizing collections, and planning patron programs\u2014follow standardized library science principles and methods that transfer across institutions. While specific systems (ILS software, databases, organizational structures) differ by employer, the underlying workflow logic remains consistent and requires only configuration rather than fundamental redesign of agent capabilities."
   },
   {
     "slug": "loan-officers",
@@ -575,7 +608,8 @@
         "concentrated": 3,
         "fragmented": 0
       }
-    }
+    },
+    "repeatability_rationale": "Loan officers' core work is deeply bound to each employer's proprietary underwriting systems, risk assessment frameworks, regulatory compliance requirements, and credit policies, which vary significantly across banks, mortgage companies, and credit unions. While data collection and verification tasks appear standardized, the actual underwriting logic, decision-making criteria, loan product offerings, and regulatory obligations differ fundamentally from one financial institution to another, requiring substantial rebuilding of an agent per employer rather than simple configuration."
   },
   {
     "slug": "logisticians",
@@ -592,7 +626,8 @@
         "concentrated": 1,
         "fragmented": 2
       }
-    }
+    },
+    "repeatability_rationale": "Logisticians' core work is deeply embedded in each company's proprietary supply chain systems, procurement platforms, inventory management software, and business-specific logistics workflows. While general tasks like data analysis and cost optimization follow similar logic, the actual execution depends heavily on custom ERPs, specialized logistics software (which vary by industry and company), regulatory requirements specific to the sector (manufacturing vs. defense vs. e-commerce), and bespoke supplier/customer relationships that cannot transfer between employers without substantial rebuilding."
   },
   {
     "slug": "market-research-analysts",
@@ -609,41 +644,44 @@
         "concentrated": 0,
         "fragmented": 3
       }
-    }
+    },
+    "repeatability_rationale": "Market research analysts perform standardized core tasks\u2014data collection via surveys/interviews, statistical analysis, trend forecasting, and report generation with visualizations\u2014that follow consistent methodologies across industries and companies. While specific clients, datasets, and presentation templates vary by employer, the underlying analytical workflow and tools (statistical software, survey design, data visualization) remain fundamentally the same, requiring only configuration changes rather than substantial process rebuilds."
   },
   {
     "slug": "material-recording-clerks",
     "title": "Material recording clerks",
-    "repeatability": "low",
+    "repeatability": "high",
     "concentration": "fragmented",
     "rationale": "Material recording workflows vary significantly across manufacturing, retail, wholesale, and transportation sectors\u2014each with distinct inventory systems, production schedules, regulatory requirements, and operational structures that require custom integration. The market is also highly fragmented across 1.3 million workers distributed broadly across small to medium manufacturers, retailers, and warehouses rather than concentrated in a few dominant buyers, making it difficult for a single vendor to capture substantial value.",
     "votes": {
       "repeatability": {
-        "high": 1,
-        "low": 2
+        "high": 3,
+        "low": 0
       },
       "concentration": {
         "concentrated": 0,
         "fragmented": 3
       }
-    }
+    },
+    "repeatability_rationale": "Material recording clerks perform core tasks\u2014inventory tracking, barcode scanning, record-keeping, shipping/receiving documentation, and quality inspections\u2014that follow standardized patterns across companies. While specific inventory management systems, warehouse layouts, and product types vary by employer, the underlying workflow logic (scan items, update records, verify accuracy, prepare shipping documents) remains consistent and would transfer with configuration to different systems and templates."
   },
   {
     "slug": "mathematicians-and-statisticians",
     "title": "Mathematicians and statisticians",
-    "repeatability": "low",
+    "repeatability": "high",
     "concentration": "concentrated",
     "rationale": "Mathematicians and statisticians apply domain-specific analytical methods to highly varied problems across distinct sectors (pharma, aerospace, finance, government, R&D), requiring deep retraining for each industry's data structures, regulatory constraints, and business logic. However, the buyer market is concentrated in large organizations with substantial data infrastructure and budgets\u2014federal government (17% of statisticians), major R&D firms, healthcare systems, and tech companies\u2014where a vendor can capture significant value by building industry-specific solutions for each large buyer cohort rather than serving a long tail of small employers.",
     "votes": {
       "repeatability": {
-        "high": 0,
-        "low": 3
+        "high": 2,
+        "low": 1
       },
       "concentration": {
         "concentrated": 3,
         "fragmented": 0
       }
-    }
+    },
+    "repeatability_rationale": "The core tasks\u2014designing experiments, collecting and analyzing data, identifying trends, conducting statistical tests, and presenting findings\u2014follow consistent methodological patterns across industries and employers. An AI agent trained on data analysis workflows (survey design, statistical modeling, hypothesis testing, visualization) would transfer readily between companies with only configuration changes to domain-specific data formats, software tools, and output templates rather than fundamental rewiring of the analytical logic."
   },
   {
     "slug": "medical-dosimetrists",
@@ -660,7 +698,8 @@
         "concentrated": 3,
         "fragmented": 0
       }
-    }
+    },
+    "repeatability_rationale": "Medical dosimetry involves highly specialized physics-based calculations, clinical decision-making, and regulatory compliance that are bound to each institution's radiation oncology protocols, equipment specifications, treatment planning systems, and physician-defined dosage parameters. While the general workflow (review scans, calculate dose, design plan) is consistent, the underlying task logic\u2014including dose algorithms, equipment-specific calibrations, institutional clinical guidelines, and treatment plan optimization\u2014differs fundamentally between hospitals and clinics, requiring substantial rebuilding of an AI agent per employer."
   },
   {
     "slug": "medical-records-and-health-information-technicians",
@@ -677,7 +716,8 @@
         "concentrated": 3,
         "fragmented": 0
       }
-    }
+    },
+    "repeatability_rationale": "Medical records specialists perform standardized core tasks\u2014reviewing records for completeness, assigning clinical codes using universal classification systems (ICD, CPT), maintaining EHR data, and ensuring confidentiality\u2014that follow the same workflow logic across hospitals, physician offices, and healthcare facilities. While EHR systems and specific templates vary by employer, the underlying task patterns (data entry, code assignment, record verification, access control) are configuration differences rather than fundamental workflow changes, making an agent highly transferable with light setup adjustments."
   },
   {
     "slug": "medical-transcriptionists",
@@ -694,7 +734,8 @@
         "concentrated": 0,
         "fragmented": 3
       }
-    }
+    },
+    "repeatability_rationale": "Medical transcription involves core repeatable tasks\u2014listening to dictation, converting speech to text, editing for accuracy, and entering records into EHR systems\u2014that follow the same workflow across different healthcare settings. While EHR systems and medical templates may differ by employer, the fundamental transcription logic, error-checking process, and documentation standards remain consistent; configuration of specific system interfaces would be sufficient for agent transfer across most employers."
   },
   {
     "slug": "network-and-computer-systems-administrators",
@@ -711,7 +752,8 @@
         "concentrated": 0,
         "fragmented": 3
       }
-    }
+    },
+    "repeatability_rationale": "Network and Computer Systems Administrators work with highly proprietary and company-specific infrastructure\u2014each organization's network topology, security policies, hardware configurations, cloud platforms, and legacy systems are fundamentally different. An agent built to automate core tasks (configuration management, security hardening, performance monitoring, user provisioning) would require substantial rebuilding for each employer's unique architecture, compliance requirements, and technology stack, making transfer across companies infeasible without major reimplementation."
   },
   {
     "slug": "operations-research-analysts",
@@ -728,7 +770,8 @@
         "concentrated": 3,
         "fragmented": 0
       }
-    }
+    },
+    "repeatability_rationale": "Operations research analysts' core work is deeply tied to each employer's specific business problems, proprietary data systems, domain expertise requirements, and organizational constraints. While the general methodological toolkit (statistical analysis, modeling, optimization) transfers across companies, the actual problem formulation, data architecture, stakeholder dynamics, and solution constraints vary fundamentally\u2014requiring substantial recalibration of the analytical approach, not merely configuration of tools."
   },
   {
     "slug": "paralegals-and-legal-assistants",
@@ -745,7 +788,8 @@
         "concentrated": 3,
         "fragmented": 0
       }
-    }
+    },
+    "repeatability_rationale": "Paralegals' core work is deeply bound to each firm's proprietary case management systems, document management protocols, specific practice areas (bankruptcy, IP, litigation, family law), and bespoke legal procedures that vary significantly by jurisdiction and firm size. While tasks like research and drafting are nominally similar, the underlying workflows\u2014from how documents are classified and stored to how discovery is managed to how trial logistics are coordinated\u2014differ fundamentally enough that an agent built for one firm would require substantial rebuilding to handle another's specific legal processes, case structures, and compliance requirements."
   },
   {
     "slug": "appraisers-and-assessors-of-real-estate",
@@ -762,7 +806,8 @@
         "concentrated": 0,
         "fragmented": 3
       }
-    }
+    },
+    "repeatability_rationale": "Property appraisal and assessment work is heavily dependent on local jurisdiction regulations, tax codes, comparable property databases, and state-specific licensing requirements that vary significantly across companies and localities. Core task logic\u2014determining property values, defending assessments, maintaining jurisdiction-specific property records\u2014is fundamentally tied to each employer's regulatory environment and proprietary data systems, requiring substantial rebuilding of an agent per employer rather than simple configuration."
   },
   {
     "slug": "police-fire-and-ambulance-dispatchers",
@@ -772,14 +817,15 @@
     "rationale": "Dispatch workflows vary significantly by jurisdiction due to differences in local geography, agency protocols, equipment systems (CAD platforms), multi-agency coordination rules, and state/municipal regulatory requirements\u2014making cross-jurisdiction agent transfer difficult. The 105,200 jobs are spread across 78% local government plus state and private ambulance services with no dominant buyer cohort; thousands of independent municipalities and PSAPs would each need customized solutions, preventing any single vendor from capturing most market value with a standardized product.",
     "votes": {
       "repeatability": {
-        "high": 1,
-        "low": 2
+        "high": 0,
+        "low": 3
       },
       "concentration": {
         "concentrated": 1,
         "fragmented": 2
       }
-    }
+    },
+    "repeatability_rationale": "Public safety telecommunicators rely on agency-specific computer-aided dispatch (CAD) systems, local geography knowledge, jurisdiction-specific protocols and procedures, and distinct legal/regulatory frameworks that vary significantly by state and locality. An AI agent built for one 911 center's workflow would require substantial rebuilding to handle another agency's unique systems, dispatch procedures, local law enforcement protocols, and emergency response structures."
   },
   {
     "slug": "purchasing-managers-buyers-and-purchasing-agents",
@@ -796,7 +842,8 @@
         "concentrated": 0,
         "fragmented": 3
       }
-    }
+    },
+    "repeatability_rationale": "Purchasing workflows are heavily bound to each company's proprietary procurement systems, supplier networks, contract templates, approval hierarchies, and industry-specific regulations (manufacturing vs. retail vs. government have fundamentally different compliance and sourcing logic). While individual tasks like price analysis or contract negotiation follow similar patterns, the core work logic\u2014which suppliers to evaluate, what compliance rules apply, which procurement systems to use, and how to structure deals\u2014differs substantially enough that an agent would require significant rebuilding per employer rather than light configuration."
   },
   {
     "slug": "receptionists",
@@ -813,41 +860,44 @@
         "concentrated": 0,
         "fragmented": 3
       }
-    }
+    },
+    "repeatability_rationale": "Core receptionist tasks\u2014answering phones, scheduling appointments, greeting visitors, entering data, and managing correspondence\u2014follow nearly identical patterns across organizations. While specific systems (phone systems, calendars, databases) and industry contexts vary, the underlying workflow logic is consistent and largely configuration-driven rather than fundamentally different from employer to employer."
   },
   {
     "slug": "secretaries-and-administrative-assistants",
     "title": "Secretaries and administrative assistants",
-    "repeatability": "low",
+    "repeatability": "high",
     "concentration": "fragmented",
     "rationale": "Administrative workflows are highly idiosyncratic across companies\u2014varying by industry (healthcare vs. legal vs. general), organizational structure, executive preferences, and embedded systems (email, calendar, filing protocols, vendor relationships)\u2014requiring substantial customization per employer. The 3.5 million workers are distributed across nearly every industry and organization size, with no dominant buyer cohort; value is spread across millions of small, medium, and large employers, making it impossible for a single vendor to capture most of the market with one product configuration.",
-    "votes": {
-      "repeatability": {
-        "high": 0,
-        "low": 3
-      },
-      "concentration": {
-        "concentrated": 0,
-        "fragmented": 3
-      }
-    }
-  },
-  {
-    "slug": "tax-examiners-and-collectors-and-revenue-agents",
-    "title": "Tax examiners and collectors, and revenue agents",
-    "repeatability": "high",
-    "concentration": "concentrated",
-    "rationale": "Tax examination and collection workflows follow standardized federal tax codes and procedures that are nearly identical across IRS, state, and local agencies, making the core audit and collection processes highly repeatable. The buyer market is heavily concentrated in government entities (46% federal, 34% state, 20% local), with the IRS representing the dominant purchaser, allowing a single vendor to serve most of the addressable value through shared infrastructure and configuration rather than complete rebuilds.",
     "votes": {
       "repeatability": {
         "high": 3,
         "low": 0
       },
       "concentration": {
+        "concentrated": 0,
+        "fragmented": 3
+      }
+    },
+    "repeatability_rationale": "The core tasks\u2014scheduling appointments, managing calendars and email, preparing documents, handling files, processing mail, and basic data entry\u2014follow standardized patterns across organizations. While industry-specific variants (legal, medical, executive) require domain terminology knowledge, the underlying workflow logic and automation approach remains consistent; differences between employers are primarily configuration (which calendar system, which email client, which templates) rather than fundamental task redesign."
+  },
+  {
+    "slug": "tax-examiners-and-collectors-and-revenue-agents",
+    "title": "Tax examiners and collectors, and revenue agents",
+    "repeatability": "low",
+    "concentration": "concentrated",
+    "rationale": "Tax examination and collection workflows follow standardized federal tax codes and procedures that are nearly identical across IRS, state, and local agencies, making the core audit and collection processes highly repeatable. The buyer market is heavily concentrated in government entities (46% federal, 34% state, 20% local), with the IRS representing the dominant purchaser, allowing a single vendor to serve most of the addressable value through shared infrastructure and configuration rather than complete rebuilds.",
+    "votes": {
+      "repeatability": {
+        "high": 0,
+        "low": 3
+      },
+      "concentration": {
         "concentrated": 3,
         "fragmented": 0
       }
-    }
+    },
+    "repeatability_rationale": "Tax examination and collection work is fundamentally bound to each jurisdiction's proprietary tax systems, regulatory frameworks, and statutory requirements\u2014federal, state, and local governments have distinct tax codes, enforcement procedures, and collection mechanisms that cannot be simply configured. An agent built for IRS federal income tax audits would require substantial rebuilding to handle state sales tax compliance or local property tax collection, as the underlying task logic, legal authorities, and system integrations differ materially across employers."
   },
   {
     "slug": "travel-agents",
@@ -864,6 +914,7 @@
         "concentrated": 0,
         "fragmented": 3
       }
-    }
+    },
+    "repeatability_rationale": "Travel agents perform core repeatable tasks across companies: gathering client preferences, searching availability systems, calculating costs, and making reservations across standardized platforms (GDS systems, hotel chains, airlines). While specific booking systems and agency processes vary, the underlying workflow\u2014assess needs, search inventory, price, book, communicate confirmations\u2014transfers readily with light configuration to different agencies or booking systems."
   }
 ]
