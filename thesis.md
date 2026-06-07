@@ -95,7 +95,7 @@ These produce four cells, and each has a likely winner.
 
 {{TIER2_MATRIX}}
 
-The labs are spending $5.5B through FDE ventures, but their deployments target the concentrated, high-value verticals: finance, healthcare, and manufacturing at large enterprises. That is the left side of the map, where operational context stays with the vertical startup, the incumbent, or the enterprise, as the FIS deal showed. The one cell the labs can win on their own is horizontal agents for fragmented work. It is the largest cell in Tier 2 by employment, 16 million jobs and $848B in wages, but it is the lowest paid at around $52K. The high-value work, the $108K jobs that make up a third of all Tier 2 wages, sits in the low repeatability and concentrated cell that platform incumbents like Salesforce and ServiceNow already own.
+The labs are spending $5.5B through FDE ventures, but their deployments target the concentrated, high-value verticals: [finance, healthcare, and manufacturing at large enterprises](https://techcrunch.com/2026/05/04/anthropic-and-openai-are-both-launching-joint-ventures-for-enterprise-ai-services/). That is the left side of the map, where operational context stays with the vertical startup, the incumbent, or the enterprise as the FIS deal showed. The one cell the labs can win on their own is horizontal agents for fragmented work. It is the largest cell in Tier 2 by employment, 16 million jobs and $848B in wages, but it is the lowest paid at around $52K. The high-value work, the $108K jobs that make up a third of all Tier 2 wages, sits in the low repeatability and concentrated cell that platform incumbents like Salesforce and ServiceNow already own.
 
 However, even in the cell that frontier labs can win, there is no operational context to lock in since a horizontal agent is generic by definition.
 
@@ -103,7 +103,7 @@ As a result, altogether, there aren't many structural incentives for operational
 
 So if the FDE play isn't to become the system of record, what is it for?
 
-My hypothesis: it's a way to generate demand.
+My hypothesis: it's purely a way to generate demand.
 
 ## 5. Supply side economics
 

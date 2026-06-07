@@ -166,9 +166,9 @@ QUADRANT_COPY = {
     "high-fragmented": {
         "row": "High", "col": "Fragmented", "cls": "c-orange",
         "winner": "Horizontal agents win",
-        "why": "When jobs are similar everywhere but not exactly, a horizontal agent "
-               "captures the surface. Most admin and secretary work falls here. The "
-               "largest unclaimed cell, and the one the labs have a real shot at.",
+        "why": "When a job is broadly similar across companies, a horizontal agent "
+               "captures the surface. Most admin and secretary work falls here, the "
+               "largest unclaimed cell and the one the labs have a real shot at.",
         "ex": "Claude managed agents · OpenAI workspace agents · Microsoft Copilot",
     },
     "low-concentrated": {
