@@ -88,8 +88,8 @@ The most consequential battle is being fought at {T2} which is 60% of knowledge 
 
 Tier 2 work needs the operational context of that company to be packaged in forms that agents can ingest. MCPs, tools, database connections, prompt scaffolds. But packageability isn't uniform across Tier 2. Two factors shape it.
 
-- Workflow repeatability across companies. Does customer service look the same at Goldman as at JPMorgan?
-- Company concentration. Is the work concentrated in a few large companies, or spread across many small ones?
+- **Workflow repeatability across companies.** Does customer service look the same at Goldman as at JPMorgan?
+- **Company concentration.** Is the work concentrated in a few large companies, or spread across many small ones?
 
 These produce four cells, and each has a likely winner.
 

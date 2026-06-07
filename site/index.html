@@ -134,6 +134,12 @@ header.page .credit a { color: var(--fg2); }
   display: none;
 }
 .thesis-section.open .body { display: block; }
+/* Diagram pulled out of the body stays visible whether the section is open or not */
+.thesis-section .section-diagram {
+  margin-top: 16px;
+  margin-left: 30px;
+  max-width: 760px;
+}
 .thesis-section .body p { margin-bottom: 14px; }
 .thesis-section .body h3 {
   font-size: 15px;
@@ -1018,13 +1024,24 @@ function renderThesis(thesis) {
     sec.dataset.mode = s.mode || "default";
     if (s.id === "3") sec.classList.add("open");
 
+    // Pull the quadrant out of the collapsible body so the diagram and its caption
+    // stay visible even when the section is closed.
+    let rawBody = s.body_html || "";
+    let alwaysDiagram = "";
+    const mre = /(?:<p>\s*)?\{\{TIER2_MATRIX\}\}(?:\s*<\/p>)?/;
+    if (mre.test(rawBody) && DIAGRAMS.TIER2_MATRIX) {
+      alwaysDiagram = `<div class="section-diagram">${DIAGRAMS.TIER2_MATRIX}</div>`;
+      rawBody = rawBody.replace(mre, "");
+    }
+
     sec.innerHTML = `
       <div class="header-row">
         <span class="toggle">▸</span>
         <h2><span class="section-num">${s.id}.</span>${s.title}</h2>
       </div>
       <div class="caption">${s.caption_html || ""}</div>
-      <div class="body">${injectDiagrams(s.body_html || "")}</div>
+      ${alwaysDiagram}
+      <div class="body">${injectDiagrams(rawBody)}</div>
     `;
 
     if (parseInt(s.id, 10) <= 3) before.appendChild(sec);
