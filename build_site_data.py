@@ -202,7 +202,8 @@ def build_quadrant(data):
     with open("cells.json") as f:
         cells = {c["slug"]: c for c in json.load(f)}
 
-    agg = {k: {"jobs": 0, "wages": 0, "occ": 0, "titles": []} for k in QUADRANT_COPY}
+    agg = {k: {"jobs": 0, "wages": 0, "occ": 0, "titles": [], "ow_num": 0, "ow_den": 0}
+           for k in QUADRANT_COPY}
     for d in data:
         if d.get("tier") != "T2":
             continue
@@ -217,6 +218,9 @@ def build_quadrant(data):
         agg[key]["wages"] += jobs * (d.get("pay") or 0)
         agg[key]["occ"] += 1
         agg[key]["titles"].append((jobs, d["title"]))
+        if d.get("outlook") is not None:
+            agg[key]["ow_num"] += jobs * d["outlook"]
+            agg[key]["ow_den"] += jobs
 
     total_jobs = sum(a["jobs"] for a in agg.values()) or 1
     out = {}
@@ -229,6 +233,7 @@ def build_quadrant(data):
             "occ": a["occ"],
             "pct": round(a["jobs"] / total_jobs * 100, 1),
             "pay": round(a["wages"] / a["jobs"]) if a["jobs"] else 0,
+            "outlook": round(a["ow_num"] / a["ow_den"], 1) if a["ow_den"] else 0,
             "top": [t for _, t in sorted(a["titles"], reverse=True)[:3]],
         }
     return out
@@ -246,36 +251,34 @@ def build_map_facts(data, quadrant):
     facts = []
 
     if quadrant:
-        total_w = sum(c["wages"] for c in quadrant.values()) or 1
         labs = quadrant["high-fragmented"]
         inc = quadrant["low-concentrated"]
-        labs_w = labs["wages"] / total_w * 100
         facts.append({
-            "stat": f"{labs['pct']:.0f}%",
-            "label": f"of Tier 2 jobs fall in the one cell the labs can win, horizontal "
-                     f"agents for fragmented work. It is the largest cell in Tier 2 "
-                     f"(${labs['wages']/1e9:.0f}B in wages), but also the lowest-paid at "
-                     f"${labs['pay']/1000:.0f}K a year. The labs win on volume, not value.",
+            "stat": f"{labs['outlook']:+.0f}%",
+            "label": f"The one cell the labs can win is the largest in Tier 2 "
+                     f"(${labs['wages']/1e9:.0f}B in wages) but the lowest-paid, at "
+                     f"${labs['pay']/1000:.0f}K, and the only Tier 2 cell BLS projects to "
+                     f"shrink this decade. The labs win on volume, not value.",
         })
-        ratio = inc["pay"] / labs["pay"] if labs["pay"] else 0
         facts.append({
-            "stat": f"{ratio:.1f}×",
-            "label": f"The highest-value Tier 2 work pays ${inc['pay']/1000:.0f}K, more "
-                     f"than double the labs' cell, and holds a third of all T2 wages. It "
-                     f"sits in the low-repeatability cell platform incumbents already own "
-                     f"(Salesforce, ServiceNow, FIS). The labs win the volume; incumbents "
-                     f"keep the margin.",
+            "stat": f"{inc['outlook']:+.0f}%",
+            "label": f"The high-value work, ${inc['pay']/1000:.0f}K jobs that hold a third "
+                     f"of all Tier 2 wages, sits in the low-repeatability cell platform "
+                     f"incumbents already own (Salesforce, ServiceNow, FIS). It is growing "
+                     f"while the labs' cell declines. Incumbents keep the margin and the "
+                     f"growth.",
         })
 
     t3c = [d for d in data if d.get("tier") == "T3c"]
-    t3c_jobs = sum((d["jobs"] or 0) for d in t3c)
     if t3c:
+        w = sum((d["jobs"] or 0) * (d["pay"] or 0) for d in t3c)
+        j = sum((d["jobs"] or 0) for d in t3c)
         facts.append({
-            "stat": f"{t3c_jobs/total_jobs*100:.0f}%",
-            "label": f"of high-exposure knowledge work ({t3c_jobs/1e6:.1f}M jobs) is "
-                     f"relational, Tier 3c. Well paid at ${_pay_weighted(t3c)/1000:.0f}K "
-                     f"and rooted in relationships between people, it is structurally out "
-                     f"of reach for any agent.",
+            "stat": f"${w/1e12:.1f}T",
+            "label": f"Relational work (Tier 3c) is the second-largest wage pool in "
+                     f"knowledge work, {j/1e6:.1f}M jobs worth ${w/1e12:.1f}T a year. It "
+                     f"lives in relationships between people and is structurally out of "
+                     f"reach for any agent.",
         })
     return facts
 
@@ -295,8 +298,8 @@ TIER_INSIGHT = {
            "context, these jobs convert into Tier 2.",
     "T3b": "The highest-paid tier. The context is genuinely tacit, so only the expert "
            "can harness-engineer the agent.",
-    "T3c": "Work that lives in relationships between people. Well paid and structurally "
-           "out of reach for any agent.",
+    "T3c": "The second-largest wage pool in knowledge work after Tier 2. It lives in "
+           "relationships between people and is structurally out of reach for any agent.",
 }
 
 

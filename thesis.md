@@ -6,7 +6,7 @@ Edit this file to update the page text. Sections are delimited by `## <number>. 
 
 ## 1. The puzzle
 
-CAPTION: I've been trying to piece together what their long-term business model is going to be.
+CAPTION: Two moves the labs made in 2026 seem to point in opposite directions. They turn out to be the same bet.
 
 Anthropic is rumored to be about to have its first profitable quarter and both frontier labs are targeting IPO. I've been trying to piece together what their long-term business model is going to be.
 
@@ -29,7 +29,7 @@ But the more I looked, the more I think they're the same bet.
 
 ## 2. The FDE bet, reframed
 
-CAPTION: The problem however is that the operational context doesn't transfer to the labs.
+CAPTION: The joint ventures look like system of record plays. The operational context never reaches the labs.
 
 The standard read of the joint ventures is that they're system of record plays.
 
@@ -43,7 +43,7 @@ To see why, we need to look at the shape of the work AI is actually being deploy
 
 ## 3. The Shape of Knowledge Work
 
-CAPTION: The ratio of these inputs determines which agent works for which job.
+CAPTION: Generic capability, standardized context, tacit context. The mix decides which agent can do the job, and splits the work into tiers.
 
 Karpathy's Bureau of Labor Statistics visualizer showed that jobs with high digital exposure, roughly 49 million of 143 million US jobs, are at higher risk of AI restructuring. Those jobs are mostly knowledge work: labor requiring non-routine problem solving and human reasoning.
 
@@ -63,7 +63,7 @@ Jobs in this tier have standard inputs and standard outputs and are similar acro
 
 ### {T2} Tier 2: Genericizable framework, custom configuration
 
-*Vertical agent built first then becomes horizontal*
+*Vertical or horizontal agent, depending on the cell*
 
 Tier 2 jobs are structurally similar across companies but require company-specific context to execute. Customer service has the same shape at Goldman and JPMorgan, but an agent needs each company's actual escalation rules, support history, and customer data to do the work. Connectors alone aren't enough. Examples of agents in this tier are Decagon (customer service), Harvey (legal research), and Abridge (medical scribing). Agents at this tier are mostly built by vertical agent startups. Recently, frontier labs have started using FDEs to target the same verticals.
 
@@ -82,7 +82,7 @@ These are jobs where tacit context dominates. Work at these jobs cannot be done 
 
 ## 4. The Tier 2 battle
 
-CAPTION: The most consequential battle is being fought at Tier 2 which is 60% of knowledge work.
+CAPTION: 60% of knowledge work, four cells, four different winners. The labs win one of them.
 
 The most consequential battle is being fought at {T2} which is 60% of knowledge work: **27 million jobs and $1.75 trillion in annual wages.**
 
@@ -95,7 +95,9 @@ These produce four cells, and each has a likely winner.
 
 {{TIER2_MATRIX}}
 
-The labs are spending $5.5B through FDE ventures to enter all four cells. But the empirical picture is that they win just one of them, and not where the value sits. The cell they can win, horizontal agents for fragmented work, is the largest in Tier 2 by employment, 16 million jobs and $848B in wages, but it is the lowest paid at around $52K and the one cell that needs the least operational context. The high-value work, the $108K jobs that make up a third of all Tier 2 wages, sits in the low repeatability and concentrated cell that platform incumbents like Salesforce and ServiceNow already own. The labs win on volume, not value, and as you can see, there aren't many structural incentives for operational context to transfer into frontier labs.
+The labs are spending $5.5B through FDE ventures, but the deployments target the concentrated, high-value verticals: finance, healthcare, and manufacturing at large enterprises. That is the left side of the map, where operational context stays with the incumbent or the enterprise, as the FIS deal showed. The one cell the labs can win on their own is horizontal agents for fragmented work. It is the largest cell in Tier 2 by employment, 16 million jobs and $848B in wages, but it is the lowest paid at around $52K. The high-value work, the $108K jobs that make up a third of all Tier 2 wages, sits in the low repeatability and concentrated cell that platform incumbents like Salesforce and ServiceNow already own.
+
+But a horizontal agent is generic by definition. Even in the cell they win, there is no operational context to lock in. There aren't many structural incentives for operational context to transfer into frontier labs.
 
 So if the FDE play isn't to become the system of record, what is it for?
 
@@ -103,7 +105,7 @@ My hypothesis: it's a way to generate demand.
 
 ## 5. Supply side economics
 
-CAPTION: Unless frontier labs can utilize all the new GPU supply, inference commoditizes and their margins collapse.
+CAPTION: A $7T datacenter buildout only pays off if enterprises burn the tokens. That is what the FDEs are for.
 
 Today, frontier labs can command premium prices for tokens because compute remains scarce. This is why we saw their pricing pivot with puzzle piece 2.
 
@@ -117,7 +119,7 @@ Viewed through that lens, the labs aren't trying to capture the workflows. They'
 
 ## 6. What this means for unit economics
 
-CAPTION: The frontier labs are running AWS's playbook, not Salesforce's.
+CAPTION: AWS's playbook, not Salesforce's: sit underneath everything and get paid by the token.
 
 The frontier labs are running AWS's playbook, not Salesforce's.
 
