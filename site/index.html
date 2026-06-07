@@ -356,6 +356,154 @@ canvas#canvas {
   word-break: break-word;
 }
 .prompt-block .prompt-box strong { color: var(--fg); }
+
+/* ── Inline thesis diagrams ───────────────────────────────────────── */
+.diagram { margin: 24px 0; }
+.diagram-cap {
+  font-size: 11px;
+  color: var(--fg3);
+  font-style: italic;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* §1 — Puzzle convergence */
+.puzzle-diag .pz-row { display: flex; gap: 14px; }
+.puzzle-diag .pz-card {
+  flex: 1;
+  background: var(--bg2);
+  border: 1px solid var(--rule);
+  border-top: 2px solid var(--fg3);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+.puzzle-diag .pz-jv    { border-top-color: var(--t3a); }
+.puzzle-diag .pz-price { border-top-color: var(--accent); }
+.puzzle-diag .pz-tag {
+  font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--fg3); font-weight: 600; margin-bottom: 4px;
+}
+.puzzle-diag .pz-title { font-size: 14px; font-weight: 600; color: #fff; }
+.puzzle-diag .pz-sub { font-size: 11px; color: var(--fg2); margin: 2px 0 8px; }
+.puzzle-diag .pz-read { font-size: 12px; color: var(--fg); }
+.puzzle-diag .pz-read b { color: var(--fg); }
+.puzzle-diag .pz-merge { text-align: center; margin-top: 6px; }
+.puzzle-diag .pz-arrow { display: block; color: var(--fg3); font-size: 14px; line-height: 1.8; }
+.puzzle-diag .pz-result {
+  display: inline-block;
+  background: rgba(255,138,60,0.12);
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  padding: 9px 18px;
+  font-size: 14px; font-weight: 600; color: #fff;
+}
+
+/* §2 — Operational-context stack */
+.fde-stack .fde-layer {
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+.fde-stack .fde-context {
+  background: rgba(93,164,216,0.10);
+  border-color: rgba(93,164,216,0.45);
+}
+.fde-stack .fde-model {
+  background: rgba(255,138,60,0.10);
+  border-color: rgba(255,138,60,0.45);
+}
+.fde-stack .fde-label { font-size: 13px; font-weight: 700; color: #fff; }
+.fde-stack .fde-desc { font-size: 12px; color: var(--fg); margin: 3px 0 5px; }
+.fde-stack .fde-owner { font-size: 11px; color: var(--fg2); font-style: italic; }
+.fde-stack .fde-gap { text-align: center; padding: 6px 0; }
+.fde-stack .fde-x {
+  font-size: 11px; color: var(--t3c); font-weight: 600;
+  border: 1px dashed rgba(224,123,169,0.5); border-radius: 20px; padding: 2px 12px;
+}
+
+/* §4 — 2×2 quadrant */
+.quadrant { display: flex; align-items: stretch; gap: 8px; }
+.quadrant .q-axis-y {
+  writing-mode: vertical-rl; transform: rotate(180deg);
+  text-align: center; font-size: 11px; font-weight: 600;
+  color: var(--fg2); text-transform: uppercase; letter-spacing: 0.06em;
+  padding: 26px 0 0;
+}
+.quadrant .q-main { flex: 1; }
+.quadrant .q-grid {
+  display: grid;
+  grid-template-columns: 52px 1fr 1fr;
+  grid-template-rows: auto 1fr 1fr;
+  gap: 6px;
+}
+.quadrant .q-corner { }
+.quadrant .q-colhead {
+  text-align: center; font-size: 11px; font-weight: 600;
+  color: var(--fg2); align-self: end; padding-bottom: 2px;
+}
+.quadrant .q-rowhead {
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 600; color: var(--fg2);
+}
+.quadrant .q-cell {
+  background: var(--bg2);
+  border: 1px solid var(--rule);
+  border-left-width: 3px;
+  border-radius: 6px;
+  padding: 11px 12px;
+  min-height: 78px;
+}
+.quadrant .q-cell.c-blue   { border-left-color: var(--t3a); }
+.quadrant .q-cell.c-orange { border-left-color: var(--accent); }
+.quadrant .q-cell.c-purple { border-left-color: var(--t3b); }
+.quadrant .q-cell.c-green  { border-left-color: var(--t1); }
+.quadrant .q-win { font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.quadrant .q-ex { font-size: 11px; color: var(--fg2); }
+.quadrant .q-axis-x {
+  text-align: center; font-size: 11px; font-weight: 600;
+  color: var(--fg2); text-transform: uppercase; letter-spacing: 0.06em;
+  margin-top: 8px;
+}
+
+/* §5 — Demand-manufacturing flow */
+.flow-chain {
+  display: flex; flex-wrap: wrap; align-items: stretch;
+  gap: 8px; justify-content: center;
+}
+.flow-chain .fc-step {
+  background: var(--bg2); border: 1px solid var(--rule);
+  border-radius: 8px; padding: 9px 12px;
+  font-size: 12px; color: var(--fg); text-align: center;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.flow-chain .fc-step span { font-size: 10px; color: var(--fg3); }
+.flow-chain .fc-step.fc-hl {
+  border-color: var(--accent); background: rgba(255,138,60,0.10);
+  color: #fff; font-weight: 600;
+}
+.flow-chain .fc-arr { display: flex; align-items: center; color: var(--fg3); font-size: 14px; }
+
+/* §6 — AWS-vs-SaaS stack */
+.aws-stack .aws-layer {
+  border: 1px solid var(--rule); border-radius: 8px; padding: 13px 15px;
+}
+.aws-stack .aws-app {
+  background: rgba(122,138,120,0.12); border-color: rgba(122,138,120,0.5);
+}
+.aws-stack .aws-infra {
+  background: rgba(255,138,60,0.12); border-color: var(--accent);
+}
+.aws-stack .aws-label { font-size: 13px; font-weight: 700; color: #fff; }
+.aws-stack .aws-desc { font-size: 12px; color: var(--fg); margin-top: 3px; }
+.aws-stack .aws-flow { text-align: center; padding: 6px 0; }
+.aws-stack .aws-flow span {
+  font-size: 11px; color: var(--fg2); font-style: italic;
+}
+
+@media (max-width: 620px) {
+  .puzzle-diag .pz-row { flex-direction: column; }
+  .flow-chain .fc-arr { transform: rotate(90deg); }
+}
 </style>
 </head>
 <body>
@@ -373,7 +521,7 @@ canvas#canvas {
   <p class="credit">Built on <a href="https://karpathy.ai/jobs/">Karpathy's BLS visualizer</a>. Same Bureau of Labor Statistics dataset; filtered to high-digital-exposure occupations; recoloured by tier.</p>
 </header>
 
-<!-- Thesis sections before the map (§1, §2) — populated from thesis.json -->
+<!-- Thesis sections before the map (§1–§3) — populated from thesis.json -->
 <div id="thesisBeforeMap"></div>
 
 <!-- The actual scoring prompt the LLM was given (populated from thesis.json) -->
@@ -400,7 +548,7 @@ canvas#canvas {
   <p class="map-note" id="mapNote"></p>
 </div>
 
-<!-- Thesis sections after the map (§3, §4, §5) — populated from thesis.json -->
+<!-- Thesis sections after the map (§4–§6) — populated from thesis.json -->
 <div id="thesisAfterMap"></div>
 
 </div>
@@ -433,8 +581,8 @@ const NONE_COLOR = "#4a4a55";
 // Map narrative modes (driven by which section is open).
 const MODE_COPY = {
   "default":  "Each rectangle is one US occupation; area = total employment. Color = tier in the framework above. Click any tile for the BLS page; hover for the rationale.",
-  "t2-focus": "Highlighting Tier 2 only — the contested middle where the 2a vs 2b deployment battle is fought. Other tiers dimmed.",
-  "vendors":  "Tiles marked with ★ have a named AI vendor operating in that occupation today. Hover to see who.",
+  "t2-focus": "Highlighting Tier 2 only — 60% of knowledge work, the contested middle the $5.5B FDE bet is sized for. Other tiers dimmed.",
+  "vendors":  "Tiles marked with ★ have a named AI vendor operating in that occupation today — the application-layer players the labs meter underneath. Hover to see who.",
 };
 
 // ── Hex → rgba helper ─────────────────────────────────────────────────
@@ -708,6 +856,119 @@ function setNarrativeMode(mode) {
   draw();
 }
 
+// ── Inline diagrams (injected where {{MARKER}} appears in a section) ───
+
+const DIAGRAMS = {
+  PUZZLE_DIAGRAM: `
+    <div class="diagram puzzle-diag">
+      <div class="pz-row">
+        <div class="pz-card pz-jv">
+          <div class="pz-tag">Puzzle piece 1</div>
+          <div class="pz-title">Enterprise joint ventures</div>
+          <div class="pz-sub">$5.5B FDE ventures · Anthropic + OpenAI</div>
+          <div class="pz-read">Reads as: own the workflow → <b>system-of-record, per-seat (SaaS)</b></div>
+        </div>
+        <div class="pz-card pz-price">
+          <div class="pz-tag">Puzzle piece 2</div>
+          <div class="pz-title">Consumption-based billing</div>
+          <div class="pz-sub">$1,000+/seat/mo · 30× the prior flat rate</div>
+          <div class="pz-read">Reads as: meter the tokens → <b>per-token (API)</b></div>
+        </div>
+      </div>
+      <div class="pz-merge">
+        <span class="pz-arrow">▼</span>
+        <div class="pz-result">The same bet: manufacture token demand</div>
+      </div>
+    </div>
+    <div class="diagram-cap">Two moves that look opposed resolve into one strategy.</div>`,
+
+  FDE_STACK: `
+    <div class="diagram fde-stack">
+      <div class="fde-layer fde-context">
+        <div class="fde-label">Operational context layer</div>
+        <div class="fde-desc">Escalation rules · audit trails · workflow design · governance · customer relationships</div>
+        <div class="fde-owner">Stays with FIS · vertical startups · the enterprise</div>
+      </div>
+      <div class="fde-gap"><span class="fde-x">operational context does not transfer ↓</span></div>
+      <div class="fde-layer fde-model">
+        <div class="fde-label">Frontier model</div>
+        <div class="fde-desc">Reasoning engine, called into context the customer owns</div>
+        <div class="fde-owner">The labs — paid per token</div>
+      </div>
+    </div>
+    <div class="diagram-cap">The labs supply the engine underneath; the context lives one layer up.</div>`,
+
+  TIER2_MATRIX: `
+    <div class="diagram quadrant">
+      <div class="q-axis-y">Workflow repeatability</div>
+      <div class="q-main">
+        <div class="q-grid">
+          <div class="q-corner"></div>
+          <div class="q-colhead">Concentrated customers</div>
+          <div class="q-colhead">Fragmented customers</div>
+          <div class="q-rowhead">High</div>
+          <div class="q-cell c-blue">
+            <div class="q-win">Vertical AI startups win</div>
+            <div class="q-ex">Decagon · Harvey · Abridge</div>
+          </div>
+          <div class="q-cell c-orange">
+            <div class="q-win">Horizontal agents win</div>
+            <div class="q-ex">Claude · ChatGPT — largest unclaimed cell, the labs' real shot</div>
+          </div>
+          <div class="q-rowhead">Low</div>
+          <div class="q-cell c-purple">
+            <div class="q-win">Platform incumbents win</div>
+            <div class="q-ex">Salesforce Agentforce · ServiceNow · FIS</div>
+          </div>
+          <div class="q-cell c-green">
+            <div class="q-win">Enterprises go internal</div>
+            <div class="q-ex">JPMorgan LLM Suite · Bridgewater</div>
+          </div>
+        </div>
+        <div class="q-axis-x">Company concentration →</div>
+      </div>
+    </div>
+    <div class="diagram-cap">Two factors split the 27M Tier 2 jobs into four pockets — the labs win at most one.</div>`,
+
+  DEMAND_LOOP: `
+    <div class="diagram flow-chain">
+      <div class="fc-step">$7T data-center<br>build-out</div>
+      <div class="fc-arr">→</div>
+      <div class="fc-step">GPU supply expands<br><span>2027–28</span></div>
+      <div class="fc-arr">→</div>
+      <div class="fc-step">Inference<br>commoditizes</div>
+      <div class="fc-arr">→</div>
+      <div class="fc-step fc-hl">FDEs build<br>enterprise workflows</div>
+      <div class="fc-arr">→</div>
+      <div class="fc-step">Every workflow<br>burns lab tokens</div>
+      <div class="fc-arr">→</div>
+      <div class="fc-step">GPUs stay full</div>
+    </div>
+    <div class="diagram-cap">The FDE play exists to fill the datacenters the build-out is about to deliver.</div>`,
+
+  AWS_STACK: `
+    <div class="diagram aws-stack">
+      <div class="aws-layer aws-app">
+        <div class="aws-label">Application layer</div>
+        <div class="aws-desc">Vertical AI startups · SaaS incumbents · enterprises — own the workflows, keep the SaaS margin</div>
+      </div>
+      <div class="aws-flow"><span>value flows down as metered tokens ↓</span></div>
+      <div class="aws-layer aws-infra">
+        <div class="aws-label">Frontier labs = metered infrastructure</div>
+        <div class="aws-desc">Models underneath every app-layer player · paid per token · infrastructure economics, not SaaS</div>
+      </div>
+    </div>
+    <div class="diagram-cap">AWS's position, not Salesforce's: underneath everything, paid by the unit.</div>`,
+};
+
+function injectDiagrams(html) {
+  for (const key in DIAGRAMS) {
+    const re = new RegExp(`(?:<p>\\s*)?\\{\\{${key}\\}\\}(?:\\s*</p>)?`, "g");
+    html = html.replace(re, DIAGRAMS[key]);
+  }
+  return html;
+}
+
 // ── Thesis rendering (from thesis.json) ───────────────────────────────
 
 function renderThesis(thesis) {
@@ -721,7 +982,7 @@ function renderThesis(thesis) {
     sec.className = "thesis-section";
     sec.dataset.section = s.id;
     sec.dataset.mode = s.mode || "default";
-    if (s.id === "2") sec.classList.add("open");
+    if (s.id === "3") sec.classList.add("open");
 
     sec.innerHTML = `
       <div class="header-row">
@@ -729,10 +990,10 @@ function renderThesis(thesis) {
         <h2><span class="section-num">${s.id}.</span>${s.title}</h2>
       </div>
       <div class="caption">${s.caption_html || ""}</div>
-      <div class="body">${s.body_html || ""}</div>
+      <div class="body">${injectDiagrams(s.body_html || "")}</div>
     `;
 
-    if (parseInt(s.id, 10) <= 2) before.appendChild(sec);
+    if (parseInt(s.id, 10) <= 3) before.appendChild(sec);
     else after.appendChild(sec);
   }
 

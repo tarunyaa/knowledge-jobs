@@ -26,13 +26,12 @@ MIN_EXPOSURE = 7
 # Each section's narrative mode drives how the map repaints itself when the
 # section is expanded. See site/index.html.
 SECTION_MODE = {
-    "1": "default",
-    "2": "default",
-    "3": "t2-focus",
-    "4": "default",
-    "5": "default",
-    "6": "vendors",
-    "7": "default",
+    "1": "default",     # The puzzle
+    "2": "default",     # The FDE bet, reframed
+    "3": "default",     # The Shape of Knowledge Work — tier coloring (map sits after this)
+    "4": "t2-focus",    # The Tier 2 battle — highlight T2
+    "5": "default",     # Supply-side economics
+    "6": "vendors",     # Unit economics — show who owns each surface
 }
 
 TIER_CHIP_RE = re.compile(r"\{(T1|T2|T3a|T3b|T3c)\}")

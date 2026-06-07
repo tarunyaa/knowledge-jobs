@@ -1,133 +1,132 @@
 # Thesis — Knowledge Work Map
 
-Edit this file to update the page text. Sections are delimited by `## <number>. <title>`. The line starting with `CAPTION:` becomes the always-visible caption; everything after it is the body shown when the section is expanded. Tier chips can be embedded in prose as `{T1}`, `{T2}`, `{T3a}`, `{T3b}`, `{T3c}`. Re-render with `uv run python build_site_data.py`.
+Edit this file to update the page text. Sections are delimited by `## <number>. <title>`. The line starting with `CAPTION:` becomes the always-visible caption; everything after it is the body shown when the section is expanded. Tier chips can be embedded in prose as `{T1}`, `{T2}`, `{T3a}`, `{T3b}`, `{T3c}`. Diagram components are injected wherever a `{{MARKER}}` token appears on its own line — supported markers: `{{PUZZLE_DIAGRAM}}`, `{{FDE_STACK}}`, `{{TIER2_MATRIX}}`, `{{DEMAND_LOOP}}`, `{{AWS_STACK}}`. Re-render with `uv run python build_site_data.py`.
 
 ---
 
-## 1. Introduction
+## 1. The puzzle
 
-Frontier labs and hardware providers have made the bet through the massive $7 trillion data center build-out that AI will eventually add a lot of value to the economy. The value has to come from the jobs that it can automate, augment, or even create. The issue is that 95% of AI pilot programs within enterprises today deliver little to no measurable impact on profit. This was a finding published by MIT's NANDA initiative in 2025.
+CAPTION: Anthropic is about to post its first profitable quarter. Two of the labs' 2026 moves seem to point in opposite directions.
 
-Although frontier LLMs are highly capable, most internal enterprise deployments are failing to translate to measurable employee productivity increase. The MIT report points towards flawed enterprise integration. While generic tools like ChatGPT excel for individuals, enterprises operate across a wide suite of data sources, software stacks, and tools. For instance, even preparing for a client meeting requires pulling notes from Notion, the contract from Google Drive, and previous meeting transcripts from Microsoft Teams. A generic LLM won't know to do so.
+Anthropic is rumored to be about to have its first profitable quarter and both frontier labs are targeting an IPO. The long-term business model is still hard to read. Two moves from 2026 are the reason.
 
-There is a race being run over the next 12-18 months whose outcome determines how value will be captured at the application layer. The race is not over the model layer — frontier models are converging in capability and are increasingly substitutable. The race is over the layer above the model, where organizational context turns generic capability into useful work. The shape and deployment of AI agents across enterprises will determine where in that layer the durable value lives.
+**Puzzle piece 1.** On May 4 2026, both labs revealed enterprise AI joint ventures with private-equity partners.
 
-## 2. The Shape of Knowledge Work
+- Anthropic's **$1.5B** partnership with Blackstone, Hellman & Friedman, and Goldman Sachs.
+- OpenAI's **$4B** Deployment Company backed by TPG, Advent, Bain Capital, and Brookfield.
 
-Karpathy's Bureau of Labor Statistics visualizer showed that jobs with high digital exposure (~49M of 143M US jobs) are at higher risk of AI restructuring. Zooming in, those jobs are mostly knowledge work. Knowledge work can be defined by labour requiring non-routine problem solving, and as a result, requiring human reasoning abilities.
+Both ventures run the same play from Palantir's book: embedding forward deployed engineers (FDEs) inside enterprise customers to redesign workflows around AI models.
+
+**Puzzle piece 2.** A few months earlier, as Simon Willison explained, both labs converted their enterprise customers from subscription bundles to consumption-based billing. Heavy users of Claude Code and Codex now cost enterprises $1,000+ per month per seat — 30x what flat-rate subscriptions cost the year before. Uber maxed out its annual AI budget within months of 2026.
+
+These moves seemingly point in different directions.
+
+{{PUZZLE_DIAGRAM}}
+
+The joint ventures look like a bet on owning workflow surfaces inside enterprise customers: becoming the system of record, achieving lock-in, and commanding margins like the per-seat economics of the SaaS era. The pricing pivots look like a bet on capturing revenue proportional to how many tokens enterprise customers consume — the per-token economics of API calls.
+
+But the more I looked, the more I think they're the same bet.
+
+## 2. The FDE bet, reframed
+
+CAPTION: The joint ventures read as system-of-record plays. The catch: the operational context never actually transfers to the labs.
+
+The standard read of the joint ventures is that they're system-of-record plays.
+
+The history of enterprise software shows what it means to become the system of record. When Salesforce first arrived, it was a tool sitting alongside how the sales team already did its work. Over time, the relationship inverted. Pipeline stages became Salesforce-defined stages. Lead qualification became qualification rules baked into Salesforce. The sales team's pipeline *became* Salesforce — and the same pattern played out with ServiceNow in IT and Workday in HR.
+
+The same pattern could in principle work for AI agents. A customer-service agent could accumulate the company's specific escalation patterns, plug into its systems, and own the operational context of how the workflow actually runs — eventually becoming the surface where customer-service work executes.
+
+The problem is that the operational context doesn't transfer to the labs.
+
+{{FDE_STACK}}
+
+Anthropic's deal with FIS for the Financial Crimes AI agent states that operational context — what counts as suspicious activity at BMO versus Amalgamated, which alerts get escalated, how investigators document findings — stays with FIS. OpenAI Frontier is structured the same way, launching with vertical AI startups as Frontier Partners rather than competitors. The labs provide the models underneath. The operational context lives somewhere else.
+
+To see *why* it lives somewhere else, we need to look at the shape of the work AI is actually being deployed against.
+
+## 3. The Shape of Knowledge Work
+
+CAPTION: Every knowledge job mixes generic capability, standardized context, and tacit context. The ratio sorts the work into tiers — and decides which agent can do it.
+
+Karpathy's Bureau of Labor Statistics visualizer showed that jobs with high digital exposure — roughly 49 million of 143 million US jobs — are at higher risk of AI restructuring. Those jobs are mostly knowledge work: labor requiring non-routine problem solving and human reasoning.
 
 Every knowledge job requires some mix of three inputs:
 
-- Generic capability: skills that transfer across companies such as writing, coding, analysis, calculation
-- Standardized context: information that exists in published or documentable form within that company
-- Tacit context: information that lives in internal workflows, prior decisions, human relationships, unwritten expertise
+- **Generic capability** — skills that transfer across companies: writing, coding, analysis, calculation.
+- **Standardized context** — information that exists in documentable form within that company.
+- **Tacit context** — information that lives in workflows, prior decisions, and relationships.
 
-The ratio of these inputs leads to three categories of knowledge work, and agents that will eventually come for them.
+The ratio of these inputs determines which agent works for which job. Three tiers emerge. The map below recolors Karpathy's high-exposure occupations by these tiers; area is employment.
 
-### Tier 1: Genericizable
+### {T1} Tier 1: Genericizable
 
-*Horizontal agent is enough*
+*Horizontal agent is enough.*
 
-Jobs within this tier have standard inputs and standard outputs. As a result, the job is similar across employers in terms of skills required and tools used. For example, software engineers at Meta and Oracle use the same IDE — Cursor or VS Code. Another example is a designer at Stripe and Airbnb both using Figma.
+Standard inputs, standard outputs, similar across employers. Software engineers at Meta and Oracle use the same IDE — Cursor or VS Code. Designers at Stripe and Airbnb both use Figma. Because the work is highly transferable, a horizontal agent built once and connected to relevant tools is good enough. Built by frontier labs (Claude Code, Codex) or developers shipping lightweight wrappers. Margins compress fastest here because every lab can offer roughly the same product — but token consumption per task is high.
 
-Because of highly transferable nature of work within the category, a horizontal agent built once and connected to relevant tools is good enough. This is built by frontier labs (Claude Code, Codex) or developers building lightweight wrappers. Margins compress the fastest here because every lab can offer roughly the same product.
+### {T2} Tier 2: Genericizable framework, custom configuration
 
-### Tier 2: Genericizable framework, custom configuration
+*Vertical agent built first, then becomes horizontal.*
 
-*Vertical agent built first then becomes horizontal*
+Structurally similar across companies but requires company-specific context to execute. Customer service has the same shape at Goldman and JPMorgan, but an agent needs each company's actual escalation rules, support history, and customer data to do the work. Connectors alone aren't enough. Decagon (customer service), Harvey (legal research), and Abridge (medical scribing) live here — mostly built by vertical agent startups. Recently, frontier labs have started using FDEs to target the same verticals.
 
-Jobs within this tier are also similar across companies in the same way as jobs at tier 1. However, an agent built for these jobs requires more specific customizations. Connectors alone aren't enough. Take customer service representatives for instance. An agent built for them requires pre-built integrations into Zendesk/Salesforce, a system prompt and escalation logic tuned over thousands of real support conversations, multi-tenant infrastructure, eval dashboards that workers trust, etc.
+### {T3a} {T3b} {T3c} Tier 3: Fundamentally custom
 
-Examples of agents in this tier are Decagon (customer service), legal research (Harvey), medical scribing (Abridge). As you can see, agents at this tier are mostly built by vertical agent startups. Recently, there is an effort by frontier labs to use forward deployed engineers or FDEs to target the same verticals.
+*Purely vertical agent.*
 
-### Tier 3: Fundamentally custom
+Jobs where tacit context dominates — work that cannot be done without knowing things that exist only inside that specific company or the specific human doing it: a senior engineer maintaining a fifteen-year-old undocumented tool, an account executive managing a complex enterprise relationship, a manager who is the only one who knows why a decision was made. This tier divides further.
 
-*Purely vertical agent*
+- **{T3a} Documentable tacit knowledge.** Currently undocumented but extractable through structured interviews or old email and message threads. Mercor, Viven, and Afterquery work on this extraction — after which the job converts to Tier 2.
+- **{T3b} Genuinely tacit knowledge.** Cannot be fully articulated even by the worker who has it: the senior engineer's eye that this rocket wing will crumple under pressure, the doctor's diagnosis, the trader's instinct. The only known transfer mechanism is the expert harness-engineering their own agent and iterating with it.
+- **{T3c} Relational and contextual knowledge.** Lives in relationships between people rather than in any individual head. Extractable in pieces, but loses fidelity because the value is in the relationship. No agent can come for this.
 
-These are jobs where tacit context dominates. Work at these jobs cannot be done without knowing things that exist only inside that specific company or the specific human doing the work. We've all encountered this in many ways — a senior engineer maintaining a fifteen-year old undocumented tool, an account executive managing a complex enterprise relationship, a manager who is the only one who knows why certain decisions were made. This tier can be further divided.
+## 4. The Tier 2 battle
 
-#### Tier 3a: Documentable tacit knowledge
+CAPTION: Tier 2 is 60% of knowledge work — 27 million jobs, $1.75 trillion in annual wages. Two factors decide who wins each pocket of it.
 
-This is work where the tacit context is currently undocumented but could be extracted through structured interviews or reviewing old email threads and messages. Companies such as Mercor, Viven and Afterquery are working on this extraction after which the job converts to Tier 2.
+The most consequential battle is being fought at {T2}, which is **60% of knowledge work: 27 million jobs and $1.75 trillion in annual wages.**
 
-#### Tier 3b: Genuinely tacit knowledge
+Tier 2 work needs the operational context of the company packaged in forms agents can ingest — MCPs, tools, database connections, prompt scaffolds. But packageability isn't uniform. Two factors shape it:
 
-This is work where the tacit context cannot be fully articulated even by the worker who has it. The senior engineer's eye that this rocket wing will crumple under pressure, the doctor's diagnosis, the trader's instinct. The only known transfer mechanism is the expert harness engineering their own agent and iterating with it.
+- **Workflow repeatability across companies.** Does customer service look the same at Goldman as at JPMorgan?
+- **Company concentration.** Are there enough large companies to support a specialized agent for that function?
 
-#### Tier 3c: Relational and contextual knowledge
+These produce four cells, and each has a likely winner.
 
-This is work where the tacit context lives in relationships between people rather than in any individual head. Extractable in pieces but loses fidelity because the value is in the relationship. No agent can substitute for this.
+{{TIER2_MATRIX}}
 
-## 3. The Tier 2 Battle
+- **High repeatability, concentrated customers → vertical AI startups win.** When the job packages cleanly and a small cohort of large companies can use the same infrastructure, a startup builds the operational-context layer once and sells it to all of them. Customer service is the canonical case; legal review at large firms and medical scribing follow. Decagon, Harvey, and Abridge own these cells.
+- **High repeatability, fragmented customers → horizontal agents win.** When jobs are similar everywhere but not exactly, a horizontal agent captures the surface. Most admin and secretary work falls here — calendar coordination, expense management, meeting prep, email triage. Whoever builds the best general assistant captures it. This is probably the largest unclaimed cell at Tier 2, and the one the labs have a real shot at through Claude and ChatGPT.
+- **Low repeatability, concentrated customers → platform incumbents win.** When jobs vary significantly across companies, only players who already own that variation can extend it into AI. Salesforce extended into Agentforce because the CRM workflow varies enormously across customers and only Salesforce already owned that variation. ServiceNow did it with IT; FIS with banking compliance. The incumbent's existing operational context does the work.
+- **Low repeatability, fragmented customers → sophisticated enterprises go internal.** When neither factor is favorable, technically capable enterprises build their own architectures — JPMorgan's internal LLM Suite, Bridgewater's proprietary stack. Lab models serve as reasoning engines called into context infrastructure the enterprise owns.
 
-The most consequential battle is being fought at Tier 2. Both labs have committed roughly $11.5B combined to FDE ventures in 2026.
+The labs are spending **$5.5B** through FDE ventures to enter all four cells. But the empirical picture is that they're not winning most of them. There aren't many structural incentives for operational context to transfer into the frontier labs.
 
-- **OpenAI's $4B Deployment Company** is backed by TPG, Advent, Bain Capital, and Brookfield, and includes the acquisition of Tomoro, a 150-person applied AI consulting firm. Early OpenAI FDE work deployed agents at Morgan Stanley, BBVA, Klarna, and T-Mobile, which are primarily financial services and customer support names. The acquisition of Tomoro also brought clients in gaming (Supercell), aviation (Virgin Atlantic), retail (Tesco), and consumer goods (Mattel, Red Bull).
-- **Anthropic's $1.5B joint venture** is backed by Blackstone, Hellman & Friedman, and Goldman Sachs. Notably, Anthropic has worked with Fidelity National Information Services (FIS) to design the Financial Crimes AI Agent for money laundering investigations. BMO and Amalgamated Bank are the first deployments.
+So if the FDE play isn't to become the system of record, what is it for? My hypothesis: it's a way to generate demand.
 
-At the same time, startups are creating vertical agents to compete with labs at Tier 2. Decagon, Harvey, Sierra, Abridge, Ambience, and Clay sell against the lab-plus-custom-build alternative for the same enterprise budgets.
+## 5. Supply-side economics
 
-The agent landscape is becoming increasingly heterogeneous. A single team might deploy many agents that have to operate as a coherent unit.
+CAPTION: Inference commoditizes the moment GPUs stop being scarce. The FDE play is how the labs manufacture the demand to keep them busy.
 
-Consider a software engineering team running Claude Code for new features, a code review agent for PRs, an on-call agent for production incidents, a deployment agent for release coordination, and Decagon triaging customer-reported bugs into the engineering queue. These agents have to share more than information. They have to share an understanding of how the team actually operates — what counts as good code in this codebase, which incidents the team has learned from, which customer reports are real bugs versus user error, which decisions are settled and which are still contested, which exceptions matter and which can be ignored. Across teams, the question of where that operating model lives becomes the central battle of enterprise AI.
+Right now, the labs can command high prices for token-based API calls because GPU supply is scarce — which is why we saw the pricing pivot in puzzle piece 2. The moment GPU supply isn't scarce, inference commoditizes.
 
-## 4. Where the Lock-In Lives
+And soon enough, GPU supply is going to expand. The labs have bet that there will be enormous demand for AI, which is why they've embarked on a roughly **$7 trillion** data-center build-out.
 
-The history of enterprise shows where the lock-in actually lives. Salesforce did not become entrenched because customer records were difficult to export. ServiceNow did not dominate because tickets were trapped inside its database. Workday did not capture HR because employee data couldn't be moved. In each case, the deeper source of lock-in was that the software became the way the organization performed the function itself. Sales teams operated through Salesforce-defined pipelines. IT departments reorganized around ServiceNow workflows. HR processes became structured around Workday business processes. Although data portability improved over time, organizations stayed because exporting data did not export the workflows, permissions, compliance controls, reporting structures, integrations, and employee habits that had formed around the software.
+The hiccup: enterprises are the only way demand for AI scales, and they struggle to integrate AI with their internal systems. The 2025 MIT NANDA report found that **95% of AI pilot programs deliver little to no measurable impact on earnings.** The FDE play is a way to materialize that demand — and to make sure the GPUs inside the datacenters don't sit idle when they arrive in 2027–2028.
 
-This strategic asset is what I call the **operational context layer**: the combination of memory, workflow definitions, governance and escalation logic, tool integrations, and the organizational routines that form around them.
+{{DEMAND_LOOP}}
 
-An enterprise support agent is valuable not because it remembers previous tickets but because it knows which systems to check, which policies apply, when to escalate, how managers measure performance, and how outcomes are audited. A legal agent is valuable not because it stores prior conversations but because it embeds the firm's review process, risk tolerances, approval chains, and drafting conventions.
+So the labs aren't trying to capture the workflows. They're trying to make sure the workflows *get built* — and that every one of them burns lab tokens.
 
-## 5. Why Pricing follows Operational Context
+## 6. What this means for unit economics
 
-Today, labs charge enterprises based on token usage. This works for labs today because they are supply constrained in terms of GPU availability. However, in 2027-2028, when the datacenter buildout completes and compute supply catches up to demand, we will see a Jevons paradox dynamic. When you charge per token, frontier labs compete on price to win the next task to be routed. As inference gets cheaper, customers don't pay less but use more. As a result, the efficiency surplus from declining inference costs gets absorbed into volume rather than captured as margin.
+CAPTION: The labs are running AWS's playbook, not Salesforce's: sit underneath everything, capture value through metered tokens.
 
-Per-seat pricing breaks this dynamic because it decouples revenue from consumption. Salesforce earned 70%+ gross margins under per-seat pricing because it used deep operational lock-in to capture pricing power. The frontier labs can run the same playbook — charging per AI coworker at salary-replacement rates ($2,000 per month for an agent vs $100,000 per year for the human it replaces) — but only if they're embedded deeply enough in the operational context layer to justify the pricing.
+The frontier labs are running AWS's playbook, not Salesforce's.
 
-This is why operational context ownership matters. Per-seat pricing only works when the lab owns the entire stack the "seat" runs on — not just the data, but the workflow definitions, the governance, the integration patterns, the organizational routines. The "seat" is a coherent unit only within a single operating system. If the enterprise is composing multiple agents across multiple vendors on a neutral memory layer, the seat dissolves into per-task consumption metrics and pricing reverts to per-token economics.
+{{AWS_STACK}}
 
-The Tier 2 battle is therefore about who succeeds in packaging organizational context into repeatable workflows. The winner is whoever becomes the default operating system for a business function.
+Like AWS sits underneath every cloud-native application, the labs sit underneath every successful application-layer player and capture value through metered tokens. This produces real businesses — Anthropic is approaching its first profitable quarter at $10.9B revenue — but at infrastructure economics rather than SaaS economics.
 
-## 6. The State of Operational Context
-
-Both labs have launched explicit platform plays for owning the operational context layer.
-
-**OpenAI Frontier** (February 2026) is described by OpenAI as "a semantic layer for the enterprise that all AI coworkers can reference to operate and communicate effectively." That phrasing is the operational-context-ownership bet stated directly. Frontier provides agent identities, persistent context, onboarding flows, feedback loops, permissions, and platform-wide governance — all managed on OpenAI's infrastructure. The vertical partner ecosystem (Harvey, Decagon, Sierra, Abridge, Ambience, Clay) plugs into Frontier and inherits its identity and operational model. Named early customers include Intuit, HP, Oracle, State Farm, Uber, and Thermo Fisher.
-
-**Anthropic Claude Cowork** (January 2026) makes the same bet from a different angle. Cowork combines Claude's reasoning model with Microsoft 365 enterprise context, with Claude now available in mainline Microsoft Copilot chat through the Frontier program.
-
-*Note: ChatGPT Enterprise at scale (BBVA's 120,000-employee deployment) is real lab revenue but a different category of product. It's a productivity tool that sits alongside enterprise workflows, not the system the work runs through. The lab-platform operational context bet rises or falls on Frontier and Cowork specifically.*
-
-Anthropic's deal with FIS points in a different direction. The agreement explicitly puts data on FIS infrastructure. But the deeper structure of the deal matters more: FIS is the one doing the operational context restructuring. FIS owns the workflow design for AML investigations, the escalation logic, the governance and audit framework, the regulatory compliance posture, and the relationship with the banks that deploy the agent. Anthropic provides the reasoning engine inside something FIS owns end-to-end. This is the opposite of lab-platform lock-in — and it's the cleanest example of a different pattern: **vertical platform incumbents winning Tier 2 because they already own the operational context for their domain.**
-
-This isn't an exception. The same pattern likely applies in any regulated or operationally complex vertical with established incumbents. Epic and Cerner own the operational context for healthcare. Salesforce owns it for sales operations. ServiceNow owns it for IT workflows. Workday owns it for HR. When labs deploy into these verticals, they're partnering with the incumbent rather than displacing them.
-
-A third pattern is emerging from the **vertical AI startups themselves**. Decagon, Harvey, Sierra, and others aren't just building agents on top of frontier models. They're building the operational context layer for specific functions: the customer support workflow, the legal review process, the medical scribing pipeline. They own the workflow definitions, the evaluation systems, the integrations into customer systems of record, and the accumulated patterns of how the work gets done. The model underneath is increasingly swappable.
-
-A fourth pattern is emerging in parallel: **model-agnostic memory infrastructure** that sits between source systems and agents. The leading vendors are Mem0, OpenMemory, Memori, Animus, and Sentra. Notably, Mem0 raised a $24M Series A in October 2025, and AWS integrated Mem0 as the default memory layer in its Strands Agents SDK.
-
-However, Mem0 abstracts memory but it doesn't build the workflows, governance, and integration patterns that constitute the full operational context layer. The neutral architecture works only when an application company (Decagon, Harvey, a vertical AI startup) builds the operational context on top of neutral memory.
-
-## 7. The Likely Outcome
-
-The numbers below come from re-classifying the 130 high-digital-exposure occupations in Karpathy's open-source BLS visualizer against the tier definitions in this essay using an LLM, with employment figures from the BLS Occupational Outlook Handbook 2024 that his project bundled.
-
-**Tier 2 represents 60% of knowledge-work employment — 27 million jobs and $1.75 trillion in annual wages.** At per-seat pricing of $2K/month, that's a $649B annual TAM ceiling. This is the prize the $11.5B FDE bet is sized for.
-
-Of those 27 million T2 jobs, **18.9 million workers, or 70%, are in occupations with at least one named AI agent vendor competing today**. That breaks down into three groups. **8.7 million** sit in occupations served by lab-aligned products such as Claude Code and Codex from the labs themselves, alongside the Frontier Partners Harvey, Decagon, Sierra, Abridge, Ambience, and Clay. Another **10.2 million** sit in occupations served by independent vertical AI startups like Pilot, Numeric, Mercor, Eightfold, Glean, and Ada. The remaining **7.6 million** sit in occupations where the natural agent product comes from the SaaS incumbent itself. Microsoft Copilot Studio targets the 3.45 million secretaries and office workers. Salesforce Agentforce targets sales reps. ServiceNow Now Assist targets IT support. Beyond these three groups, **0.5 million** T2 workers do specialized analytical work in finance, healthcare, and math, such as property appraisers, financial examiners, actuaries, and mathematicians. No named vendor is competing for that work today.
-
-These shares predict a fragmented Tier 2 outcome rather than a single winner:
-
-- **Lab-owned operational context** wins in the 8.7M lab-aligned segment plus shares of greenfield where labs hire FDEs to build the operational context layer fresh. Less mature buyers ship AI fast and accept the lock-in trade-off. The labs capture durable margin here because they own the workflow surface directly.
-- **Vertical AI startup operational context** wins in the 10.2M independent-vertical segment. Decagon for customer support, Harvey for legal, Pilot for accounting, Mercor for talent — they own the workflow definitions, evaluation systems, and integrations into customer systems of record. The model underneath is increasingly swappable.
-- **Platform-owned operational context** wins in the 7.6M SaaS-incumbent segment by defending existing customer relationships rather than capturing new ones. Microsoft Copilot Studio, Salesforce Agentforce, ServiceNow Action Fabric, FIS, and Epic each hold their installed base. They're not winning the broader race; they're holding their existing moat.
-
-**Two findings push back on the lab-native case:**
-
-The biggest unclaimed T2 segment is **administrative support work**. Over 7 million jobs of secretaries, office clerks, and material recording specialists sit in Microsoft Copilot Studio's natural territory, but there is no category-defining horizontal AI executive assistant yet. Whoever builds the "Decagon for administrative work" in the next 12-18 months captures a multi-billion-dollar wage pool. The natural builder here is Microsoft, since M365 and Copilot are already in place across most large enterprises. The labs are not positioned to build it directly.
-
-T2's pay-weighted average is **$65K**. This is the lowest of any tier. T1 averages $104K and T3b averages $121K. The reason is that the largest T2 segments are admin and clerical work, not high-value professional work. This **weakens the procurement sophistication argument** for the largest T2 segments specifically. The wave of buyers who will demand portability in RFPs is more likely to hit higher-paid T2 segments first. Accountants earn $82K, financial analysts earn $102K, and lawyers earn $151K. These are exactly the segments where vertical AI startups like Pilot and Harvey are already most established. The largest T2 buyers are back-office IT teams at mid-market enterprises, and they are less likely to demand portable architectures.
-
-**The next 12-18 months resolve which pattern captures the largest share.** The labs' $11.5B FDE bet is structured for a world where they win lab-owned operational context at scale. The map data suggests that world is contested rather than guaranteed: lab-aligned products cover 32% of T2 employment today; independent vertical startups already cover another 38%; SaaS incumbents are positioned to defend 28%. If lab-owned operational context turns out to be a smaller share of Tier 2 than the bet requires, frontier model margins compress toward inference-reseller economics — not as a prediction of failure, but as a structural feature of competing against players who own the workflow surfaces the agents have to run through.
-
+The FDE bets aren't a hedge against operational-context capture failing. They're the labs' admission that demand might not scale fast enough on its own. The next 18 months reveal whether **$5.5B of demand manufacturing** can force the curve.
