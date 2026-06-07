@@ -10,14 +10,14 @@ CAPTION: Two moves the labs made in 2026 seem to point in opposite directions.
 
 Anthropic is rumored to be about to have its first profitable quarter and both frontier labs are targeting IPO. I've been trying to piece together what their long-term business model is going to be.
 
-Puzzle piece 1: On May 4 2026, both labs revealed enterprise AI joint ventures with private equity and finance partners.
+**Puzzle piece 1:** On May 4 2026, both labs revealed enterprise AI joint ventures with private equity and finance partners.
 
 - Anthropic's $1.5B partnership with Blackstone, Hellman & Friedman, and Goldman Sachs
 - OpenAI's $4B Deployment Company backed by TPG, Advent, Bain Capital, and Brookfield
 
 Both ventures use the same structural play from Palantir's book: embedding forward deployed engineers inside enterprise customers to redesign workflows around AI models.
 
-Puzzle piece 2: A few months earlier, as Simon Willison explained, both labs converted their enterprise customers from subscription bundles to consumption-based billing. Heavy users of Claude Code and Codex now cost enterprises $1,000+ per month per seat, 30x what flat-rate subscriptions cost the year before. Uber maxed out its annual AI budget within months of 2026.
+**Puzzle piece 2:** A few months earlier, as Simon Willison explained, both labs converted their enterprise customers from subscription bundles to consumption-based billing. Heavy users of Claude Code and Codex now cost enterprises $1,000+ per month per seat, 30x what flat-rate subscriptions cost the year before. Uber maxed out its annual AI budget within months of 2026.
 
 The puzzle is that these moves seemingly point in different directions.
 
