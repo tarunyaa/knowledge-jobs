@@ -8,16 +8,16 @@ Edit this file to update the page text. Sections are delimited by `## <number>. 
 
 CAPTION: Two moves the labs made in 2026 seem to point in opposite directions.
 
-Anthropic is rumored to be about to have its first profitable quarter and both frontier labs are targeting IPO. I've been trying to piece together what their long-term business model is going to be.
+Anthropic is rumored to be about to have its [first profitable quarter](https://techcrunch.com/2026/05/20/anthropic-says-its-about-to-have-its-first-profitable-quarter/) and both frontier labs are targeting IPO. I've been trying to piece together what their long-term business model is going to be.
 
 **Puzzle piece 1:** On May 4 2026, both labs revealed enterprise AI joint ventures with private equity and finance partners.
 
-- Anthropic's $1.5B partnership with Blackstone, Hellman & Friedman, and Goldman Sachs
-- OpenAI's $4B Deployment Company backed by TPG, Advent, Bain Capital, and Brookfield
+- [Anthropic's $1.5B partnership with Blackstone, Hellman & Friedman, and Goldman Sachs](https://www.anthropic.com/news/enterprise-ai-services-company)
+- [OpenAI's $4B Deployment Company backed by TPG, Advent, Bain Capital, and Brookfield](https://openai.com/index/openai-launches-the-deployment-company/)
 
 Both ventures use the same structural play from Palantir's book: embedding forward deployed engineers inside enterprise customers to redesign workflows around AI models.
 
-**Puzzle piece 2:** A few months earlier, as Simon Willison explained, both labs converted their enterprise customers from subscription bundles to consumption-based billing. Heavy users of Claude Code and Codex now cost enterprises $1,000+ per month per seat, 30x what flat-rate subscriptions cost the year before. Uber maxed out its annual AI budget within months of 2026.
+**Puzzle piece 2:** A few months earlier, as [Simon Willison](https://simonwillison.net/2026/May/27/product-market-fit/#enterprise-customers-are-now-paying-api-prices) explained, both labs converted their enterprise customers from subscription bundles to consumption-based billing. Heavy users of Claude Code and Codex now cost enterprises $1,000+ per month per seat, 30x what flat-rate subscriptions cost the year before. Uber maxed out its annual AI budget within months of 2026.
 
 The puzzle is that these moves seemingly point in different directions.
 
@@ -109,7 +109,7 @@ CAPTION: A $7T datacenter buildout only pays off if enterprises burn the tokens.
 
 Today, frontier labs can command premium prices for tokens because compute remains scarce. This is why we saw their pricing pivot with puzzle piece 2.
 
-At the same time, the labs have invested unprecedented sums into expanding supply. The $7T datacenter buildout is going to complete in 2027-2028, dramatically increasing the number of GPUs available.
+At the same time, the labs have invested unprecedented sums into expanding supply. The [$7T datacenter buildout](https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/the-7-trillion-dollar-data-center-build-out-how-industrials-can-capture-their-share#/) is going to complete in 2027-2028, dramatically increasing the number of GPUs available.
 
 Unless frontier labs can utilize all the new GPU supply, inference commoditizes and their margins collapse. And enterprises are the only market large enough to absorb that volume of GPUs.
 
