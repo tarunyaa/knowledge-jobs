@@ -251,23 +251,23 @@ def build_map_facts(data, quadrant):
     facts = []
 
     if quadrant:
+        total_w = sum(c["wages"] for c in quadrant.values()) or 1
         labs = quadrant["high-fragmented"]
         inc = quadrant["low-concentrated"]
+        ratio = inc["pay"] / labs["pay"] if labs["pay"] else 0
         facts.append({
-            "stat": f"{labs['outlook']:+.0f}%",
-            "label": f"The one cell the labs can win is the largest in Tier 2 "
-                     f"(${labs['wages']/1e9:.0f}B in wages) but the lowest-paid, at "
-                     f"${labs['pay']/1000:.0f}K, and BLS projects its employment to "
-                     f"shrink {abs(labs['outlook']):.0f}% this decade. The labs win on "
-                     f"volume, not value.",
+            "stat": f"{ratio:.0f}×",
+            "label": f"The labs win Tier 2's largest cell by headcount, but its cheapest "
+                     f"work: ${labs['pay']/1000:.0f}K a year against ${inc['pay']/1000:.0f}K "
+                     f"in the cell next door. They win the volume; the margin stays with "
+                     f"whoever owns the workflow. This is infrastructure pricing, not SaaS.",
         })
         facts.append({
-            "stat": f"{inc['outlook']:+.0f}%",
-            "label": f"The high-value work, ${inc['pay']/1000:.0f}K jobs that hold a third "
-                     f"of all Tier 2 wages, sits in the low-repeatability cell platform "
-                     f"incumbents already own (Salesforce, ServiceNow, FIS). It is growing "
-                     f"while the labs' cell declines. Incumbents keep the margin and the "
-                     f"growth.",
+            "stat": f"${inc['wages']/1e9:.0f}B",
+            "label": f"About a third of all Tier 2 wages sit in the low-repeatability cell "
+                     f"platform incumbents already own. The operational context there, the "
+                     f"CRM workflow, the bank's definition of suspicious activity, stays "
+                     f"with Salesforce, ServiceNow, and FIS, not the labs.",
         })
 
     t3c = [d for d in data if d.get("tier") == "T3c"]
@@ -277,9 +277,8 @@ def build_map_facts(data, quadrant):
         facts.append({
             "stat": f"${w/1e12:.1f}T",
             "label": f"Relational work (Tier 3c) is the second-largest wage pool in "
-                     f"knowledge work, {j/1e6:.1f}M jobs worth ${w/1e12:.1f}T a year. It "
-                     f"lives in relationships between people and is structurally out of "
-                     f"reach for any agent.",
+                     f"knowledge work, {j/1e6:.1f}M jobs worth ${w/1e12:.1f}T. It lives in "
+                     f"relationships between people and is out of reach for any agent.",
         })
     return facts
 

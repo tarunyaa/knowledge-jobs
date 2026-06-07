@@ -41,7 +41,7 @@ The problem however is that the operational context doesn't transfer to the labs
 
 To see why, we need to look at the shape of the work AI is actually being deployed against.
 
-## 3. The Shape of Knowledge Work
+## 3. The shape of knowledge work
 
 CAPTION: Generic capability, standardized context, tacit context. The mix decides which agent can do the job, and classifies jobs across tiers.
 
