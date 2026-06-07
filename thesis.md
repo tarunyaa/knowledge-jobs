@@ -29,7 +29,7 @@ But the more I looked, the more I think they're the same bet.
 
 ## 2. The FDE bet, reframed
 
-CAPTION: The joint ventures look like system of record plays. The operational context never reaches the labs.
+CAPTION: The joint ventures look like system of record plays but operational context doesn't reach the labs.
 
 The standard read of the joint ventures is that they're system of record plays.
 
