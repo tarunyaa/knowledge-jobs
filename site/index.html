@@ -299,18 +299,6 @@ canvas#canvas {
 .map-facts summary::before { content: "▸ "; color: var(--accent); }
 .map-facts[open] summary::before { content: "▾ "; }
 .map-facts[open] summary { border-bottom: 1px solid var(--rule); }
-#mapFactsBody {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;
-  padding: 16px 0 18px;
-}
-.map-fact .mf-stat {
-  font-size: 26px; font-weight: 700; color: var(--accent);
-  letter-spacing: -0.02em; font-variant-numeric: tabular-nums;
-  margin-bottom: 4px;
-}
-.map-fact .mf-label { font-size: 12px; color: var(--fg); line-height: 1.5; }
 
 /* Per-tier stat rows */
 #tierStatsBody { padding: 14px 0 16px; }
