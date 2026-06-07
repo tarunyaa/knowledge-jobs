@@ -77,7 +77,7 @@ These are jobs where tacit context dominates. Work at these jobs cannot be done 
 <summary>Drop down to see the three kinds of Tier 3 work</summary>
 <p>{T3a} <strong>Tier 3a: Documentable tacit knowledge.</strong> This is work where the tacit context is currently undocumented but could be extracted through structured interviews or reviewing old email threads and messages. Companies such as Mercor, Viven and Afterquery are working on this extraction after which the job converts to Tier 2.</p>
 <p>{T3b} <strong>Tier 3b: Genuinely tacit knowledge.</strong> This is work where the tacit context cannot be fully articulated even by the worker who has it. The senior engineer's eye that this rocket wing will crumple under pressure, the doctor's diagnosis, the trader's instinct. The only known transfer mechanism is the expert harness engineering their own agent and iterating with it.</p>
-<p>{T3c} <strong>Tier 3c: Relational and contextual knowledge.</strong> This is work where the tacit context lives in relationships between people rather than in any individual head. Extractable in pieces but loses fidelity because the value is in the relationship. No agent can come for this.</p>
+<p>{T3c} <strong>Tier 3c: Relational and contextual knowledge.</strong> This is work where the tacit context lives in relationships between people rather than in any individual head. Extractable in pieces but loses fidelity because the value is in the relationship. No agent can come for this. On the map it is the largest tier outside the Tier 2 battle, 26% of high-exposure knowledge work and 11.6 million jobs.</p>
 </details>
 
 ## 4. The Tier 2 battle
@@ -95,7 +95,7 @@ These produce four cells, and each has a likely winner.
 
 {{TIER2_MATRIX}}
 
-The labs are spending $5.5B through FDE ventures to enter all four cells. But the empirical picture is that they're not winning most of them. As you can see, there aren't many structural incentives for operational context to transfer into frontier labs.
+The labs are spending $5.5B through FDE ventures to enter all four cells. But the empirical picture is that they win just one of them, and not where the value sits. The cell they can win, horizontal agents for fragmented work, is the largest in Tier 2 by employment, 16 million jobs and $848B in wages, but it is the lowest paid at around $52K and the one cell that needs the least operational context. The high-value work, the $108K jobs that make up a third of all Tier 2 wages, sits in the low repeatability and concentrated cell that platform incumbents like Salesforce and ServiceNow already own. The labs win on volume, not value, and as you can see, there aren't many structural incentives for operational context to transfer into frontier labs.
 
 So if the FDE play isn't to become the system of record, what is it for?
 
@@ -103,15 +103,17 @@ My hypothesis: it's a way to generate demand.
 
 ## 5. Supply side economics
 
-CAPTION: The moment GPU supply isn't scarce, inference commoditizes.
+CAPTION: Unless frontier labs can utilize all the new GPU supply, inference commoditizes and their margins collapse.
 
-Right now, labs are only able to command high prices for token-based API calls because GPU supply is scarce. This is why we saw their pricing pivot with puzzle piece 2. The moment GPU supply isn't scarce, inference commoditizes.
+Today, frontier labs can command premium prices for tokens because compute remains scarce. This is why we saw their pricing pivot with puzzle piece 2.
 
-And soon enough, GPU supply is going to expand. Frontier labs have made the bet that there will be a lot of demand for AI which is why they have embarked on the massive $7 trillion data center build-out.
+At the same time, the labs have invested unprecedented sums into expanding supply. The $7T datacenter buildout is going to complete in 2027-2028, dramatically increasing the number of GPUs available.
 
-The hiccup is that enterprises are the only way that demand for AI will scale and that they struggle to integrate AI with their internal systems. The 2025 MIT NANDA report found that 95% of AI pilot programs deliver little to no measurable impact on earnings. The FDE play is a way to materialize that demand and ensure the GPUs within the datacenters don't sit idle when they arrive in 2027-2028.
+Unless frontier labs can utilize all the new GPU supply, inference commoditizes and their margins collapse. And enterprises are the only market large enough to absorb that volume of GPUs.
 
-So, the labs aren't trying to capture the workflows. They're trying to make sure the workflows get built. And that every one of them burns lab tokens.
+The hiccup is that enterprises struggle to integrate AI into their existing workflows. Enterprises rarely have clean data, tools connected to MCP servers or documented context. FDEs solve this problem by doing the messy work of adoption and redesigning workflows around AI. Their job is to convert AI capability into better gross margins for the enterprise.
+
+Viewed through that lens, the labs aren't trying to capture the workflows. They're trying to make sure the workflows get built. And that every one of them continuously burns lab tokens.
 
 ## 6. What this means for unit economics
 
@@ -119,6 +121,8 @@ CAPTION: The frontier labs are running AWS's playbook, not Salesforce's.
 
 The frontier labs are running AWS's playbook, not Salesforce's.
 
-Like AWS sits underneath every cloud-native application, the labs sit underneath every successful application-layer player and capture value through metered tokens. This produces real businesses with Anthropic approaching its first profitable quarter at $10.9B revenue, but at infrastructure economics rather than SaaS economics.
+AWS never needed to own the applications built on top of it. It only needed those applications to exist. Every successful startup, internal tool, and SaaS company increased demand for AWS infrastructure.
 
-The FDE bets aren't a hedge against operational context capture failing. They're the labs' admission that demand might not scale fast enough on its own. The next 18 months reveal whether $5.5B of demand manufacturing can force the curve.
+The same logic applies here. Most operational context is likely to remain outside the labs. The labs provide the reasoning layer underneath and capture value through metered inference. This produces real businesses with Anthropic approaching its first profitable quarter at $10.9B revenue, but at infrastructure economics rather than SaaS economics.
+
+Seen this way, the $5.5 billion being spent on FDE-led deployments is not a system of record investment. It is a demand generation investment. And it's also the labs' admission that demand might not scale fast enough on its own. The next 18 months reveal whether $5.5B of demand generation can force the curve.
