@@ -6,7 +6,7 @@ Edit this file to update the page text. Sections are delimited by `## <number>. 
 
 ## 1. The puzzle
 
-CAPTION: Two moves the labs made in 2026 seem to point in opposite directions. They turn out to be the same bet.
+CAPTION: Two moves the labs made in 2026 seem to point in opposite directions.
 
 Anthropic is rumored to be about to have its first profitable quarter and both frontier labs are targeting IPO. I've been trying to piece together what their long-term business model is going to be.
 
