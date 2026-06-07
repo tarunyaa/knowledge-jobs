@@ -27,12 +27,12 @@ MIN_EXPOSURE = 7
 
 # The LLM prompts behind the visualization, surfaced as dropdowns (à la Karpathy).
 PROMPTS = [
-    {"summary": f"1 · AI-exposure scoring prompt — filters the map to exposure ≥ "
+    {"summary": f"1 · AI-exposure scoring prompt: filters the map to exposure ≥ "
                 f"{MIN_EXPOSURE} (Karpathy's rubric)", "text": EXPOSURE_PROMPT},
-    {"summary": "2 · Tier classifier prompt — colours each occupation T1–T3c",
+    {"summary": "2 · Tier classifier prompt: colours each occupation T1 to T3c",
      "text": TIER_PROMPT},
-    {"summary": "3 · Tier 2 quadrant prompt — places each T2 job by repeatability × "
-                "customer concentration", "text": CELL_PROMPT},
+    {"summary": "3 · Tier 2 quadrant prompt: places each T2 job by repeatability and "
+                "company concentration", "text": CELL_PROMPT},
 ]
 
 # Each section's narrative mode drives how the map repaints itself when the
@@ -158,31 +158,33 @@ QUADRANT_COPY = {
     "high-concentrated": {
         "row": "High", "col": "Concentrated", "cls": "c-blue",
         "winner": "Vertical AI startups win",
-        "why": "The workflow packages cleanly and the addressable value sits in a "
-               "small cohort of large buyers — a startup builds the operational-context "
-               "layer once and sells it across them.",
+        "why": "When the job packages cleanly and a small cohort of large companies can "
+               "use the same infrastructure, a startup can build the operational context "
+               "layer once and sell it to them.",
         "ex": "Decagon · Harvey · Abridge",
     },
     "high-fragmented": {
         "row": "High", "col": "Fragmented", "cls": "c-orange",
         "winner": "Horizontal agents win",
-        "why": "Similar everywhere but spread across a long tail of small buyers — the "
-               "best general assistant captures the surface. The largest unclaimed pool, "
-               "and the labs' real shot.",
-        "ex": "Claude · ChatGPT",
+        "why": "When jobs are similar everywhere but not exactly, a horizontal agent "
+               "captures the surface. Most admin and secretary work falls here. The "
+               "largest unclaimed cell, and the one the labs have a real shot at.",
+        "ex": "Claude · ChatGPT · Microsoft Copilot",
     },
     "low-concentrated": {
         "row": "Low", "col": "Concentrated", "cls": "c-purple",
         "winner": "Platform incumbents win",
-        "why": "The workflow varies enormously across companies — only the player who "
-               "already owns that variation can extend it into AI.",
+        "why": "When jobs vary significantly across companies, only players who already "
+               "own that variation can extend it into AI. The incumbent's existing "
+               "operational context does the work.",
         "ex": "Salesforce Agentforce · ServiceNow · FIS",
     },
     "low-fragmented": {
         "row": "Low", "col": "Fragmented", "cls": "c-green",
         "winner": "Enterprises go internal",
-        "why": "Neither factor is favorable, so capable enterprises build their own "
-               "architecture and call lab models as the engine underneath.",
+        "why": "When neither factor is favorable, technically capable enterprises build "
+               "their own architectures. Lab models serve as reasoning engines called "
+               "into context infrastructure the enterprise owns.",
         "ex": "JPMorgan LLM Suite · Bridgewater",
     },
 }
@@ -226,50 +228,108 @@ def build_quadrant(data):
             "wages": a["wages"],
             "occ": a["occ"],
             "pct": round(a["jobs"] / total_jobs * 100, 1),
+            "pay": round(a["wages"] / a["jobs"]) if a["jobs"] else 0,
             "top": [t for _, t in sorted(a["titles"], reverse=True)[:3]],
         }
     return out
 
 
-def build_map_facts(data):
-    """A few data-derived findings for the dropdown beside the map (not the essay)."""
-    def pay_weighted(items):
-        j = sum((d["jobs"] or 0) for d in items if d.get("pay"))
-        w = sum((d["jobs"] or 0) * (d["pay"] or 0) for d in items)
-        return (w / j) if j else 0
+def _pay_weighted(items):
+    j = sum((d["jobs"] or 0) for d in items if d.get("pay"))
+    w = sum((d["jobs"] or 0) * (d["pay"] or 0) for d in items)
+    return (w / j) if j else 0
 
-    t1 = [d for d in data if d.get("tier") == "T1"]
-    t2 = [d for d in data if d.get("tier") == "T2"]
-    if not t2:
-        return []
-    pw_t1, pw_t2 = pay_weighted(t1), pay_weighted(t2)
-    t2_jobs = sum((d["jobs"] or 0) for d in t2) or 1
-    covered = sum((d["jobs"] or 0) for d in t2 if d.get("vendors"))
-    admin = sum((d["jobs"] or 0) for d in t2
-                if d.get("category") == "office-and-administrative-support")
 
-    return [
-        {
-            "stat": f"${pw_t2/1000:.0f}K",
-            "label": f"Tier 2's pay-weighted average wage — the lowest of any tier "
-                     f"(Tier 1 averages ${pw_t1/1000:.0f}K). The biggest T2 segments "
-                     f"are admin and clerical, so pricing power is weakest exactly where "
-                     f"the employment concentrates.",
-        },
-        {
-            "stat": f"{covered/t2_jobs*100:.0f}%",
-            "label": "of Tier 2 employment is in occupations that already have a named "
-                     "AI vendor competing today — the operational context is being "
-                     "packaged by someone, and rarely by the labs.",
-        },
-        {
-            "stat": f"{admin/1e6:.1f}M",
-            "label": f"Tier 2 jobs are office & administrative support "
-                     f"({admin/t2_jobs*100:.0f}% of T2) — fragmented long-tail work "
-                     f"where no vertical specialist has emerged and a horizontal "
-                     f"assistant is the natural winner. No “Decagon for admin” exists yet.",
-        },
-    ]
+def build_map_facts(data, quadrant):
+    """Three coherent, high-impact findings for the dropdown beside the map."""
+    total_jobs = sum((d["jobs"] or 0) for d in data) or 1
+    facts = []
+
+    if quadrant:
+        total_w = sum(c["wages"] for c in quadrant.values()) or 1
+        labs = quadrant["high-fragmented"]
+        inc = quadrant["low-concentrated"]
+        non_labs_w = (total_w - labs["wages"]) / total_w * 100
+        labs_w = labs["wages"] / total_w * 100
+        facts.append({
+            "stat": f"{non_labs_w:.0f}%",
+            "label": f"of Tier 2 wages sit in cells the labs don't structurally win. "
+                     f"Their one cell, horizontal agents for fragmented work, holds "
+                     f"{labs['pct']:.0f}% of Tier 2 jobs and {labs_w:.0f}% of its wages. "
+                     f"The rest goes to vertical startups, platform incumbents, or "
+                     f"enterprises building in-house.",
+        })
+        ratio = inc["pay"] / labs["pay"] if labs["pay"] else 0
+        facts.append({
+            "stat": f"{ratio:.1f}×",
+            "label": f"The labs can win the cheapest Tier 2 work. Their winnable cell "
+                     f"pays ${labs['pay']/1000:.0f}K a year; the most valuable T2 work "
+                     f"pays ${inc['pay']/1000:.0f}K and holds a third of all T2 wages, "
+                     f"and it sits in the low-repeatability cell platform incumbents own. "
+                     f"Reach and value point in opposite directions.",
+        })
+
+    t3c = [d for d in data if d.get("tier") == "T3c"]
+    t3c_jobs = sum((d["jobs"] or 0) for d in t3c)
+    if t3c:
+        facts.append({
+            "stat": f"{t3c_jobs/total_jobs*100:.0f}%",
+            "label": f"of high-exposure knowledge work ({t3c_jobs/1e6:.1f}M jobs) is "
+                     f"relational, Tier 3c. Well paid at ${_pay_weighted(t3c)/1000:.0f}K "
+                     f"and rooted in relationships between people, it is structurally out "
+                     f"of reach for any agent.",
+        })
+    return facts
+
+
+TIER_LABEL = {
+    "T1": "Genericizable", "T2": "Framework + config", "T3a": "Documentable tacit",
+    "T3b": "Genuinely tacit", "T3c": "Relational",
+}
+TIER_INSIGHT = {
+    "T1": "The labs' direct territory through Claude Code and Codex: the highest AI "
+          "exposure and the fastest projected growth, but small headcount and heavy "
+          "token burn per task.",
+    "T2": "The battleground. Huge by headcount yet the lowest-paid tier, with "
+          "essentially flat projected growth, the prize is wide, cheap, and barely "
+          "expanding.",
+    "T3a": "Tacit but documentable. Once firms like Mercor and Viven extract the "
+           "context, these jobs convert into Tier 2.",
+    "T3b": "The highest-paid tier. The context is genuinely tacit, so only the expert "
+           "can harness-engineer the agent.",
+    "T3c": "Work that lives in relationships between people. Well paid and structurally "
+           "out of reach for any agent.",
+}
+
+
+def build_tier_stats(data):
+    """Per-tier stat cards for the 'each tier at a glance' dropdown (à la Karpathy)."""
+    total_jobs = sum((d["jobs"] or 0) for d in data) or 1
+
+    def emp_weighted(items, key):
+        j = sum((d["jobs"] or 0) for d in items if d.get(key) is not None)
+        s = sum((d["jobs"] or 0) * d[key] for d in items if d.get(key) is not None)
+        return (s / j) if j else 0
+
+    out = []
+    for t in ["T1", "T2", "T3a", "T3b", "T3c"]:
+        it = [d for d in data if d.get("tier") == t]
+        if not it:
+            continue
+        jobs = sum((d["jobs"] or 0) for d in it)
+        top = sorted(it, key=lambda d: -(d["jobs"] or 0))[:3]
+        out.append({
+            "tier": t,
+            "label": TIER_LABEL[t],
+            "jobs": jobs,
+            "pct": round(jobs / total_jobs * 100, 1),
+            "pay": round(_pay_weighted(it)),
+            "outlook": round(emp_weighted(it, "outlook"), 1),
+            "exposure": round(emp_weighted(it, "exposure"), 1),
+            "top": [d["title"] for d in top],
+            "insight": TIER_INSIGHT[t],
+        })
+    return out
 
 
 def build_thesis(data):
@@ -308,7 +368,8 @@ def build_thesis(data):
         })
 
     quadrant = build_quadrant(data)
-    map_facts = build_map_facts(data)
+    map_facts = build_map_facts(data, quadrant)
+    tier_stats = build_tier_stats(data)
 
     os.makedirs("site", exist_ok=True)
     with open("site/thesis.json", "w", encoding="utf-8") as f:
@@ -317,6 +378,7 @@ def build_thesis(data):
             "prompts": PROMPTS,
             "quadrant": quadrant,
             "map_facts": map_facts,
+            "tier_stats": tier_stats,
         }, f)
 
     print()

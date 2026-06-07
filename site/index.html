@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Knowledge Work Map — Tier Visualizer</title>
+<title>The Frontier Labs' Real Business Model</title>
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -70,7 +70,7 @@ header.page .subquestions li {
   margin-bottom: 3px;
 }
 header.page .subquestions li::before {
-  content: "—";
+  content: "·";
   position: absolute;
   left: 0;
   color: var(--fg3);
@@ -311,6 +311,31 @@ canvas#canvas {
 }
 .map-fact .mf-label { font-size: 12px; color: var(--fg); line-height: 1.5; }
 
+/* Per-tier stat rows */
+#tierStatsBody { padding: 14px 0 16px; }
+.tier-row {
+  padding: 12px 0;
+  border-top: 1px solid var(--rule);
+}
+.tier-row:first-child { border-top: none; }
+.tier-row-head {
+  display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px;
+  font-size: 14px; color: var(--fg);
+}
+.tier-row-head b { color: #000; font-weight: 600; }
+.tier-row-head .tier-share {
+  font-size: 12px; color: var(--fg2); margin-left: auto;
+  font-variant-numeric: tabular-nums;
+}
+.tier-metrics {
+  display: flex; flex-wrap: wrap; gap: 6px 18px;
+  margin: 7px 0 6px;
+  font-size: 12px; color: var(--fg2);
+}
+.tier-metrics b { color: var(--fg); font-weight: 700; font-variant-numeric: tabular-nums; }
+.tier-insight { font-size: 12.5px; color: var(--fg); line-height: 1.5; }
+.tier-top { font-size: 11px; color: var(--fg3); margin-top: 4px; }
+
 /* ── Tooltip ───────────────────────────────────────────────────────── */
 
 #tooltip {
@@ -516,7 +541,7 @@ canvas#canvas {
 
 <!-- Methodology: the LLM prompts behind the map (populated from thesis.json) -->
 <div class="prompt-methodology">
-  <p class="prompt-methodology-label">Methodology — the LLM prompts behind this map, on <a href="https://karpathy.ai/jobs/">Karpathy's BLS pipeline</a>:</p>
+  <p class="prompt-methodology-label">Methodology: the LLM prompts behind this map, on <a href="https://karpathy.ai/jobs/">Karpathy's BLS pipeline</a>.</p>
   <div id="promptBlocks"></div>
 </div>
 
@@ -538,10 +563,14 @@ canvas#canvas {
   <p class="map-note" id="mapNote"></p>
 </div>
 
-<!-- Data-derived findings beside the map (not part of the essay) — from thesis.json -->
+<!-- Data-derived findings beside the map (not part of the essay), from thesis.json -->
 <details class="map-facts" id="mapFacts">
-  <summary>What the map says — three findings from the data</summary>
+  <summary>What the map says: three findings from the data</summary>
   <div id="mapFactsBody"></div>
+</details>
+<details class="map-facts" id="tierStats">
+  <summary>Each tier at a glance</summary>
+  <div id="tierStatsBody"></div>
 </details>
 
 <!-- Thesis sections after the map (§4–§6) — populated from thesis.json -->
@@ -564,11 +593,11 @@ canvas#canvas {
 // ── Constants ──────────────────────────────────────────────────────────
 
 const TIER_DEFS = [
-  { id: "T1",  label: "T1 — Genericizable",            color: "#6f8a76" },
-  { id: "T2",  label: "T2 — Framework + config",       color: "#ff8a3c" },
-  { id: "T3a", label: "T3a — Documentable tacit",      color: "#4a93d0" },
-  { id: "T3b", label: "T3b — Genuinely tacit",         color: "#9159c9" },
-  { id: "T3c", label: "T3c — Relational",              color: "#d96a9c" },
+  { id: "T1",  label: "T1 · Genericizable",            color: "#6f8a76" },
+  { id: "T2",  label: "T2 · Framework + config",       color: "#ff8a3c" },
+  { id: "T3a", label: "T3a · Documentable tacit",      color: "#4a93d0" },
+  { id: "T3b", label: "T3b · Genuinely tacit",         color: "#9159c9" },
+  { id: "T3c", label: "T3c · Relational",              color: "#d96a9c" },
 ];
 const TIER_COLOR = Object.fromEntries(TIER_DEFS.map(t => [t.id, t.color]));
 const TIER_LABEL = Object.fromEntries(TIER_DEFS.map(t => [t.id, t.label]));
@@ -577,8 +606,8 @@ const NONE_COLOR = "#b8b8c2";
 // Map narrative modes (driven by which section is open).
 const MODE_COPY = {
   "default":  "Each rectangle is one US occupation; area = total employment. Color = tier in the framework above. Click any tile for the BLS page; hover for the rationale.",
-  "t2-focus": "Highlighting Tier 2 only — 60% of knowledge work, the contested middle the $5.5B FDE bet is sized for. Other tiers dimmed.",
-  "vendors":  "Tiles marked with ★ have a named AI vendor operating in that occupation today — the application-layer players the labs meter underneath. Hover to see who.",
+  "t2-focus": "Highlighting Tier 2 only, 60% of knowledge work, the contested middle the $5.5B FDE bet is sized for. Other tiers dimmed.",
+  "vendors":  "Tiles marked with ★ have a named AI vendor operating in that occupation today, the application-layer players the labs meter underneath. Hover to see who.",
 };
 
 // ── Hex → rgba helper ─────────────────────────────────────────────────
@@ -866,30 +895,30 @@ const DIAGRAMS = {
           <div class="q-rowhead">High</div>
           <div class="q-cell c-blue">
             <div class="q-win">Vertical AI startups win</div>
-            <div class="q-why">The job packages cleanly and a small cohort of large customers can share it — a startup builds the operational-context layer once and sells it to all of them.</div>
+            <div class="q-why">When the job packages cleanly and a small cohort of large companies can use the same infrastructure, a startup can build the operational context layer once and sell it to them.</div>
             <div class="q-ex">Decagon · Harvey · Abridge</div>
           </div>
           <div class="q-cell c-orange">
             <div class="q-win">Horizontal agents win</div>
-            <div class="q-why">Similar everywhere but not exactly — the best general assistant captures the surface. The largest unclaimed cell, and the labs' real shot.</div>
-            <div class="q-ex">Claude · ChatGPT</div>
+            <div class="q-why">When jobs are similar everywhere but not exactly, a horizontal agent captures the surface. The largest unclaimed cell, and the one the labs have a real shot at.</div>
+            <div class="q-ex">Claude · ChatGPT · Microsoft Copilot</div>
           </div>
           <div class="q-rowhead">Low</div>
           <div class="q-cell c-purple">
             <div class="q-win">Platform incumbents win</div>
-            <div class="q-why">The workflow varies enormously across companies — only the player who already owns that variation can extend it into AI.</div>
+            <div class="q-why">When jobs vary significantly across companies, only players who already own that variation can extend it into AI.</div>
             <div class="q-ex">Salesforce Agentforce · ServiceNow · FIS</div>
           </div>
           <div class="q-cell c-green">
             <div class="q-win">Enterprises go internal</div>
-            <div class="q-why">Neither factor is favorable, so capable enterprises build their own architecture and call lab models as the engine underneath.</div>
+            <div class="q-why">When neither factor is favorable, technically capable enterprises build their own architectures and call lab models as the engine underneath.</div>
             <div class="q-ex">JPMorgan LLM Suite · Bridgewater</div>
           </div>
         </div>
         <div class="q-axis-x">Company concentration →</div>
       </div>
     </div>
-    <div class="diagram-cap">Two factors split the 27M Tier 2 jobs into four pockets — the labs win at most one.</div>`,
+    <div class="diagram-cap">Two factors split the 27M Tier 2 jobs into four pockets, and the labs win at most one.</div>`,
 };
 
 function injectDiagrams(html) {
@@ -936,10 +965,10 @@ function quadrantHTML(q) {
           ${quadrantCell(q["low-concentrated"])}
           ${quadrantCell(q["low-fragmented"])}
         </div>
-        <div class="q-axis-x">Customer concentration →</div>
+        <div class="q-axis-x">Company concentration →</div>
       </div>
     </div>
-    <div class="diagram-cap">Cells placed by <b>customer concentration</b> (whether the agent's buyers are a small cohort of large enterprises or a long tail), sized by the Tier 2 wages at stake. Placements are majority-vote LLM judgments over 51 occupations — directional, not exact. The labs win one cell — horizontal agents, ${labs.pct}% of Tier 2 jobs; roughly <b>${notLabsW}%</b> of Tier 2 wages sit in the three cells owned by vertical startups, incumbents, or the enterprise itself.</div>`;
+    <div class="diagram-cap">Cells placed by <b>company concentration</b> (whether the agent's buyers are a small cohort of large enterprises or a long tail), sized by the Tier 2 wages at stake. Placements are majority-vote LLM judgments over 51 occupations, directional and not exact. The labs win one cell, horizontal agents, ${labs.pct}% of Tier 2 jobs; roughly <b>${notLabsW}%</b> of Tier 2 wages sit in the three cells owned by vertical startups, incumbents, or the enterprise itself.</div>`;
 }
 
 function renderMapFacts(facts) {
@@ -954,6 +983,28 @@ function renderMapFacts(facts) {
     </div>`).join("");
 }
 
+function renderTierStats(stats) {
+  const box = document.getElementById("tierStatsBody");
+  const wrap = document.getElementById("tierStats");
+  if (!box || !wrap) return;
+  if (!stats || !stats.length) { wrap.style.display = "none"; return; }
+  box.innerHTML = stats.map(s => `
+    <div class="tier-row">
+      <div class="tier-row-head">
+        <span class="tier-chip ${s.tier.toLowerCase()}">${s.tier}</span>
+        <b>${s.label}</b>
+        <span class="tier-share">${fmtJobs(s.jobs)} jobs · ${s.pct}% of knowledge work</span>
+      </div>
+      <div class="tier-metrics">
+        <span>Median pay <b>$${Math.round(s.pay/1000)}K</b></span>
+        <span>BLS 10-yr outlook <b>${s.outlook >= 0 ? "+" : ""}${s.outlook}%</b></span>
+        <span>AI exposure <b>${s.exposure}/10</b></span>
+      </div>
+      <div class="tier-insight">${s.insight}</div>
+      <div class="tier-top">Largest: ${s.top.join(", ")}</div>
+    </div>`).join("");
+}
+
 // ── Thesis rendering (from thesis.json) ───────────────────────────────
 
 function renderThesis(thesis) {
@@ -965,6 +1016,7 @@ function renderThesis(thesis) {
   // Quantified quadrant overrides the static fallback when data is present.
   if (thesis.quadrant) DIAGRAMS.TIER2_MATRIX = quadrantHTML(thesis.quadrant);
   renderMapFacts(thesis.map_facts);
+  renderTierStats(thesis.tier_stats);
 
   for (const s of thesis.sections) {
     const sec = document.createElement("section");
