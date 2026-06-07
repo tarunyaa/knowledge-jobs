@@ -94,7 +94,18 @@ header.page .credit a { color: var(--fg2); }
   display: flex;
   align-items: baseline;
   gap: 14px;
+  cursor: pointer;
+  user-select: none;
 }
+.thesis-section .header-row:hover h2 { color: var(--accent); }
+.thesis-section .toggle {
+  font-size: 12px;
+  color: var(--fg3);
+  width: 16px;
+  flex-shrink: 0;
+  transition: transform 0.15s, color 0.15s;
+}
+.thesis-section.open .toggle { transform: rotate(90deg); color: var(--accent); }
 .thesis-section h2 {
   font-size: 19px;
   font-weight: 600;
@@ -108,6 +119,7 @@ header.page .credit a { color: var(--fg2); }
 }
 .thesis-section .caption {
   margin-top: 8px;
+  margin-left: 30px;
   font-size: 14px;
   font-style: italic;
   color: var(--fg2);
@@ -116,8 +128,11 @@ header.page .credit a { color: var(--fg2); }
 .thesis-section .caption p { margin-bottom: 0; }
 .thesis-section .body {
   margin-top: 14px;
+  margin-left: 30px;
   max-width: 760px;
+  display: none;
 }
+.thesis-section.open .body { display: block; }
 .thesis-section .body p { margin-bottom: 14px; }
 .thesis-section .body h3 {
   font-size: 15px;
@@ -948,9 +963,11 @@ function renderThesis(thesis) {
     sec.className = "thesis-section";
     sec.dataset.section = s.id;
     sec.dataset.mode = s.mode || "default";
+    if (s.id === "3") sec.classList.add("open");
 
     sec.innerHTML = `
       <div class="header-row">
+        <span class="toggle">▸</span>
         <h2><span class="section-num">${s.id}.</span>${s.title}</h2>
       </div>
       <div class="caption">${s.caption_html || ""}</div>
@@ -969,17 +986,23 @@ function renderThesis(thesis) {
 // ── Section accordion ─────────────────────────────────────────────────
 
 function setupSections() {
-  const sections = [...document.querySelectorAll(".thesis-section")];
-  if (!sections.length) return;
-  // No accordion: every section is always expanded. The map's narrative mode
-  // is driven by whichever section is crossing the ~40% viewport line.
-  const obs = new IntersectionObserver((entries) => {
-    for (const e of entries) {
-      if (e.isIntersecting) setNarrativeMode(e.target.dataset.mode || "default");
-    }
-  }, { rootMargin: "-40% 0px -55% 0px", threshold: 0 });
-  sections.forEach(s => obs.observe(s));
-  setNarrativeMode("default");
+  const sections = document.querySelectorAll(".thesis-section");
+  sections.forEach(s => {
+    const header = s.querySelector(".header-row");
+    header.addEventListener("click", () => {
+      const wasOpen = s.classList.contains("open");
+      sections.forEach(o => o.classList.remove("open"));
+      if (!wasOpen) {
+        s.classList.add("open");
+        setNarrativeMode(s.dataset.mode || "default");
+      } else {
+        setNarrativeMode("default");
+      }
+    });
+  });
+
+  const openSec = document.querySelector(".thesis-section.open");
+  if (openSec) setNarrativeMode(openSec.dataset.mode || "default");
 }
 
 // ── Events ────────────────────────────────────────────────────────────
