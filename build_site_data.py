@@ -110,7 +110,7 @@ def build_occupations():
     print(f"  kept:                                 {len(data)}")
 
     if not data:
-        return
+        return data
 
     print()
     by_tier = {}
@@ -126,6 +126,8 @@ def build_occupations():
         pct = j / total_jobs * 100 if total_jobs else 0
         print(f"  {t:<5} {c:>3} occ   {j:>12,} jobs   {pct:>5.1f}% of employment")
 
+    return data
+
 
 def tier_chip_html(match: re.Match) -> str:
     tier = match.group(1)
@@ -138,10 +140,131 @@ def render_markdown(text: str) -> str:
     return TIER_CHIP_RE.sub(tier_chip_html, html)
 
 
-def build_thesis():
+# Editorial copy for each quadrant cell; employment/wage stats are merged in
+# from cells.json + the kept occupation set at build time.
+QUADRANT_COPY = {
+    "high-concentrated": {
+        "row": "High", "col": "Concentrated", "cls": "c-blue",
+        "winner": "Vertical AI startups win",
+        "why": "The workflow packages cleanly and the addressable value sits in a "
+               "small cohort of large buyers — a startup builds the operational-context "
+               "layer once and sells it across them.",
+        "ex": "Decagon · Harvey · Abridge",
+    },
+    "high-fragmented": {
+        "row": "High", "col": "Fragmented", "cls": "c-orange",
+        "winner": "Horizontal agents win",
+        "why": "Similar everywhere but spread across a long tail of small buyers — the "
+               "best general assistant captures the surface. The largest unclaimed pool, "
+               "and the labs' real shot.",
+        "ex": "Claude · ChatGPT",
+    },
+    "low-concentrated": {
+        "row": "Low", "col": "Concentrated", "cls": "c-purple",
+        "winner": "Platform incumbents win",
+        "why": "The workflow varies enormously across companies — only the player who "
+               "already owns that variation can extend it into AI.",
+        "ex": "Salesforce Agentforce · ServiceNow · FIS",
+    },
+    "low-fragmented": {
+        "row": "Low", "col": "Fragmented", "cls": "c-green",
+        "winner": "Enterprises go internal",
+        "why": "Neither factor is favorable, so capable enterprises build their own "
+               "architecture and call lab models as the engine underneath.",
+        "ex": "JPMorgan LLM Suite · Bridgewater",
+    },
+}
+
+
+def build_quadrant(data):
+    """Sum T2 employment/wages into the four §4 cells using cells.json.
+
+    Placement comes from the buyer-market classifier (cells.json); the number on
+    each cell is the *prize* (employment and wages), not the axis.
+    """
+    if not os.path.exists("cells.json"):
+        print("(no cells.json — run `uv run python cell.py`; quadrant left unquantified)")
+        return None
+    with open("cells.json") as f:
+        cells = {c["slug"]: c for c in json.load(f)}
+
+    agg = {k: {"jobs": 0, "wages": 0, "occ": 0, "titles": []} for k in QUADRANT_COPY}
+    for d in data:
+        if d.get("tier") != "T2":
+            continue
+        c = cells.get(d["slug"])
+        if not c:
+            continue
+        key = f"{c['repeatability']}-{c['concentration']}"
+        if key not in agg:
+            continue
+        jobs = d.get("jobs") or 0
+        agg[key]["jobs"] += jobs
+        agg[key]["wages"] += jobs * (d.get("pay") or 0)
+        agg[key]["occ"] += 1
+        agg[key]["titles"].append((jobs, d["title"]))
+
+    total_jobs = sum(a["jobs"] for a in agg.values()) or 1
+    out = {}
+    for key, copy in QUADRANT_COPY.items():
+        a = agg[key]
+        out[key] = {
+            **copy,
+            "jobs": a["jobs"],
+            "wages": a["wages"],
+            "occ": a["occ"],
+            "pct": round(a["jobs"] / total_jobs * 100, 1),
+            "top": [t for _, t in sorted(a["titles"], reverse=True)[:3]],
+        }
+    return out
+
+
+def build_map_facts(data):
+    """A few data-derived findings for the dropdown beside the map (not the essay)."""
+    def pay_weighted(items):
+        j = sum((d["jobs"] or 0) for d in items if d.get("pay"))
+        w = sum((d["jobs"] or 0) * (d["pay"] or 0) for d in items)
+        return (w / j) if j else 0
+
+    t1 = [d for d in data if d.get("tier") == "T1"]
+    t2 = [d for d in data if d.get("tier") == "T2"]
+    if not t2:
+        return []
+    pw_t1, pw_t2 = pay_weighted(t1), pay_weighted(t2)
+    t2_jobs = sum((d["jobs"] or 0) for d in t2) or 1
+    covered = sum((d["jobs"] or 0) for d in t2 if d.get("vendors"))
+    admin = sum((d["jobs"] or 0) for d in t2
+                if d.get("category") == "office-and-administrative-support")
+
+    return [
+        {
+            "stat": f"${pw_t2/1000:.0f}K",
+            "label": f"Tier 2's pay-weighted average wage — the lowest of any tier "
+                     f"(Tier 1 averages ${pw_t1/1000:.0f}K). The biggest T2 segments "
+                     f"are admin and clerical, so pricing power is weakest exactly where "
+                     f"the employment concentrates.",
+        },
+        {
+            "stat": f"{covered/t2_jobs*100:.0f}%",
+            "label": "of Tier 2 employment is in occupations that already have a named "
+                     "AI vendor competing today — the operational context is being "
+                     "packaged by someone, and rarely by the labs.",
+        },
+        {
+            "stat": f"{admin/1e6:.1f}M",
+            "label": f"Tier 2 jobs are office & administrative support "
+                     f"({admin/t2_jobs*100:.0f}% of T2) — fragmented long-tail work "
+                     f"where no vertical specialist has emerged and a horizontal "
+                     f"assistant is the natural winner. No “Decagon for admin” exists yet.",
+        },
+    ]
+
+
+def build_thesis(data):
     if not os.path.exists("thesis.md"):
         print("(skipping thesis.json — thesis.md not found)")
         return
+    data = data or []
 
     with open("thesis.md", encoding="utf-8") as f:
         raw = f.read()
@@ -172,11 +295,16 @@ def build_thesis():
             "mode": SECTION_MODE.get(num, "default"),
         })
 
+    quadrant = build_quadrant(data)
+    map_facts = build_map_facts(data)
+
     os.makedirs("site", exist_ok=True)
     with open("site/thesis.json", "w", encoding="utf-8") as f:
         json.dump({
             "sections": sections,
             "scoring_prompt": TIER_PROMPT,
+            "quadrant": quadrant,
+            "map_facts": map_facts,
         }, f)
 
     print()
@@ -184,10 +312,16 @@ def build_thesis():
     for s in sections:
         print(f"  §{s['id']} {s['title']:<40} mode={s['mode']}")
 
+    if quadrant:
+        print("\nQuadrant cells (T2 prize by employment):")
+        for key, c in quadrant.items():
+            print(f"  {key:<18} {c['occ']:>2} occ  {c['jobs']:>12,} jobs  "
+                  f"{c['pct']:>5.1f}%  ${c['wages']/1e9:>5.0f}B  -> {c['winner']}")
+
 
 def main():
-    build_occupations()
-    build_thesis()
+    data = build_occupations()
+    build_thesis(data)
 
 
 if __name__ == "__main__":

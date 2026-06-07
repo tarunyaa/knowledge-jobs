@@ -1,0 +1,869 @@
+[
+  {
+    "slug": "accountants-and-auditors",
+    "title": "Accountants and auditors",
+    "repeatability": "low",
+    "concentration": "concentrated",
+    "rationale": "Accounting workflows vary significantly across industries (banking, healthcare, manufacturing) and company sizes, requiring substantial customization around client-specific chart-of-accounts, regulatory frameworks, and internal controls. However, the addressable market is dominated by large enterprises and mid-market firms with substantial accounting operations, plus a concentrated segment of large CPA/accounting service providers (23% of employment) that serve many clients, making it feasible for a vendor to capture most buyer-side value through a few enterprise contracts.",
+    "votes": {
+      "repeatability": {
+        "high": 0,
+        "low": 3
+      },
+      "concentration": {
+        "concentrated": 2,
+        "fragmented": 1
+      }
+    }
+  },
+  {
+    "slug": "actuaries",
+    "title": "Actuaries",
+    "repeatability": "low",
+    "concentration": "concentrated",
+    "rationale": "Actuarial workflows vary significantly across insurance types (health, life, pension, property/casualty) and non-insurance sectors (enterprise risk, investments), with each requiring different regulatory frameworks, data sources, and modeling approaches specific to each company's product mix and risk profile. However, the buyer market is highly concentrated in large insurance companies and financial institutions (78% in finance/insurance) where a small number of major carriers and consulting firms dominate the addressable value for actuarial AI tools.",
+    "votes": {
+      "repeatability": {
+        "high": 0,
+        "low": 3
+      },
+      "concentration": {
+        "concentrated": 3,
+        "fragmented": 0
+      }
+    }
+  },
+  {
+    "slug": "air-traffic-controllers",
+    "title": "Air traffic controllers",
+    "repeatability": "high",
+    "concentration": "concentrated",
+    "rationale": "Air traffic control workflows are highly standardized across all facilities, governed by FAA regulations, radar systems, and radio communication protocols that are uniform nationwide. The addressable market is concentrated among a small number of large airport operators (major hubs and regional facilities) that account for most air traffic volume and control complexity, with 90% of controllers employed by the federal government (FAA) itself.",
+    "votes": {
+      "repeatability": {
+        "high": 3,
+        "low": 0
+      },
+      "concentration": {
+        "concentrated": 3,
+        "fragmented": 0
+      }
+    }
+  },
+  {
+    "slug": "atmospheric-scientists-including-meteorologists",
+    "title": "Atmospheric scientists, including meteorologists",
+    "repeatability": "high",
+    "concentration": "concentrated",
+    "rationale": "Atmospheric scientists follow standardized scientific methodologies (data collection, computer modeling, forecasting) that are largely uniform across employers, making workflows highly repeatable. However, the addressable market is highly concentrated: 31% work in federal government (primarily NOAA/NWS), 16% in universities, and only 13% in dispersed professional services, meaning a dominant AI vendor could capture most value by serving NOAA and a small number of large research institutions and broadcasters.",
+    "votes": {
+      "repeatability": {
+        "high": 3,
+        "low": 0
+      },
+      "concentration": {
+        "concentrated": 3,
+        "fragmented": 0
+      }
+    }
+  },
+  {
+    "slug": "bill-and-account-collectors",
+    "title": "Bill and account collectors",
+    "repeatability": "high",
+    "concentration": "fragmented",
+    "rationale": "Bill collection workflows are highly standardized across industries\u2014skip tracing, compliance with FDCPA/state laws, negotiation scripts, and payment plan recording follow similar patterns everywhere. However, the buyer market is fragmented: while third-party collection agencies (25%) and credit intermediation (19%) are significant, the work is distributed across healthcare, professional services, management companies, and many small creditors, with no dominant cohort of large buyers that a single vendor could capture with one configuration. The long tail of small and mid-market creditors managing their own collections prevents market concentration despite workflow repeatability.",
+    "votes": {
+      "repeatability": {
+        "high": 3,
+        "low": 0
+      },
+      "concentration": {
+        "concentrated": 0,
+        "fragmented": 3
+      }
+    }
+  },
+  {
+    "slug": "bookkeeping-accounting-and-auditing-clerks",
+    "title": "Bookkeeping, accounting, and auditing clerks",
+    "repeatability": "high",
+    "concentration": "fragmented",
+    "rationale": "Bookkeeping workflows are highly standardized across companies\u2014transaction entry, reconciliation, report generation, and GL posting follow universal accounting principles and similar software (QuickBooks, NetSuite, etc.), making agent transfer straightforward with light configuration. However, the buyer market is fragmented across 1.6M jobs spread widely across small businesses, mid-market firms, and large enterprises with no dominant cohort; most value lies in the long tail of small employers and independent practitioners rather than a few large buyers, preventing any single vendor from capturing the market with one product.",
+    "votes": {
+      "repeatability": {
+        "high": 3,
+        "low": 0
+      },
+      "concentration": {
+        "concentrated": 0,
+        "fragmented": 3
+      }
+    }
+  },
+  {
+    "slug": "budget-analysts",
+    "title": "Budget analysts",
+    "repeatability": "low",
+    "concentration": "concentrated",
+    "rationale": "Budget analysis workflows vary dramatically across government agencies, universities, and private companies due to idiosyncratic accounting systems, regulatory requirements, org structures, and funding models\u2014an agent must be rebuilt for each buyer's context. However, the addressable buyer market is highly concentrated: 26% of jobs are in federal government, 15% in education, and 13-11% in state/local government, meaning a few large institutional buyers (federal agencies, state systems, large universities, major corporations) control most of the value and can sustain specialized vendor solutions with dedicated integrations to their finance systems and compliance frameworks.",
+    "votes": {
+      "repeatability": {
+        "high": 0,
+        "low": 3
+      },
+      "concentration": {
+        "concentrated": 3,
+        "fragmented": 0
+      }
+    }
+  },
+  {
+    "slug": "cartographers-and-photogrammetrists",
+    "title": "Cartographers and photogrammetrists",
+    "repeatability": "high",
+    "concentration": "concentrated",
+    "rationale": "Cartography workflows are highly standardized around GIS/CAD tools and common data sources (satellite imagery, surveys, LiDAR), making agent logic portable across companies. However, the buyer market is concentrated in government (45% local + state + federal) and large engineering/consulting firms, where mapping budgets and volumes dominate\u2014a vendor can capture substantial value by serving these institutional buyers with a shared platform, even though cartographers work across many smaller employers.",
+    "votes": {
+      "repeatability": {
+        "high": 3,
+        "low": 0
+      },
+      "concentration": {
+        "concentrated": 3,
+        "fragmented": 0
+      }
+    }
+  },
+  {
+    "slug": "claims-adjusters-appraisers-examiners-and-investigators",
+    "title": "Claims adjusters, appraisers, examiners, and investigators",
+    "repeatability": "low",
+    "concentration": "concentrated",
+    "rationale": "Claims adjustment workflows vary significantly across insurance types (property/casualty, health, life, auto) and individual insurers' underwriting standards, fraud detection rules, and settlement policies, requiring company-specific configuration. However, the addressable agent market is highly concentrated among a small set of large insurance carriers and government programs (35% in direct carriers, 15% in federal government, 7% in health carriers) that handle the vast majority of claim volume and spending, making it viable for a focused vendor to serve dominant buyers with shared infrastructure.",
+    "votes": {
+      "repeatability": {
+        "high": 0,
+        "low": 3
+      },
+      "concentration": {
+        "concentrated": 3,
+        "fragmented": 0
+      }
+    }
+  },
+  {
+    "slug": "compensation-and-benefits-managers",
+    "title": "Compensation and benefits managers",
+    "repeatability": "low",
+    "concentration": "fragmented",
+    "rationale": "Compensation and benefits management is deeply embedded in each organization's unique pay structures, regulatory environment, vendor relationships, and internal systems\u2014what works at a tech company differs substantially from a bank or hospital. Additionally, while concentrated in larger employers, the 20,900 job holders are distributed across many industries and company sizes with no dominant buyer cohort, making it difficult for a single vendor to serve most of the market with one configuration.",
+    "votes": {
+      "repeatability": {
+        "high": 0,
+        "low": 3
+      },
+      "concentration": {
+        "concentrated": 0,
+        "fragmented": 3
+      }
+    }
+  },
+  {
+    "slug": "compensation-benefits-and-job-analysis-specialists",
+    "title": "Compensation, benefits, and job analysis specialists",
+    "repeatability": "low",
+    "concentration": "fragmented",
+    "rationale": "Compensation and benefits structures vary significantly across industries, company sizes, regulatory environments, and organizational philosophies, requiring substantial customization around each employer's specific pay scales, benefits packages, compliance obligations, and HR systems. The 107,000 workers are distributed across nearly every industry (18% in insurance, 13% in professional services, with significant long-tail employment) with no dominant buyer cohort, making the market fragmented across large enterprises, mid-market firms, and public sector organizations rather than concentrated in a few major players.",
+    "votes": {
+      "repeatability": {
+        "high": 0,
+        "low": 3
+      },
+      "concentration": {
+        "concentrated": 0,
+        "fragmented": 3
+      }
+    }
+  },
+  {
+    "slug": "compliance-officers",
+    "title": "Compliance officers",
+    "repeatability": "low",
+    "concentration": "fragmented",
+    "rationale": "Compliance workflows are highly industry-specific and regulatory-environment-dependent, varying dramatically between finance, healthcare, manufacturing, and government sectors\u2014making cross-company transfer of an agent difficult. The buyer market is highly fragmented across 418,000 compliance officer positions spread across diverse industries and employer sizes, with no dominant cohort of large enterprises accounting for most addressable value.",
+    "votes": {
+      "repeatability": {
+        "high": 0,
+        "low": 3
+      },
+      "concentration": {
+        "concentrated": 1,
+        "fragmented": 2
+      }
+    }
+  },
+  {
+    "slug": "computer-network-architects",
+    "title": "Computer network architects",
+    "repeatability": "low",
+    "concentration": "fragmented",
+    "rationale": "Network architecture is deeply idiosyncratic to each organization's existing infrastructure, security posture, scale, and technology stack\u2014what works for a cloud-native startup differs fundamentally from a legacy bank or hospital system. The buyer market is also fragmented: while some large enterprises and telecoms need significant spend, network architecture work is distributed across virtually every mid-sized and large organization, with no dominant cohort that a single vendor can capture with one product.",
+    "votes": {
+      "repeatability": {
+        "high": 0,
+        "low": 3
+      },
+      "concentration": {
+        "concentrated": 1,
+        "fragmented": 2
+      }
+    }
+  },
+  {
+    "slug": "computer-support-specialists",
+    "title": "Computer support specialists",
+    "repeatability": "low",
+    "concentration": "fragmented",
+    "rationale": "Computer support workflows vary dramatically across industries (healthcare EHR systems vs. telecom networks vs. financial institutions vs. education) and depend heavily on each organization's specific infrastructure, legacy systems, and IT architecture, making cross-company transfer difficult. The buyer market is highly fragmented, with support needs distributed across tens of thousands of small-to-medium employers, educational institutions, government agencies, and small businesses that cannot justify shared-infrastructure vendors\u2014the top five employer sectors account for only ~55% of network support jobs and ~58% of user support jobs, leaving the majority spread across a long tail of organizations.",
+    "votes": {
+      "repeatability": {
+        "high": 0,
+        "low": 3
+      },
+      "concentration": {
+        "concentrated": 0,
+        "fragmented": 3
+      }
+    }
+  },
+  {
+    "slug": "cost-estimators",
+    "title": "Cost estimators",
+    "repeatability": "low",
+    "concentration": "fragmented",
+    "rationale": "Cost estimation workflows vary significantly across construction, manufacturing, and automotive sectors due to industry-specific methodologies, regulatory requirements, and proprietary systems (BIM, CAD, company databases); additionally, the 221,400 jobs are dispersed across thousands of small-to-medium specialty contractors, builders, and manufacturers with no dominant buyer cohort, making it difficult for a single vendor to capture most addressable value with shared infrastructure.",
+    "votes": {
+      "repeatability": {
+        "high": 0,
+        "low": 3
+      },
+      "concentration": {
+        "concentrated": 0,
+        "fragmented": 3
+      }
+    }
+  },
+  {
+    "slug": "credit-counselors",
+    "title": "Credit counselors",
+    "repeatability": "high",
+    "concentration": "fragmented",
+    "rationale": "Credit counseling workflows are highly standardized across organizations\u2014financial assessment, debt analysis, budget planning, and client education follow similar processes regardless of employer. However, the buyer market is fragmented: the largest single employer category (universities) accounts for only 36% of jobs, with the remaining positions spread across hospitals, credit unions, nonprofits, and small financial institutions, meaning no single vendor can capture dominant value through one configuration.",
+    "votes": {
+      "repeatability": {
+        "high": 3,
+        "low": 0
+      },
+      "concentration": {
+        "concentrated": 0,
+        "fragmented": 3
+      }
+    }
+  },
+  {
+    "slug": "customer-service-representatives",
+    "title": "Customer service representatives",
+    "repeatability": "high",
+    "concentration": "concentrated",
+    "rationale": "Customer service workflows are standardized across most industries\u2014listening to concerns, processing orders, handling complaints, and recording interactions follow similar patterns regardless of employer. However, the addressable AI agent market is highly concentrated among large enterprises (retail chains, insurance carriers, telecoms, banks) that handle massive ticket volumes and can justify significant infrastructure investment; most value derives from a relatively small set of large organizations rather than the long tail of small businesses where customer service also exists.",
+    "votes": {
+      "repeatability": {
+        "high": 3,
+        "low": 0
+      },
+      "concentration": {
+        "concentrated": 3,
+        "fragmented": 0
+      }
+    }
+  },
+  {
+    "slug": "data-scientists",
+    "title": "Data scientists",
+    "repeatability": "low",
+    "concentration": "fragmented",
+    "rationale": "Data science workflows vary dramatically across industries and companies due to differences in data infrastructure, domain-specific problems, regulatory requirements, and internal analytics maturity; an agent must be rebuilt around each organization's data stack, business context, and analytical priorities. While data science spans many sectors (tech, insurance, consulting, finance, research), the addressable value is distributed across a large, heterogeneous buyer base with no dominant cohort\u2014most organizations need data scientists but few have the scale to support a standardized vendor solution like the largest enterprises in customer service or legal review.",
+    "votes": {
+      "repeatability": {
+        "high": 0,
+        "low": 3
+      },
+      "concentration": {
+        "concentrated": 1,
+        "fragmented": 2
+      }
+    }
+  },
+  {
+    "slug": "database-administrators",
+    "title": "Database administrators and architects",
+    "repeatability": "low",
+    "concentration": "concentrated",
+    "rationale": "Database administration and architecture workflows vary significantly across organizations due to differing database technologies, cloud strategies, data governance frameworks, and compliance requirements (finance vs. healthcare vs. retail). However, the buyer market is concentrated: the largest employers are in computer systems design, finance/insurance, and large enterprises that account for the majority of addressable value, making this attractive for specialized vendors serving the high-spend segment.",
+    "votes": {
+      "repeatability": {
+        "high": 0,
+        "low": 3
+      },
+      "concentration": {
+        "concentrated": 3,
+        "fragmented": 0
+      }
+    }
+  },
+  {
+    "slug": "epidemiologists",
+    "title": "Epidemiologists",
+    "repeatability": "low",
+    "concentration": "concentrated",
+    "rationale": "Epidemiological workflows vary significantly by specialization (infectious disease, chronic disease, environmental health, etc.), employer type (CDC/NIH, state/local health departments, hospitals, pharma), and regulatory/institutional context, requiring substantial customization per organization. However, the buyer market is highly concentrated: 34% of jobs are in state government and 22% in local government, with major federal agencies (CDC, NIH) and large hospital systems accounting for most addressable AI value, making this a natural fit for a few specialized vendors to serve dominant public health institutions.",
+    "votes": {
+      "repeatability": {
+        "high": 0,
+        "low": 3
+      },
+      "concentration": {
+        "concentrated": 3,
+        "fragmented": 0
+      }
+    }
+  },
+  {
+    "slug": "financial-analysts",
+    "title": "Financial analysts",
+    "repeatability": "low",
+    "concentration": "concentrated",
+    "rationale": "Financial analysts' workflows vary significantly across institutions due to different investment mandates, risk frameworks, compliance regimes, and proprietary data systems (hedge funds vs. banks vs. insurance companies operate under fundamentally different constraints and strategies). However, the buyer market is highly concentrated: the addressable value is dominated by large asset managers, banks, insurance companies, and hedge funds that collectively employ most of the 429,000 analysts and control the majority of assets under management, making it possible for a single vendor to capture substantial market share by serving this institutional cohort with configurable rather than fully bespoke solutions.",
+    "votes": {
+      "repeatability": {
+        "high": 0,
+        "low": 3
+      },
+      "concentration": {
+        "concentrated": 3,
+        "fragmented": 0
+      }
+    }
+  },
+  {
+    "slug": "financial-clerks",
+    "title": "Financial clerks",
+    "repeatability": "low",
+    "concentration": "fragmented",
+    "rationale": "Financial clerks encompass highly specialized subtypes (billing, payroll, brokerage, loan processing, insurance claims) with vastly different workflows, systems, and regulatory requirements across industries\u2014an agent built for insurance claims processing will not transfer to brokerage or payroll work. The 1.2M workers are distributed across insurance (20%), healthcare (18%), credit intermediation (16%), and many smaller sectors with no dominant buyer cohort; most employers are mid-market and smaller firms where the addressable value per deployment is low, making it economically infeasible for a vendor to capture most of the market with a single product.",
+    "votes": {
+      "repeatability": {
+        "high": 0,
+        "low": 3
+      },
+      "concentration": {
+        "concentrated": 1,
+        "fragmented": 2
+      }
+    }
+  },
+  {
+    "slug": "financial-examiners",
+    "title": "Financial examiners",
+    "repeatability": "low",
+    "concentration": "concentrated",
+    "rationale": "Financial examiners' workflows are highly regulated and institution-specific, varying by regulatory framework (federal vs. state oversight), institution type (banks, credit unions, securities firms), and internal compliance systems\u2014requiring deep customization per employer. However, the buyer market is concentrated: 42% of jobs are in credit intermediation, federal/state regulators are major employers, and a small cohort of large financial institutions and regulators account for most of the compliance spend and examination volume, making this attractive for a vendor targeting systemically important banks and regulatory agencies.",
+    "votes": {
+      "repeatability": {
+        "high": 0,
+        "low": 3
+      },
+      "concentration": {
+        "concentrated": 3,
+        "fragmented": 0
+      }
+    }
+  },
+  {
+    "slug": "financial-managers",
+    "title": "Financial managers",
+    "repeatability": "low",
+    "concentration": "concentrated",
+    "rationale": "Financial management workflows vary substantially across industries (banking, healthcare, government, manufacturing) due to sector-specific regulations, accounting standards, and capital structures, requiring agents to be rebuilt for each industry context. However, the buyer market is concentrated in large financial institutions, Fortune 500 companies, and major government agencies that account for most of the addressable value and have the resources to deploy sophisticated financial AI systems.",
+    "votes": {
+      "repeatability": {
+        "high": 0,
+        "low": 3
+      },
+      "concentration": {
+        "concentrated": 3,
+        "fragmented": 0
+      }
+    }
+  },
+  {
+    "slug": "general-office-clerks",
+    "title": "General office clerks",
+    "repeatability": "low",
+    "concentration": "fragmented",
+    "rationale": "General office clerk duties vary significantly by industry context (colleges process applications, hospitals manage medical records, construction handles project documentation), requiring customization to each employer's specific systems, workflows, and organizational structure. The 2.6M workers are distributed across highly fragmented buyers\u2014education (13%), healthcare (11%), construction (10%), government (10%), and dozens of other sectors\u2014with no dominant cohort of large employers that would allow a single vendor to capture most addressable value with a shared platform.",
+    "votes": {
+      "repeatability": {
+        "high": 0,
+        "low": 3
+      },
+      "concentration": {
+        "concentrated": 0,
+        "fragmented": 3
+      }
+    }
+  },
+  {
+    "slug": "geographers",
+    "title": "Geographers",
+    "repeatability": "low",
+    "concentration": "concentrated",
+    "rationale": "Geographic research workflows vary significantly by domain (physical vs. human geography), client needs (urban planning vs. environmental assessment vs. resource management), and regulatory/institutional context, requiring customized GIS integrations and data sources for each organization. However, 68% of geographers work in federal government, creating a highly concentrated buyer market where a single vendor could serve most of the addressable value through tailored solutions for federal agencies and large state/local governments managing infrastructure and environmental planning projects.",
+    "votes": {
+      "repeatability": {
+        "high": 1,
+        "low": 2
+      },
+      "concentration": {
+        "concentrated": 3,
+        "fragmented": 0
+      }
+    }
+  },
+  {
+    "slug": "health-information-technologists-and-medical-registrars",
+    "title": "Health information technologists and medical registrars",
+    "repeatability": "low",
+    "concentration": "fragmented",
+    "rationale": "Workflow repeatability is low because health information technologists work across diverse healthcare settings (hospitals, physician offices, research institutions) with highly variable EHR systems, data governance policies, and clinical registries that differ substantially by organization and specialty. Concentration is fragmented because while hospitals dominate employment at 46%, the remaining 54% is spread across physician offices, management companies, and technical services firms\u2014and even within hospitals, the work is deeply embedded in institution-specific systems, compliance frameworks, and clinical workflows that resist standardization across buyers.",
+    "votes": {
+      "repeatability": {
+        "high": 0,
+        "low": 3
+      },
+      "concentration": {
+        "concentrated": 1,
+        "fragmented": 2
+      }
+    }
+  },
+  {
+    "slug": "human-resources-specialists",
+    "title": "Human resources specialists",
+    "repeatability": "low",
+    "concentration": "fragmented",
+    "rationale": "HR specialist workflows vary significantly across companies due to different organizational structures, compensation systems, benefits packages, and regulatory requirements; moreover, while 944k workers hold this role, the buyer market is highly fragmented across employers of all sizes (from small businesses to large enterprises), with no dominant cohort where a single vendor can capture most addressable value.",
+    "votes": {
+      "repeatability": {
+        "high": 0,
+        "low": 3
+      },
+      "concentration": {
+        "concentrated": 0,
+        "fragmented": 3
+      }
+    }
+  },
+  {
+    "slug": "information-clerks",
+    "title": "Information clerks",
+    "repeatability": "low",
+    "concentration": "fragmented",
+    "rationale": "Information clerks perform highly heterogeneous work across different subtypes (court clerks, eligibility interviewers, hotel desk clerks, file clerks, order clerks, etc.) with fundamentally different workflows, regulatory contexts, and systems (court dockets, government benefit systems, hotel management software, filing protocols), making agent reuse across companies minimal. The 1.3 million-person workforce is distributed across many small employers (traveler accommodation at 19%, healthcare at 11%, state government at 9%) with no dominant buyer cohort\u2014most organizations that employ information clerks are fragmented across small and mid-sized companies, hotels, and government agencies, so no single vendor can capture most addressable value with one configuration.",
+    "votes": {
+      "repeatability": {
+        "high": 0,
+        "low": 3
+      },
+      "concentration": {
+        "concentrated": 0,
+        "fragmented": 3
+      }
+    }
+  },
+  {
+    "slug": "information-security-analysts",
+    "title": "Information security analysts",
+    "repeatability": "low",
+    "concentration": "concentrated",
+    "rationale": "Information security workflows are highly idiosyncratic, shaped by each organization's unique infrastructure, threat model, compliance requirements (finance vs. healthcare vs. tech), and existing security stack\u2014making agent transfer between companies difficult. However, the buyer market is concentrated: large enterprises in finance, tech, and managed services (which collectively employ most analysts and represent the majority of security spend) have the resources and need for sophisticated security agents, while small businesses typically cannot afford or justify dedicated security infrastructure for agent deployment.",
+    "votes": {
+      "repeatability": {
+        "high": 0,
+        "low": 3
+      },
+      "concentration": {
+        "concentrated": 3,
+        "fragmented": 0
+      }
+    }
+  },
+  {
+    "slug": "insurance-underwriters",
+    "title": "Insurance underwriters",
+    "repeatability": "low",
+    "concentration": "concentrated",
+    "rationale": "Insurance underwriting workflows vary significantly by insurance type (health, life, property & casualty), regulatory environment, and company-specific risk models and approval criteria, making agent transfer difficult. However, the addressable market is concentrated in a small number of large direct insurance carriers and health insurers that dominate employment and underwriting volume, making it economically viable for a specialized vendor to build a deep product for this buyer cohort despite workflow heterogeneity.",
+    "votes": {
+      "repeatability": {
+        "high": 0,
+        "low": 3
+      },
+      "concentration": {
+        "concentrated": 3,
+        "fragmented": 0
+      }
+    }
+  },
+  {
+    "slug": "lawyers",
+    "title": "Lawyers",
+    "repeatability": "low",
+    "concentration": "concentrated",
+    "rationale": "Legal work workflows vary dramatically across practice areas (corporate, litigation, tax, IP, family law) and across different organizational contexts (BigLaw firms, in-house counsel, government, solo practice), each with distinct procedural rules, document templates, and client management systems. However, the addressable market for AI agents is highly concentrated in large law firms and major corporate legal departments where volume and budget enable significant AI investment.",
+    "votes": {
+      "repeatability": {
+        "high": 0,
+        "low": 3
+      },
+      "concentration": {
+        "concentrated": 3,
+        "fragmented": 0
+      }
+    }
+  },
+  {
+    "slug": "librarians",
+    "title": "Librarians and library media specialists",
+    "repeatability": "low",
+    "concentration": "fragmented",
+    "rationale": "Library workflows vary significantly by institution type (public, academic, school, special/corporate) with different systems, patron bases, collection management practices, and organizational structures, requiring substantial customization per employer. The buyer market is highly fragmented across 142,100+ jobs distributed among local governments (32%), schools (31%), colleges (18%), and corporate/special libraries (5%), with no dominant cohort where a single vendor could capture most addressable value.",
+    "votes": {
+      "repeatability": {
+        "high": 1,
+        "low": 2
+      },
+      "concentration": {
+        "concentrated": 0,
+        "fragmented": 3
+      }
+    }
+  },
+  {
+    "slug": "loan-officers",
+    "title": "Loan officers",
+    "repeatability": "low",
+    "concentration": "concentrated",
+    "rationale": "Loan underwriting workflows vary significantly across lenders due to different risk appetites, regulatory environments (mortgage vs. commercial vs. consumer), product portfolios, and internal approval hierarchies\u2014an agent built for one bank's process requires substantial reconfiguration for another. However, the buyer market is highly concentrated: the largest employers (commercial banks, credit unions, mortgage companies) control most lending volume, and a vendor can capture significant value by selling to a small cohort of large financial institutions rather than serving thousands of small lenders.",
+    "votes": {
+      "repeatability": {
+        "high": 0,
+        "low": 3
+      },
+      "concentration": {
+        "concentrated": 3,
+        "fragmented": 0
+      }
+    }
+  },
+  {
+    "slug": "logisticians",
+    "title": "Logisticians",
+    "repeatability": "low",
+    "concentration": "fragmented",
+    "rationale": "Logisticians' workflows vary dramatically by industry (manufacturing vs. federal government vs. wholesale trade), product type, and company-specific supply chain architecture, ERP systems, and procurement processes\u2014requiring substantial customization per employer. The buyer market is also highly fragmented, with 241,000 logisticians spread across manufacturing (23%), government (16%), professional services (15%), wholesale (11%), and many other sectors, so no single vendor can serve most of the addressable value with one configuration.",
+    "votes": {
+      "repeatability": {
+        "high": 0,
+        "low": 3
+      },
+      "concentration": {
+        "concentrated": 1,
+        "fragmented": 2
+      }
+    }
+  },
+  {
+    "slug": "market-research-analysts",
+    "title": "Market research analysts",
+    "repeatability": "high",
+    "concentration": "fragmented",
+    "rationale": "Market research workflows are fundamentally similar across companies: define research questions, design surveys/studies, collect and analyze data with standard statistical tools, and present findings\u2014these methods are largely industry-agnostic and transferable. However, the buyer market is highly fragmented; while 941,700 analysts are spread across all industries with no dominant employer cohort (largest is only 10% in consulting services), and small-to-mid-market companies each need their own research conducted, making it difficult for any single vendor to achieve scale with a shared product.",
+    "votes": {
+      "repeatability": {
+        "high": 3,
+        "low": 0
+      },
+      "concentration": {
+        "concentrated": 0,
+        "fragmented": 3
+      }
+    }
+  },
+  {
+    "slug": "material-recording-clerks",
+    "title": "Material recording clerks",
+    "repeatability": "low",
+    "concentration": "fragmented",
+    "rationale": "Material recording workflows vary significantly across manufacturing, retail, wholesale, and transportation sectors\u2014each with distinct inventory systems, production schedules, regulatory requirements, and operational structures that require custom integration. The market is also highly fragmented across 1.3 million workers distributed broadly across small to medium manufacturers, retailers, and warehouses rather than concentrated in a few dominant buyers, making it difficult for a single vendor to capture substantial value.",
+    "votes": {
+      "repeatability": {
+        "high": 1,
+        "low": 2
+      },
+      "concentration": {
+        "concentrated": 0,
+        "fragmented": 3
+      }
+    }
+  },
+  {
+    "slug": "mathematicians-and-statisticians",
+    "title": "Mathematicians and statisticians",
+    "repeatability": "low",
+    "concentration": "concentrated",
+    "rationale": "Mathematicians and statisticians apply domain-specific analytical methods to highly varied problems across distinct sectors (pharma, aerospace, finance, government, R&D), requiring deep retraining for each industry's data structures, regulatory constraints, and business logic. However, the buyer market is concentrated in large organizations with substantial data infrastructure and budgets\u2014federal government (17% of statisticians), major R&D firms, healthcare systems, and tech companies\u2014where a vendor can capture significant value by building industry-specific solutions for each large buyer cohort rather than serving a long tail of small employers.",
+    "votes": {
+      "repeatability": {
+        "high": 0,
+        "low": 3
+      },
+      "concentration": {
+        "concentrated": 3,
+        "fragmented": 0
+      }
+    }
+  },
+  {
+    "slug": "medical-dosimetrists",
+    "title": "Medical dosimetrists",
+    "repeatability": "low",
+    "concentration": "concentrated",
+    "rationale": "Medical dosimetry workflows vary significantly across institutions due to different radiation oncology equipment, treatment planning software systems, institutional protocols, and cancer case mixes, requiring substantial customization per hospital or center. However, the buyer market is highly concentrated among large hospital systems and cancer centers that perform high-volume radiation therapy, where a single vendor can capture substantial addressable value with a specialized solution.",
+    "votes": {
+      "repeatability": {
+        "high": 0,
+        "low": 3
+      },
+      "concentration": {
+        "concentrated": 3,
+        "fragmented": 0
+      }
+    }
+  },
+  {
+    "slug": "medical-records-and-health-information-technicians",
+    "title": "Medical records specialists",
+    "repeatability": "high",
+    "concentration": "concentrated",
+    "rationale": "Medical records workflows\u2014data entry, coding, verification, and EHR management\u2014are highly standardized across healthcare settings, relying on universal classification systems (ICD, CPT) and common EHR platforms, enabling an agent built for one organization to transfer to others with light configuration. The addressable market is dominated by large hospitals and health systems (28% of jobs) and big physician office networks, where transaction volume and reimbursement stakes justify AI investment, while the fragmented tail of small practices has lower individual spend.",
+    "votes": {
+      "repeatability": {
+        "high": 3,
+        "low": 0
+      },
+      "concentration": {
+        "concentrated": 3,
+        "fragmented": 0
+      }
+    }
+  },
+  {
+    "slug": "medical-transcriptionists",
+    "title": "Medical transcriptionists",
+    "repeatability": "high",
+    "concentration": "fragmented",
+    "rationale": "Medical transcription workflows are highly standardized across healthcare settings\u2014listen to dictation, convert to text, edit for accuracy, and enter into EHR systems\u2014with minimal variation in the core process. However, the buyer market is fragmented: while hospitals and large health systems exist, the majority of transcriptionists work in small physician offices (36%) and independent transcription service companies (36%), with no dominant cohort of buyers that a single vendor could serve with shared infrastructure.",
+    "votes": {
+      "repeatability": {
+        "high": 3,
+        "low": 0
+      },
+      "concentration": {
+        "concentrated": 0,
+        "fragmented": 3
+      }
+    }
+  },
+  {
+    "slug": "network-and-computer-systems-administrators",
+    "title": "Network and computer systems administrators",
+    "repeatability": "low",
+    "concentration": "fragmented",
+    "rationale": "Network administration workflows vary significantly across organizations due to idiosyncratic infrastructure, legacy systems, security policies, and vendor choices\u2014an agent built for one company's stack (Azure/AWS/on-prem mix, specific monitoring tools, escalation rules) requires substantial reconfiguration elsewhere. The buyer market is also fragmented: while some large enterprises have significant IT infrastructure spend, the 331,500 jobs are distributed across every sector (education, finance, manufacturing, healthcare, government) with no dominant cohort\u2014most organizations need their own admins rather than buying a shared vendor solution.",
+    "votes": {
+      "repeatability": {
+        "high": 0,
+        "low": 3
+      },
+      "concentration": {
+        "concentrated": 0,
+        "fragmented": 3
+      }
+    }
+  },
+  {
+    "slug": "operations-research-analysts",
+    "title": "Operations research analysts",
+    "repeatability": "low",
+    "concentration": "concentrated",
+    "rationale": "Operations research workflows are highly problem-specific and depend on each organization's unique business models, data infrastructure, supply chains, and decision-making structures\u2014an airline scheduling model differs fundamentally from financial portfolio optimization or healthcare resource allocation. However, the buyer market is concentrated: 25% of employment is in finance/insurance and 22% in professional services, with the largest addressable value concentrated in large enterprises and government agencies (Federal government alone accounts for 6% of jobs) that have the scale and complexity to justify custom OR analysis and agent infrastructure.",
+    "votes": {
+      "repeatability": {
+        "high": 0,
+        "low": 3
+      },
+      "concentration": {
+        "concentrated": 3,
+        "fragmented": 0
+      }
+    }
+  },
+  {
+    "slug": "paralegals-and-legal-assistants",
+    "title": "Paralegals and legal assistants",
+    "repeatability": "low",
+    "concentration": "concentrated",
+    "rationale": "Paralegal work varies significantly across practice areas (litigation, bankruptcy, IP, corporate) and firm sizes, requiring deep familiarity with each firm's case management systems, document protocols, and attorney workflows. However, the addressable agent market is highly concentrated in large law firms and corporate legal departments that handle high-volume document work and can justify custom AI infrastructure investment.",
+    "votes": {
+      "repeatability": {
+        "high": 0,
+        "low": 3
+      },
+      "concentration": {
+        "concentrated": 3,
+        "fragmented": 0
+      }
+    }
+  },
+  {
+    "slug": "appraisers-and-assessors-of-real-estate",
+    "title": "Property appraisers and assessors",
+    "repeatability": "low",
+    "concentration": "fragmented",
+    "rationale": "Property appraisal workflows vary significantly by geography, property type (residential vs. commercial), local tax assessment procedures, and state licensing requirements, requiring substantial customization per jurisdiction. The market is highly fragmented across 37% local government assessors in different municipalities, 21% self-employed appraisers, and distributed real estate/finance firms, with no dominant buyer cohort that a single vendor could serve at scale with a standardized product.",
+    "votes": {
+      "repeatability": {
+        "high": 0,
+        "low": 3
+      },
+      "concentration": {
+        "concentrated": 0,
+        "fragmented": 3
+      }
+    }
+  },
+  {
+    "slug": "police-fire-and-ambulance-dispatchers",
+    "title": "Public safety telecommunicators",
+    "repeatability": "low",
+    "concentration": "fragmented",
+    "rationale": "Dispatch workflows vary significantly by jurisdiction due to differences in local geography, agency protocols, equipment systems (CAD platforms), multi-agency coordination rules, and state/municipal regulatory requirements\u2014making cross-jurisdiction agent transfer difficult. The 105,200 jobs are spread across 78% local government plus state and private ambulance services with no dominant buyer cohort; thousands of independent municipalities and PSAPs would each need customized solutions, preventing any single vendor from capturing most market value with a standardized product.",
+    "votes": {
+      "repeatability": {
+        "high": 1,
+        "low": 2
+      },
+      "concentration": {
+        "concentrated": 1,
+        "fragmented": 2
+      }
+    }
+  },
+  {
+    "slug": "purchasing-managers-buyers-and-purchasing-agents",
+    "title": "Purchasing managers, buyers, and purchasing agents",
+    "repeatability": "low",
+    "concentration": "fragmented",
+    "rationale": "Purchasing workflows vary dramatically across industries (manufacturing vs. retail vs. government), company size, regulatory environments, and supplier ecosystems\u2014requiring deep integration with each organization's ERP, contract management, and vendor systems. The buyer base is highly fragmented across manufacturing, wholesale, government, retail, and professional services with no dominant cohort; while large enterprises need procurement automation, the addressable value is spread across thousands of independent companies with idiosyncratic procurement policies and supplier networks.",
+    "votes": {
+      "repeatability": {
+        "high": 0,
+        "low": 3
+      },
+      "concentration": {
+        "concentrated": 0,
+        "fragmented": 3
+      }
+    }
+  },
+  {
+    "slug": "receptionists",
+    "title": "Receptionists",
+    "repeatability": "high",
+    "concentration": "fragmented",
+    "rationale": "Receptionist workflows are highly standardized across employers\u2014greeting visitors, answering phones, scheduling appointments, and data entry follow nearly identical patterns whether at a small office or large corporation, making agents transferable with minimal configuration. However, the buyer market is fragmented: receptionists are distributed across ~1 million employers spanning healthcare, professional services, nonprofits, and small businesses with no dominant buyer cohort, so no single vendor can capture most addressable value with one product.",
+    "votes": {
+      "repeatability": {
+        "high": 3,
+        "low": 0
+      },
+      "concentration": {
+        "concentrated": 0,
+        "fragmented": 3
+      }
+    }
+  },
+  {
+    "slug": "secretaries-and-administrative-assistants",
+    "title": "Secretaries and administrative assistants",
+    "repeatability": "low",
+    "concentration": "fragmented",
+    "rationale": "Administrative workflows are highly idiosyncratic across companies\u2014varying by industry (healthcare vs. legal vs. general), organizational structure, executive preferences, and embedded systems (email, calendar, filing protocols, vendor relationships)\u2014requiring substantial customization per employer. The 3.5 million workers are distributed across nearly every industry and organization size, with no dominant buyer cohort; value is spread across millions of small, medium, and large employers, making it impossible for a single vendor to capture most of the market with one product configuration.",
+    "votes": {
+      "repeatability": {
+        "high": 0,
+        "low": 3
+      },
+      "concentration": {
+        "concentrated": 0,
+        "fragmented": 3
+      }
+    }
+  },
+  {
+    "slug": "tax-examiners-and-collectors-and-revenue-agents",
+    "title": "Tax examiners and collectors, and revenue agents",
+    "repeatability": "high",
+    "concentration": "concentrated",
+    "rationale": "Tax examination and collection workflows follow standardized federal tax codes and procedures that are nearly identical across IRS, state, and local agencies, making the core audit and collection processes highly repeatable. The buyer market is heavily concentrated in government entities (46% federal, 34% state, 20% local), with the IRS representing the dominant purchaser, allowing a single vendor to serve most of the addressable value through shared infrastructure and configuration rather than complete rebuilds.",
+    "votes": {
+      "repeatability": {
+        "high": 3,
+        "low": 0
+      },
+      "concentration": {
+        "concentrated": 3,
+        "fragmented": 0
+      }
+    }
+  },
+  {
+    "slug": "travel-agents",
+    "title": "Travel agents",
+    "repeatability": "high",
+    "concentration": "fragmented",
+    "rationale": "Travel agent workflows are highly standardized across companies\u2014destination research, itinerary planning, booking via GDS systems, cost calculation, and visa/documentation guidance follow the same basic sequence everywhere. However, the buyer market is fragmented: value is spread across thousands of small independent agencies (11% self-employed), mid-sized regional travel firms, and corporate travel departments at diverse companies, with no dominant cohort large enough for a vendor to build a single configuration that captures most addressable spend.",
+    "votes": {
+      "repeatability": {
+        "high": 3,
+        "low": 0
+      },
+      "concentration": {
+        "concentrated": 0,
+        "fragmented": 3
+      }
+    }
+  }
+]
