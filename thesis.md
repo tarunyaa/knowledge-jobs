@@ -43,7 +43,7 @@ To see why, we need to look at the shape of the work AI is actually being deploy
 
 ## 3. The Shape of Knowledge Work
 
-CAPTION: Generic capability, standardized context, tacit context. The mix decides which agent can do the job, and splits the work into tiers.
+CAPTION: Generic capability, standardized context, tacit context. The mix decides which agent can do the job, and classifies jobs across tiers.
 
 Karpathy's Bureau of Labor Statistics visualizer showed that jobs with high digital exposure, roughly 49 million of 143 million US jobs, are at higher risk of AI restructuring. Those jobs are mostly knowledge work: labor requiring non-routine problem solving and human reasoning.
 
