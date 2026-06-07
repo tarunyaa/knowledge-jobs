@@ -10,7 +10,7 @@ CAPTION: I've been trying to piece together what their long-term business model 
 
 Anthropic is rumored to be about to have its first profitable quarter and both frontier labs are targeting IPO. I've been trying to piece together what their long-term business model is going to be.
 
-Puzzle piece 1: On May 4 2026, both labs revealed enterprise AI joint ventures with private equity partners.
+Puzzle piece 1: On May 4 2026, both labs revealed enterprise AI joint ventures with private equity and finance partners.
 
 - Anthropic's $1.5B partnership with Blackstone, Hellman & Friedman, and Goldman Sachs
 - OpenAI's $4B Deployment Company backed by TPG, Advent, Bain Capital, and Brookfield
@@ -89,7 +89,7 @@ The most consequential battle is being fought at {T2} which is 60% of knowledge 
 Tier 2 work needs the operational context of that company to be packaged in forms that agents can ingest. MCPs, tools, database connections, prompt scaffolds. But packageability isn't uniform across Tier 2. Two factors shape it.
 
 - Workflow repeatability across companies. Does customer service look the same at Goldman as at JPMorgan?
-- Company concentration. Are there enough companies to support specialized agents for that function?
+- Company concentration. Is the work concentrated in a few large companies, or spread across many small ones?
 
 These produce four cells, and each has a likely winner.
 
