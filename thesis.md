@@ -82,7 +82,7 @@ These are jobs where tacit context dominates. Work at these jobs cannot be done 
 
 ## 4. The Tier 2 battle
 
-CAPTION: 60% of knowledge work, four cells, four different winners. The labs win one of them.
+CAPTION: 60% of knowledge work, four cells, four different probable winners.
 
 The most consequential battle is being fought at {T2} which is 60% of knowledge work: **27 million jobs and $1.75 trillion in annual wages.**
 
