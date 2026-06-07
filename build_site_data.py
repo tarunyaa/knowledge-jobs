@@ -245,44 +245,6 @@ def _pay_weighted(items):
     return (w / j) if j else 0
 
 
-def build_map_facts(data, quadrant):
-    """Three coherent, high-impact findings for the dropdown beside the map."""
-    total_jobs = sum((d["jobs"] or 0) for d in data) or 1
-    facts = []
-
-    if quadrant:
-        total_w = sum(c["wages"] for c in quadrant.values()) or 1
-        labs = quadrant["high-fragmented"]
-        inc = quadrant["low-concentrated"]
-        ratio = inc["pay"] / labs["pay"] if labs["pay"] else 0
-        facts.append({
-            "stat": f"{ratio:.0f}×",
-            "label": f"The labs win Tier 2's largest cell by headcount, but its cheapest "
-                     f"work: ${labs['pay']/1000:.0f}K a year against ${inc['pay']/1000:.0f}K "
-                     f"in the cell next door. They win the volume; the margin stays with "
-                     f"whoever owns the workflow. This is infrastructure pricing, not SaaS.",
-        })
-        facts.append({
-            "stat": f"${inc['wages']/1e9:.0f}B",
-            "label": f"About a third of all Tier 2 wages sit in the low-repeatability cell "
-                     f"platform incumbents already own. The operational context there, the "
-                     f"CRM workflow, the bank's definition of suspicious activity, stays "
-                     f"with Salesforce, ServiceNow, and FIS, not the labs.",
-        })
-
-    t3c = [d for d in data if d.get("tier") == "T3c"]
-    if t3c:
-        w = sum((d["jobs"] or 0) * (d["pay"] or 0) for d in t3c)
-        j = sum((d["jobs"] or 0) for d in t3c)
-        facts.append({
-            "stat": f"${w/1e12:.1f}T",
-            "label": f"Relational work (Tier 3c) is the second-largest wage pool in "
-                     f"knowledge work, {j/1e6:.1f}M jobs worth ${w/1e12:.1f}T. It lives in "
-                     f"relationships between people and is out of reach for any agent.",
-        })
-    return facts
-
-
 TIER_LABEL = {
     "T1": "Genericizable", "T2": "Framework + config", "T3a": "Documentable tacit",
     "T3b": "Genuinely tacit", "T3c": "Relational",
@@ -369,7 +331,6 @@ def build_thesis(data):
         })
 
     quadrant = build_quadrant(data)
-    map_facts = build_map_facts(data, quadrant)
     tier_stats = build_tier_stats(data)
 
     os.makedirs("site", exist_ok=True)
@@ -378,7 +339,6 @@ def build_thesis(data):
             "sections": sections,
             "prompts": PROMPTS,
             "quadrant": quadrant,
-            "map_facts": map_facts,
             "tier_stats": tier_stats,
         }, f)
 
