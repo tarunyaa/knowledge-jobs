@@ -63,7 +63,7 @@ Jobs in this tier have standard inputs and standard outputs and are similar acro
 
 ### {T2} Tier 2: Genericizable framework, custom configuration
 
-*Vertical or horizontal agent, depending on the cell*
+*Vertical or horizontal agent*
 
 Tier 2 jobs are structurally similar across companies but require company-specific context to execute. Customer service has the same shape at Goldman and JPMorgan, but an agent needs each company's actual escalation rules, support history, and customer data to do the work. Connectors alone aren't enough. Examples of agents in this tier are Decagon (customer service), Harvey (legal research), and Abridge (medical scribing). Agents at this tier are mostly built by vertical agent startups. Recently, frontier labs have started using FDEs to target the same verticals.
 
