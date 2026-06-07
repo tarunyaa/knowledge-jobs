@@ -20,8 +20,20 @@ import re
 import markdown
 
 from tier import SYSTEM_PROMPT as TIER_PROMPT
+from score import SYSTEM_PROMPT as EXPOSURE_PROMPT
+from cell import SYSTEM_PROMPT as CELL_PROMPT
 
 MIN_EXPOSURE = 7
+
+# The LLM prompts behind the visualization, surfaced as dropdowns (à la Karpathy).
+PROMPTS = [
+    {"summary": f"1 · AI-exposure scoring prompt — filters the map to exposure ≥ "
+                f"{MIN_EXPOSURE} (Karpathy's rubric)", "text": EXPOSURE_PROMPT},
+    {"summary": "2 · Tier classifier prompt — colours each occupation T1–T3c",
+     "text": TIER_PROMPT},
+    {"summary": "3 · Tier 2 quadrant prompt — places each T2 job by repeatability × "
+                "customer concentration", "text": CELL_PROMPT},
+]
 
 # Each section's narrative mode drives how the map repaints itself when the
 # section is expanded. See site/index.html.
@@ -302,7 +314,7 @@ def build_thesis(data):
     with open("site/thesis.json", "w", encoding="utf-8") as f:
         json.dump({
             "sections": sections,
-            "scoring_prompt": TIER_PROMPT,
+            "prompts": PROMPTS,
             "quadrant": quadrant,
             "map_facts": map_facts,
         }, f)

@@ -89,7 +89,7 @@ The most consequential battle is being fought at {T2}, which is **60% of knowled
 Tier 2 work needs the operational context of the company packaged in forms agents can ingest — MCPs, tools, database connections, prompt scaffolds. But packageability isn't uniform. Two factors shape it:
 
 - **Workflow repeatability across companies.** Does customer service look the same at Goldman as at JPMorgan?
-- **Company concentration.** Are there enough large companies to support a specialized agent for that function?
+- **Customer concentration.** Are the agent's buyers a small cohort of large enterprises, or a long fragmented tail of many small ones?
 
 These produce four cells, and each has a likely winner.
 

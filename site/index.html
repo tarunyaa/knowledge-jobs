@@ -52,6 +52,7 @@ header.page .tagline {
   font-size: 17px;
   color: var(--fg);
   font-weight: 500;
+  font-style: italic;
   max-width: 720px;
   margin-bottom: 10px;
 }
@@ -395,10 +396,17 @@ canvas#canvas {
   color: var(--accent);
 }
 
-/* ── Scoring prompt (Karpathy-style collapsible) ──────────────────── */
+/* ── Scoring prompts (Karpathy-style collapsibles) ────────────────── */
+.prompt-methodology { margin: 8px 0 4px; max-width: 760px; }
+.prompt-methodology-label {
+  font-size: 12px;
+  color: var(--fg2);
+  margin-bottom: 8px;
+}
+.prompt-methodology-label a { color: var(--accent); text-decoration: none; }
+.prompt-methodology-label a:hover { text-decoration: underline; }
 .prompt-block {
-  margin-top: 14px;
-  margin-left: 30px;
+  margin: 0 0 6px;
   max-width: 760px;
 }
 .prompt-block summary {
@@ -493,8 +501,8 @@ canvas#canvas {
 <div id="wrapper">
 
 <header class="page">
-  <h1>Knowledge Work Map</h1>
-  <p class="tagline">When and how will AI create value at the application layer?</p>
+  <h1>The Frontier Labs' Real Business Model</h1>
+  <p class="tagline">An agentic systems thesis on whether frontier labs can be profitable.</p>
   <ul class="subquestions">
     <li>When will frontier labs become profitable?</li>
     <li>How will AI agents be deployed?</li>
@@ -506,11 +514,11 @@ canvas#canvas {
 <!-- Thesis sections before the map (§1–§3) — populated from thesis.json -->
 <div id="thesisBeforeMap"></div>
 
-<!-- The actual scoring prompt the LLM was given (populated from thesis.json) -->
-<details class="prompt-block">
-  <summary>View the scoring prompt the LLM was given (single axis: skill transferability)</summary>
-  <div class="prompt-box" id="scoringPromptBox"></div>
-</details>
+<!-- Methodology: the LLM prompts behind the map (populated from thesis.json) -->
+<div class="prompt-methodology">
+  <p class="prompt-methodology-label">Methodology — the LLM prompts behind this map, on <a href="https://karpathy.ai/jobs/">Karpathy's BLS pipeline</a>:</p>
+  <div id="promptBlocks"></div>
+</div>
 
 <!-- ═══════════════════════════════════════════════════════════════════
      THE MAP
@@ -919,8 +927,8 @@ function quadrantHTML(q) {
       <div class="q-main">
         <div class="q-grid">
           <div class="q-corner"></div>
-          <div class="q-colhead">Concentrated buyer market</div>
-          <div class="q-colhead">Fragmented buyer market</div>
+          <div class="q-colhead">Concentrated customers</div>
+          <div class="q-colhead">Fragmented customers</div>
           <div class="q-rowhead">High</div>
           ${quadrantCell(q["high-concentrated"])}
           ${quadrantCell(q["high-fragmented"])}
@@ -928,10 +936,10 @@ function quadrantHTML(q) {
           ${quadrantCell(q["low-concentrated"])}
           ${quadrantCell(q["low-fragmented"])}
         </div>
-        <div class="q-axis-x">Buyer-market concentration →</div>
+        <div class="q-axis-x">Customer concentration →</div>
       </div>
     </div>
-    <div class="diagram-cap">Cells placed by <b>buyer-market structure</b> (who the agent is sold to), sized by the Tier 2 wages at stake. Placements are majority-vote LLM judgments over 51 occupations — directional, not exact. The labs win one cell — horizontal agents, ${labs.pct}% of Tier 2 jobs; roughly <b>${notLabsW}%</b> of Tier 2 wages sit in the three cells owned by vertical startups, incumbents, or the enterprise itself.</div>`;
+    <div class="diagram-cap">Cells placed by <b>customer concentration</b> (whether the agent's buyers are a small cohort of large enterprises or a long tail), sized by the Tier 2 wages at stake. Placements are majority-vote LLM judgments over 51 occupations — directional, not exact. The labs win one cell — horizontal agents, ${labs.pct}% of Tier 2 jobs; roughly <b>${notLabsW}%</b> of Tier 2 wages sit in the three cells owned by vertical startups, incumbents, or the enterprise itself.</div>`;
 }
 
 function renderMapFacts(facts) {
@@ -978,31 +986,49 @@ function renderThesis(thesis) {
     else after.appendChild(sec);
   }
 
-  if (thesis.scoring_prompt) {
-    document.getElementById("scoringPromptBox").textContent = thesis.scoring_prompt;
-  }
+  const prompts = thesis.prompts ||
+    (thesis.scoring_prompt ? [{ summary: "View the scoring prompt", text: thesis.scoring_prompt }] : []);
+  renderPrompts(prompts);
+}
+
+function renderPrompts(prompts) {
+  const box = document.getElementById("promptBlocks");
+  if (!box) return;
+  box.innerHTML = prompts.map(p => `
+    <details class="prompt-block">
+      <summary>${p.summary}</summary>
+      <div class="prompt-box"></div>
+    </details>`).join("");
+  const boxes = box.querySelectorAll(".prompt-box");
+  prompts.forEach((p, i) => { if (boxes[i]) boxes[i].textContent = p.text; });
 }
 
 // ── Section accordion ─────────────────────────────────────────────────
 
 function setupSections() {
-  const sections = document.querySelectorAll(".thesis-section");
+  const sections = [...document.querySelectorAll(".thesis-section")];
+
+  // Each section toggles independently — several can be open at once. The map's
+  // narrative mode follows the section just opened; on close it falls back to
+  // the last still-open section (in document order), else default.
+  function refreshMode(justOpened) {
+    if (justOpened && justOpened.classList.contains("open")) {
+      setNarrativeMode(justOpened.dataset.mode || "default");
+      return;
+    }
+    const open = sections.filter(s => s.classList.contains("open"));
+    const last = open[open.length - 1];
+    setNarrativeMode(last ? (last.dataset.mode || "default") : "default");
+  }
+
   sections.forEach(s => {
-    const header = s.querySelector(".header-row");
-    header.addEventListener("click", () => {
-      const wasOpen = s.classList.contains("open");
-      sections.forEach(o => o.classList.remove("open"));
-      if (!wasOpen) {
-        s.classList.add("open");
-        setNarrativeMode(s.dataset.mode || "default");
-      } else {
-        setNarrativeMode("default");
-      }
+    s.querySelector(".header-row").addEventListener("click", () => {
+      s.classList.toggle("open");
+      refreshMode(s);
     });
   });
 
-  const openSec = document.querySelector(".thesis-section.open");
-  if (openSec) setNarrativeMode(openSec.dataset.mode || "default");
+  refreshMode();
 }
 
 // ── Events ────────────────────────────────────────────────────────────
