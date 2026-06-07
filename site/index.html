@@ -989,7 +989,6 @@ function renderThesis(thesis) {
     sec.className = "thesis-section";
     sec.dataset.section = s.id;
     sec.dataset.mode = s.mode || "default";
-    if (s.id === "3") sec.classList.add("open");
 
     sec.innerHTML = `
       <div class="header-row">
